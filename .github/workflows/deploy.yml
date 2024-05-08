@@ -31,6 +31,11 @@ jobs:
       run: |
         jupyter-book build .
 
+    # Add .nojekyll file to the publish directory
+    - name: Create .nojekyll file
+      run: |
+        touch ./_build/html/.nojekyll
+
     # Deploy the book's HTML to gh-pages branch
     - name: GitHub Pages action
       uses: peaceiris/actions-gh-pages@v3.6.1
