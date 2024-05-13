@@ -2,19 +2,41 @@
 
 This is a lecture book for the IT-security topic, security of blockchains.
 
-## Usage
+Available @ https://phelstab.github.io/blocksec/
 
-### Building the book
-
-```sh
+### Installation / Building the book
+1. 
+```bash
 python -m venv venv
-UNIX: source venv/bin/activate
-WIN: .\venv\scripts\activate
+```
+2. UNIX: Activate
+```bash
+source venv/bin/activate
+```
+3. WIN: Activate
+```bash
+.\venv\scripts\activate
+```
+4. Install libraries
+```bash
 pip install -r requirements.txt
-# remove any existing builds
+```
+5. Remove any existing builds
+```bash
 jupyter-book clean .
-# build
+```
+
+6. Build (The fully-rendered HTML version of the book will be built in `blocksec/_build/html/`)
+```bash 
 jupyter-book build .
 ```
 
-A fully-rendered HTML version of the book will be built in `blocksec/_build/html/`.
+
+
+
+
+
+
+
+
+
