@@ -1,4 +1,4 @@
----
+<!-- ---
 jupytext:
   text_representation:
     extension: .md
@@ -9,7 +9,7 @@ kernelspec:
   display_name: Python 3
   language: python
   name: python3
----
+--- -->
 
 # Lecture Plans
 
@@ -39,7 +39,46 @@ Exercise for a Double Spent Attack on a Blockchain.
 Cite a paper {cite}`konig2020risks`
 
 
+
+![fishy](images/workpartioning/0002.jpg)
+
 ### Test
+
+<style>
+.slides {
+  display: none;
+  width: 100%;
+}
+
+.animate-left {
+  position: relative;
+  animation: animateleft 0.8s
+}
+</style>
+
+Nutzen Sie die Pfeiltasten (Links und Rechts) oder die folgenden Links, um durch die Visualisierung zu navigieren. Durch klicken oder berühren (Telefon/Tablet) können Sie auch zum nächsten Bild. Alternativ können Sie auch ein <a href="images/workpartioning.pdf">PDF mit allen Bildern</a> runterladen.
+<!-- <button id="backbtn">Zurück</button>
+<button id="fwdbtn">Vor</button>
+<div id="slidescontainer">
+  <img class="slides animate-left" src="images/workpartioning/0002.jpg" style="display: block" alt="Will display in deployed book">
+  <img class="slides animate-left" src="images/workpartioning/0003.jpg">
+  <img class="slides animate-left" src="images/workpartioning/0004.jpg">
+  <img class="slides animate-left" src="images/workpartioning/0005.jpg">
+  <img class="slides animate-left" src="images/workpartioning/0006.jpg">
+  <img class="slides animate-left" src="images/workpartioning/0007.jpg">
+  <img class="slides animate-left" src="images/workpartioning/0008.jpg">
+  <img class="slides animate-left" src="images/workpartioning/0009.jpg">
+  <img class="slides animate-left" src="images/workpartioning/0010.jpg">
+  <img class="slides animate-left" src="images/workpartioning/0011.jpg">
+  <img class="slides animate-left" src="images/workpartioning/0012.jpg">
+  <img class="slides animate-left" src="images/workpartioning/0013.jpg">
+  <img class="slides animate-left" src="images/workpartioning/0014.jpg">
+  <img class="slides animate-left" src="images/workpartioning/0015.jpg">
+  <img class="slides animate-left" src="images/workpartioning/0016.jpg">
+  <img class="slides animate-left" src="images/workpartioning/0017.jpg">
+  <img class="slides animate-left" src="images/workpartioning/0018.jpg">
+</div> -->
+
 
 Nutzen Sie die Pfeiltasten (Links und Rechts) oder die folgenden Links, um durch die Visualisierung zu navigieren. Durch klicken oder berühren (Telefon/Tablet) können Sie auch zum nächsten Bild. Alternativ können Sie auch ein <a href="files/workpartioning.pdf">PDF mit allen Bildern</a> runterladen.
 <button id="backbtn">Zurück</button>

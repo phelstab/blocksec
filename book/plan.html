@@ -62,7 +62,7 @@
     <link rel="icon" href="../_static/fav.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Content with notebooks" href="notebooks.html" />
+    <link rel="next" title="Blockchain Common Vulnerability List" href="attack_list.html" />
     <link rel="prev" title="Blockchain Security" href="../index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -172,6 +172,7 @@
     <div class="bd-toc-item navbar-nav active">
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Lecture Plans</a></li>
+<li class="toctree-l1"><a class="reference internal" href="attack_list.html">Blockchain Common Vulnerability List</a></li>
 <li class="toctree-l1"><a class="reference internal" href="notebooks.html">Content with notebooks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="bibliography.html">Bibliography</a></li>
 </ul>
@@ -215,55 +216,6 @@
         <div class="header-article-item">
 
 <div class="article-header-buttons">
-
-
-
-
-
-<div class="dropdown dropdown-launch-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
-    <i class="fas fa-rocket"></i>
-  </button>
-  <ul class="dropdown-menu">
-      
-      
-      
-      <li><a href="https://mybinder.org/v2/gh/phelstab/blocksec/master?urlpath=tree/book/plan.md" target="_blank"
-   class="btn btn-sm dropdown-item"
-   title="Launch onBinder"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  
-    <img src="../_static/images/logo_binder.svg">
-  </span>
-<span class="btn__text-container">Binder</span>
-</a>
-</li>
-      
-      
-      
-      
-      <li><a href="https://colab.research.google.com/github/phelstab/blocksec/blob/master/book/plan.md" target="_blank"
-   class="btn btn-sm dropdown-item"
-   title="Launch onColab"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  
-    <img src="../_static/images/logo_colab.png">
-  </span>
-<span class="btn__text-container">Colab</span>
-</a>
-</li>
-      
-  </ul>
-</div>
-
 
 
 
@@ -338,23 +290,6 @@
     <i class="fas fa-download"></i>
   </button>
   <ul class="dropdown-menu">
-      
-      
-      
-      <li><a href="../_sources/book/plan.ipynb" target="_blank"
-   class="btn btn-sm btn-download-notebook-button dropdown-item"
-   title="Download notebook file"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fas fa-code"></i>
-  </span>
-<span class="btn__text-container">.ipynb</span>
-</a>
-</li>
-      
       
       
       
@@ -476,7 +411,19 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="lecture-plans">
+  <!-- ---
+jupytext:
+  text_representation:
+    extension: .md
+    format_name: myst
+    format_version: 0.13
+    jupytext_version: 1.11.5
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+--- -->
+<section class="tex2jax_ignore mathjax_ignore" id="lecture-plans">
 <h1>Lecture Plans<a class="headerlink" href="#lecture-plans" title="Link to this heading">#</a></h1>
 <section id="lecture">
 <h2>1. Lecture<a class="headerlink" href="#lecture" title="Link to this heading">#</a></h2>
@@ -505,9 +452,43 @@ document.write(`
 <section id="id1">
 <h3>3.2 …<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
 <p>Cite a paper <span id="id2">[<a class="reference internal" href="bibliography.html#id2" title="Lukas König, Stefan Unger, Peter Kieseberg, Simon Tjoa, and Josef Ressel Center Blockchains. The risks of the blockchain a review on current vulnerabilities and attacks. J. Internet Serv. Inf. Secur., 10(3):110–127, 2020.">König <em>et al.</em>, 2020</a>]</span></p>
+<p><img alt="fishy" src="../_images/0002.jpg" /></p>
 </section>
 <section id="test">
 <h3>Test<a class="headerlink" href="#test" title="Link to this heading">#</a></h3>
+<style>
+.slides {
+  display: none;
+  width: 100%;
+}
+
+.animate-left {
+  position: relative;
+  animation: animateleft 0.8s
+}
+</style>
+<p>Nutzen Sie die Pfeiltasten (Links und Rechts) oder die folgenden Links, um durch die Visualisierung zu navigieren. Durch klicken oder berühren (Telefon/Tablet) können Sie auch zum nächsten Bild. Alternativ können Sie auch ein <a href="images/workpartioning.pdf">PDF mit allen Bildern</a> runterladen.</p>
+<!-- <button id="backbtn">Zurück</button>
+<button id="fwdbtn">Vor</button>
+<div id="slidescontainer">
+  <img class="slides animate-left" src="images/workpartioning/0002.jpg" style="display: block" alt="Will display in deployed book">
+  <img class="slides animate-left" src="images/workpartioning/0003.jpg">
+  <img class="slides animate-left" src="images/workpartioning/0004.jpg">
+  <img class="slides animate-left" src="images/workpartioning/0005.jpg">
+  <img class="slides animate-left" src="images/workpartioning/0006.jpg">
+  <img class="slides animate-left" src="images/workpartioning/0007.jpg">
+  <img class="slides animate-left" src="images/workpartioning/0008.jpg">
+  <img class="slides animate-left" src="images/workpartioning/0009.jpg">
+  <img class="slides animate-left" src="images/workpartioning/0010.jpg">
+  <img class="slides animate-left" src="images/workpartioning/0011.jpg">
+  <img class="slides animate-left" src="images/workpartioning/0012.jpg">
+  <img class="slides animate-left" src="images/workpartioning/0013.jpg">
+  <img class="slides animate-left" src="images/workpartioning/0014.jpg">
+  <img class="slides animate-left" src="images/workpartioning/0015.jpg">
+  <img class="slides animate-left" src="images/workpartioning/0016.jpg">
+  <img class="slides animate-left" src="images/workpartioning/0017.jpg">
+  <img class="slides animate-left" src="images/workpartioning/0018.jpg">
+</div> -->
 <p>Nutzen Sie die Pfeiltasten (Links und Rechts) oder die folgenden Links, um durch die Visualisierung zu navigieren. Durch klicken oder berühren (Telefon/Tablet) können Sie auch zum nächsten Bild. Alternativ können Sie auch ein <a href="files/workpartioning.pdf">PDF mit allen Bildern</a> runterladen.
 <button id="backbtn">Zurück</button>
 <button id="fwdbtn">Vor</button></p>
@@ -619,7 +600,8 @@ document.getElementById('slidescontainer').onclick = function (event) {
 document.getElementById('fwdbtn').onclick = next_slide;
 document.getElementById('backbtn').onclick = prev_slide;
 
-</script></section>
+</script>
+</section>
 </section>
 </section>
 
@@ -663,11 +645,11 @@ document.getElementById('backbtn').onclick = prev_slide;
       </div>
     </a>
     <a class="right-next"
-       href="notebooks.html"
+       href="attack_list.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Content with notebooks</p>
+        <p class="prev-next-title">Blockchain Common Vulnerability List</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
