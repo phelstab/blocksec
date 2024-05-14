@@ -1,16 +1,13 @@
-# Blockchain Security
+# Direct Blockchain Attack Vectors
+*by Paul Helstab & Daniel Stucke*
 
-This is a small sample book to give you a feel for how book content is
-structured.
+This book is a collection of notes on blockchain security and corresponding attack vectors. The contents cover the lecture and the exercise on June 9, 2024, in the lecture "Praktische IT-Sicherheit"
 
-:::{note}
-Here is a note!
-:::
+## Structure
+The book is structured into two parts: The lecture and the exercise. The lecture part contains the theoretical background of the topic, while the exercise part contains practical examples and tasks. The lecture is approximately 60 minutes long, while the exercise is approximately 90 minutes long. In between the lecture and the exercise there is a short break. If any questions arise during the lecture or the exercise, feel free to us.
 
-And here is a code block:
+### Lecture
+-> Link to Lecture
 
-```
-e = mc^2
-```
-
-Check out the content pages bundled with this sample book to see more. Test
+### Exercise
+-> Link to Exercise
