@@ -6,6 +6,7 @@ root: index
 chapters:
   - file: book/plan
   # - file: book/markdown
+  - file: book/attack_list
   - file: book/notebooks
   - file: book/bibliography
 

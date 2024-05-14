@@ -65,6 +65,8 @@ sphinx:
           colab_url: "https://colab.research.google.com",
         }
     bibtex_reference_style: author_year
+    # myst_enable_extensions:
+    #   - html_image
 
 
 # Define the name of the latex output file for PDF builds

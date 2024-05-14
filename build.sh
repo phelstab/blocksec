@@ -1,2 +1,2 @@
 jupyter-book clean .
-jupyter-book build .
+jupyter-book build . 
