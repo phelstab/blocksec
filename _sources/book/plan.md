@@ -39,9 +39,6 @@ Exercise for a Double Spent Attack on a Blockchain.
 Cite a paper {cite}`konig2020risks`
 
 
-
-![fishy](images/workpartioning/0002.jpg)
-
 ### Test
 
 <style>
@@ -56,94 +53,73 @@ Cite a paper {cite}`konig2020risks`
 }
 </style>
 
-Nutzen Sie die Pfeiltasten (Links und Rechts) oder die folgenden Links, um durch die Visualisierung zu navigieren. Durch klicken oder berühren (Telefon/Tablet) können Sie auch zum nächsten Bild. Alternativ können Sie auch ein <a href="images/workpartioning.pdf">PDF mit allen Bildern</a> runterladen.
-<!-- <button id="backbtn">Zurück</button>
-<button id="fwdbtn">Vor</button>
-<div id="slidescontainer">
-  <img class="slides animate-left" src="images/workpartioning/0002.jpg" style="display: block" alt="Will display in deployed book">
-  <img class="slides animate-left" src="images/workpartioning/0003.jpg">
-  <img class="slides animate-left" src="images/workpartioning/0004.jpg">
-  <img class="slides animate-left" src="images/workpartioning/0005.jpg">
-  <img class="slides animate-left" src="images/workpartioning/0006.jpg">
-  <img class="slides animate-left" src="images/workpartioning/0007.jpg">
-  <img class="slides animate-left" src="images/workpartioning/0008.jpg">
-  <img class="slides animate-left" src="images/workpartioning/0009.jpg">
-  <img class="slides animate-left" src="images/workpartioning/0010.jpg">
-  <img class="slides animate-left" src="images/workpartioning/0011.jpg">
-  <img class="slides animate-left" src="images/workpartioning/0012.jpg">
-  <img class="slides animate-left" src="images/workpartioning/0013.jpg">
-  <img class="slides animate-left" src="images/workpartioning/0014.jpg">
-  <img class="slides animate-left" src="images/workpartioning/0015.jpg">
-  <img class="slides animate-left" src="images/workpartioning/0016.jpg">
-  <img class="slides animate-left" src="images/workpartioning/0017.jpg">
-  <img class="slides animate-left" src="images/workpartioning/0018.jpg">
-</div> -->
 
+Nutzen Sie die Pfeiltasten (Links und Rechts) oder die folgenden Links, um durch die Visualisierung zu navigieren. Durch klicken oder berühren (Telefon/Tablet) können Sie auch zum nächsten Bild. Alternativ können Sie auch ein <a href="../_static/workpartioning.pdf">PDF mit allen Bildern</a> runterladen.
 
-Nutzen Sie die Pfeiltasten (Links und Rechts) oder die folgenden Links, um durch die Visualisierung zu navigieren. Durch klicken oder berühren (Telefon/Tablet) können Sie auch zum nächsten Bild. Alternativ können Sie auch ein <a href="files/workpartioning.pdf">PDF mit allen Bildern</a> runterladen.
 <button id="backbtn">Zurück</button>
 <button id="fwdbtn">Vor</button>
+
 <div id="slidescontainer">
-  <img class="slides animate-left" src="files/workpartioning/0002.jpg" style="display: block" alt="Will display in deployed book">
-  <img class="slides animate-left" src="files/workpartioning/0003.jpg">
-  <img class="slides animate-left" src="files/workpartioning/0004.jpg">
-  <img class="slides animate-left" src="files/workpartioning/0005.jpg">
-  <img class="slides animate-left" src="files/workpartioning/0006.jpg">
-  <img class="slides animate-left" src="files/workpartioning/0007.jpg">
-  <img class="slides animate-left" src="files/workpartioning/0008.jpg">
-  <img class="slides animate-left" src="files/workpartioning/0009.jpg">
-  <img class="slides animate-left" src="files/workpartioning/0010.jpg">
-  <img class="slides animate-left" src="files/workpartioning/0011.jpg">
-  <img class="slides animate-left" src="files/workpartioning/0012.jpg">
-  <img class="slides animate-left" src="files/workpartioning/0013.jpg">
-  <img class="slides animate-left" src="files/workpartioning/0014.jpg">
-  <img class="slides animate-left" src="files/workpartioning/0015.jpg">
-  <img class="slides animate-left" src="files/workpartioning/0016.jpg">
-  <img class="slides animate-left" src="files/workpartioning/0017.jpg">
-  <img class="slides animate-left" src="files/workpartioning/0018.jpg">
-  <img class="slides animate-left" src="files/workpartioning/0019.jpg">
-  <img class="slides animate-left" src="files/workpartioning/0020.jpg">
-  <img class="slides animate-left" src="files/workpartioning/0021.jpg">
-  <img class="slides animate-left" src="files/workpartioning/0022.jpg">
-  <img class="slides animate-left" src="files/workpartioning/0023.jpg">
-  <img class="slides animate-left" src="files/workpartioning/0024.jpg">
-  <img class="slides animate-left" src="files/workpartioning/0025.jpg">
-  <img class="slides animate-left" src="files/workpartioning/0026.jpg">
-  <img class="slides animate-left" src="files/workpartioning/0027.jpg">
-  <img class="slides animate-left" src="files/workpartioning/0028.jpg">
-  <img class="slides animate-left" src="files/workpartioning/0029.jpg">
-  <img class="slides animate-left" src="files/workpartioning/0030.jpg">
-  <img class="slides animate-left" src="files/workpartioning/0031.jpg">
-  <img class="slides animate-left" src="files/workpartioning/0032.jpg">
-  <img class="slides animate-left" src="files/workpartioning/0033.jpg">
-  <img class="slides animate-left" src="files/workpartioning/0034.jpg">
-  <img class="slides animate-left" src="files/workpartioning/0035.jpg">
-  <img class="slides animate-left" src="files/workpartioning/0036.jpg">
-  <img class="slides animate-left" src="files/workpartioning/0037.jpg">
-  <img class="slides animate-left" src="files/workpartioning/0038.jpg">
-  <img class="slides animate-left" src="files/workpartioning/0039.jpg">
-  <img class="slides animate-left" src="files/workpartioning/0040.jpg">
-  <img class="slides animate-left" src="files/workpartioning/0041.jpg">
-  <img class="slides animate-left" src="files/workpartioning/0042.jpg">
-  <img class="slides animate-left" src="files/workpartioning/0043.jpg">
-  <img class="slides animate-left" src="files/workpartioning/0044.jpg">
-  <img class="slides animate-left" src="files/workpartioning/0045.jpg">
-  <img class="slides animate-left" src="files/workpartioning/0046.jpg">
-  <img class="slides animate-left" src="files/workpartioning/0047.jpg">
-  <img class="slides animate-left" src="files/workpartioning/0048.jpg">
-  <img class="slides animate-left" src="files/workpartioning/0049.jpg">
-  <img class="slides animate-left" src="files/workpartioning/0050.jpg">
-  <img class="slides animate-left" src="files/workpartioning/0051.jpg">
-  <img class="slides animate-left" src="files/workpartioning/0052.jpg">
-  <img class="slides animate-left" src="files/workpartioning/0053.jpg">
-  <img class="slides animate-left" src="files/workpartioning/0054.jpg">
-  <img class="slides animate-left" src="files/workpartioning/0055.jpg">
-  <img class="slides animate-left" src="files/workpartioning/0056.jpg">
-  <img class="slides animate-left" src="files/workpartioning/0057.jpg">
-  <img class="slides animate-left" src="files/workpartioning/0058.jpg">
-  <img class="slides animate-left" src="files/workpartioning/0059.jpg">
-  <img class="slides animate-left" src="files/workpartioning/0060.jpg">
-  <img class="slides animate-left" src="files/workpartioning/0061.jpg">
+  <img class="slides animate-left" src="../_static/images/workpartioning/0002.jpg" style="display: block" alt="Will display in deployed book">
+  <img class="slides animate-left" src="../_static/images/workpartioning/0003.jpg">
+  <img class="slides animate-left" src="../_static/images/workpartioning/0004.jpg">
+  <img class="slides animate-left" src="../_static/images/workpartioning/0005.jpg">
+  <img class="slides animate-left" src="../_static/images/workpartioning/0006.jpg">
+  <img class="slides animate-left" src="../_static/images/workpartioning/0007.jpg">
+  <img class="slides animate-left" src="../_static/images/workpartioning/0008.jpg">
+  <img class="slides animate-left" src="../_static/images/workpartioning/0009.jpg">
+  <img class="slides animate-left" src="../_static/images/workpartioning/0010.jpg">
+  <img class="slides animate-left" src="../_static/images/workpartioning/0011.jpg">
+  <img class="slides animate-left" src="../_static/images/workpartioning/0012.jpg">
+  <img class="slides animate-left" src="../_static/images/workpartioning/0013.jpg">
+  <img class="slides animate-left" src="../_static/images/workpartioning/0014.jpg">
+  <img class="slides animate-left" src="../_static/images/workpartioning/0015.jpg">
+  <img class="slides animate-left" src="../_static/images/workpartioning/0016.jpg">
+  <img class="slides animate-left" src="../_static/images/workpartioning/0017.jpg">
+  <img class="slides animate-left" src="../_static/images/workpartioning/0018.jpg">
+  <img class="slides animate-left" src="../_static/images/workpartioning/0019.jpg">
+  <img class="slides animate-left" src="../_static/images/workpartioning/0020.jpg">
+  <img class="slides animate-left" src="../_static/images/workpartioning/0021.jpg">
+  <img class="slides animate-left" src="../_static/images/workpartioning/0022.jpg">
+  <img class="slides animate-left" src="../_static/images/workpartioning/0023.jpg">
+  <img class="slides animate-left" src="../_static/images/workpartioning/0024.jpg">
+  <img class="slides animate-left" src="../_static/images/workpartioning/0025.jpg">
+  <img class="slides animate-left" src="../_static/images/workpartioning/0026.jpg">
+  <img class="slides animate-left" src="../_static/images/workpartioning/0027.jpg">
+  <img class="slides animate-left" src="../_static/images/workpartioning/0028.jpg">
+  <img class="slides animate-left" src="../_static/images/workpartioning/0029.jpg">
+  <img class="slides animate-left" src="../_static/images/workpartioning/0030.jpg">
+  <img class="slides animate-left" src="../_static/images/workpartioning/0031.jpg">
+  <img class="slides animate-left" src="../_static/images/workpartioning/0032.jpg">
+  <img class="slides animate-left" src="../_static/images/workpartioning/0033.jpg">
+  <img class="slides animate-left" src="../_static/images/workpartioning/0034.jpg">
+  <img class="slides animate-left" src="../_static/images/workpartioning/0035.jpg">
+  <img class="slides animate-left" src="../_static/images/workpartioning/0036.jpg">
+  <img class="slides animate-left" src="../_static/images/workpartioning/0037.jpg">
+  <img class="slides animate-left" src="../_static/images/workpartioning/0038.jpg">
+  <img class="slides animate-left" src="../_static/images/workpartioning/0039.jpg">
+  <img class="slides animate-left" src="../_static/images/workpartioning/0040.jpg">
+  <img class="slides animate-left" src="../_static/images/workpartioning/0041.jpg">
+  <img class="slides animate-left" src="../_static/images/workpartioning/0042.jpg">
+  <img class="slides animate-left" src="../_static/images/workpartioning/0043.jpg">
+  <img class="slides animate-left" src="../_static/images/workpartioning/0044.jpg">
+  <img class="slides animate-left" src="../_static/images/workpartioning/0045.jpg">
+  <img class="slides animate-left" src="../_static/images/workpartioning/0046.jpg">
+  <img class="slides animate-left" src="../_static/images/workpartioning/0047.jpg">
+  <img class="slides animate-left" src="../_static/images/workpartioning/0048.jpg">
+  <img class="slides animate-left" src="../_static/images/workpartioning/0049.jpg">
+  <img class="slides animate-left" src="../_static/images/workpartioning/0050.jpg">
+  <img class="slides animate-left" src="../_static/images/workpartioning/0051.jpg">
+  <img class="slides animate-left" src="../_static/images/workpartioning/0052.jpg">
+  <img class="slides animate-left" src="../_static/images/workpartioning/0053.jpg">
+  <img class="slides animate-left" src="../_static/images/workpartioning/0054.jpg">
+  <img class="slides animate-left" src="../_static/images/workpartioning/0055.jpg">
+  <img class="slides animate-left" src="../_static/images/workpartioning/0056.jpg">
+  <img class="slides animate-left" src="../_static/images/workpartioning/0057.jpg">
+  <img class="slides animate-left" src="../_static/images/workpartioning/0058.jpg">
+  <img class="slides animate-left" src="../_static/images/workpartioning/0059.jpg">
+  <img class="slides animate-left" src="../_static/images/workpartioning/0060.jpg">
+  <img class="slides animate-left" src="../_static/images/workpartioning/0061.jpg">
 </div>
 
 <script>
@@ -193,3 +169,8 @@ document.getElementById('fwdbtn').onclick = next_slide;
 document.getElementById('backbtn').onclick = prev_slide;
 
 </script>
+
+
+### 3.3 Lorem
+
+Lorem Ipsum
