@@ -73,10 +73,9 @@
 
 ### 3.1 (optional) Übungsvorberbereitung
 
-1. Server als Zentrale Blockchain-Node (z.B. Bitcoin Node)?
-2. Mining Node?
-   1. GPU Cluster?
-3. 
+- Server als Zentrale Blockchain-Node (z.B. Bitcoin Node)?
+- Mining Node?
+  - GPU Cluster?
 
 ### 3.2 Übungen (~ geschätzt 75 Minuten + 15 Minuten Puffer plus Zusatzübungen)
 
@@ -91,8 +90,10 @@
    Private Key aus Noncen widerherstellen
 
 Backlog Übungen falls zu schnell fertig:
-  * Setup einer Blockchain (z.B. implementierung von PoW), dann 51% Attacke simulieren
-  * 
+Eine weitere Idee wäre es dieses Projekt https://github.com/fenilgmehta/CS765-Simulate-P2P-CryptoCurrency-Network zu forken und weitere Attacken neben der im Repo genannten Selfish Mining Attack durchzuführen
+
+* 51% Attacke weiterentwickeln
+* Sybil Attacke weiterentwickeln
 
 
 ## Bitcoin Fundamentals
