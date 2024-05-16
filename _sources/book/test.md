@@ -11,30 +11,7 @@ kernelspec:
   name: python3
 --- -->
 
-# Lecture Plans
-
-
-## 1. Lecture
-
-### 1.1 Introduction: Concepts of blockchain and cryptography.
-Short introduction on how blockchains work.
-
-### 1.2 Consensus Mechanism in Practice:
-Explain consensus mechanism in practice and their security implications.
-
-### 1.3 Vulnerabilities: Vulnerabilities in blockchain architecutres and how to exploit them
-Explain common blockchain attack vectors to exploit the consens mechanism.
-
-
-## 2 Break
-
-
-## 3 Excercises
-
-### 3.1 Double Spent Attack
-Exercise for a Double Spent Attack on a Blockchain.
-
-### 3.2 ...
+# Test for Jupyter Book Chapter
 
 Cite a paper {cite}`konig2020risks`
 
