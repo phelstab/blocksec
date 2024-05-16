@@ -4,11 +4,12 @@
 format: jb-book
 root: index
 chapters:
-  - file: book/plan
+  - file: book/concept
   # - file: book/markdown
   - file: book/attack_list
   - file: book/notebooks
   - file: book/bibliography
+  - file: book/test
 
 # Or you organize the TOC by parts
 
