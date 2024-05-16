@@ -37,7 +37,7 @@
     Bekanntheitsgrad
     Aktualität,
     Praktikablität und Umsetzbarkeit,
-  weniger praktisch bzw. realistische Attacken soll nur grob erwähnt werden.
+  weniger praktisch bzw. realistische Attacken sollen nur überflogen werden.
 
   * Blockchain Attack Taxonomy:
      * Consensus Attacks
