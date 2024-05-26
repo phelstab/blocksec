@@ -2,35 +2,37 @@
 
 ## 1. Lecture (60 Minuten) - 14:00-15:00
 
-1. Einführung (*10 Minuten*)
+1. <u>Einleitung (*5 Minuten*)</u>
    * Überblick über Blockchain-Technologie und ihre Bedeutung
      * Ursprung und Entwicklung
-     * Funktionsweise (Genesis Block, Miner, ...)
      * Anwendungsbereiche (Asset Management, Cryptocurrencies, ...)
 
-2. Grundlegende Sicherheitskonzepte (*15 Minuten*)
-   * Erklärung Aufbau von (Pow) Blockchains
-     * Transactions
-       * Hashfunktionen (nur für Zusammenhang)
-       * Merkle Trees (Wichtig)
-       * UTXO
-       * https://developer.bitcoin.org/reference/transactions.html
-     * Wallets
-       * ECDSA 
-       * https://developer.bitcoin.org/reference/wallets.html
-     * P2P network
-       * https://developer.bitcoin.org/reference/p2p_networking.html
-     * RPC's
-       * https://developer.bitcoin.org/reference/rpc/index.html
-  
-   * Vorstellung verschiedener Konsensmechanismen und deren Sicherheitsimplikationen
-     * Proof of Work
-     * Proof of Stake
-     * Proof of Authority
+2. <u>Konzepte und Funktionsweise der Blockchain (*15 Minuten*)</u>
+   * Komponenten
+     * Blöcke (Genesisblock)
+     * Blocksquenz
+   * Funktionsweise
+     * Transaktionen (https://developer.bitcoin.org/reference/transactions.html)
+     * Konsensmechanismus
+       * Proof of Work
+       * Proof of Stake
 
-   * Sicherheitsprobleme (Überleitung)
+3. <u>Grundlegende Sicherheitskonzepte (*20 Minuten*)</u>
+    * Kryptographie
+      * Hashfunktionen (SHA)
+      * Signaturen (ECDSA)
+      * Merkle Trees
+    * UTXO
+    * Wallets (https://developer.bitcoin.org/reference/wallets.html)
+    * P2P-Netzwerk (https://developer.bitcoin.org/reference/p2p_networking.html)
+    * RPCs (https://developer.bitcoin.org/reference/rpc/index.html)
+    * DLT
+    * Sicherheitsprobleme (Überleitung)
 
-3. Direkte Angriffsvektoren auf Blockchains (*30 Minuten*)
+
+4. <u>Direkte Angriffsvektoren auf Blockchains (*20 Minuten*)</u>
+
+    **2-3 Attacken detalliert, Rest einfach kurz abreißen**
 
   Der Fokus hier liegt hier bei:
     Relevanz,
