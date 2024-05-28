@@ -246,7 +246,7 @@ document.getElementById('backbtn').onclick = prev_slide;
 
 </script>
 
-
+<!-- 
 ### Bitcoin Script
 
 Source: https://gist.github.com/bitjson/3dbe0d06961439966d774103430a636f
@@ -574,4 +574,4 @@ Source: https://gist.github.com/bitjson/3dbe0d06961439966d774103430a636f
 	},
 	"required": [ "v", "n", "l"	]
 }
-```
+``` -->
