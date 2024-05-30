@@ -1,1 +1,0 @@
-# Analysieren von schädlichen/unfairen Transaktionen
