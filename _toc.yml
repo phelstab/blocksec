@@ -4,12 +4,19 @@
 format: jb-book
 root: index
 chapters:
-  - file: book/concept
+  - file: book/0_1_introduction
+  - file: book/0_2_concepts
+  - file: book/0_3_concepts_of_security
+  - file: book/0_4_attack_vectors
+  - file: book/1_exercise
+  - file: book/2_exercise
+  - file: book/3_exercise
+  - file: book/9_bibliography
+  # - file: book/concept
   # - file: book/markdown
-  - file: book/attack_list
-  - file: book/notebooks
-  - file: book/bibliography
-  - file: book/test
+  # - file: book/attack_list
+  # - file: book/notebooks
+  # - file: book/test
 
 # Or you organize the TOC by parts
 
