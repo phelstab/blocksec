@@ -38,8 +38,15 @@ It is replaced as follows:
 
 
 
-### 3.1.1 Hashing Functions
+### 3.1.1 Cryptographic Hash Functions
+
+
+
+
 #### SHA-256
+
+
+#### Merkle-Damgård transform
 
 ### 3.1.2 Signing
 #### Elliptic Curve Digital Signature Algorithm (ECDSA)
