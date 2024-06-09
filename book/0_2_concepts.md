@@ -109,9 +109,10 @@ Node Functions:
 * Relaying Information: Propagate transactions and blocks throughout the network to ensure synchronization
 
 ## Consensus Mechanisms
+* Hard to achieve agreement in a decentralized network
 * Ensure that all nodes agree on the state of the blockchain
 * Prevent double-spending and other malicious activities
-* Achieve agreement in a decentralized network
+
 
 Types of Consensus Mechanisms:
 * Proof of Work (PoW): Miners solve complex mathematical puzzles to validate transactions and create new blocks
@@ -120,8 +121,26 @@ Types of Consensus Mechanisms:
 * Practical Byzantine Fault Tolerance (PBFT): Nodes reach consensus through a series of voting rounds
 
 ## Proof of Work (PoW)
+* random selection prone to attacks -> nodes should prove they did work required to propose a new block
+* concept adapted from digital tokens by Hal Finney in 2004 through the idea of "reusable proof of work" using SHA-1
+  * each node of the network is calculating a hash value of the block header
+  * the first node to find a hash value below a certain threshold is allowed to propose a new block
+  * when reaching the target value, it broadcasts the block to other nodes
+  * all other nodes must mutually confirm the correctness of the hash value
+  * if the hash value is correct, the block is added to the blockchain
 
+## Proof of Work (PoW) II
+* in decentralized network multiple blocks might be generated simultaneously -> blockchain branches
+* longest chain rule: the chain with the most accumulated proof of work is considered the correct one
+* PoW is energy-intensive and slow -> scalability issues
+* PoW (or mining) is used in Bitcoin, Ethereum (until 2022), and other cryptocurrencies
+* PoW in Bitcoin based on SHA-256 hash function
+* Bitcoin adjusts the mining difficulty every 2016 blocks to maintain a 10-minute block time
 
 # References
 {cite}`sybilmubashar:article`
 {cite}`bitcoin:article`
+{cite}`overview:inproceedings`
+{cite}`nakamotoinstituteRPOWReusable:online`
+{cite}`cryptoBitcoinTransactions:online`
+{cite}`9019870:article`
