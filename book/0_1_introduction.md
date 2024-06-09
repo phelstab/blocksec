@@ -1,7 +1,7 @@
 # 1. Introduction
 
 ## Introduction
-Initial concept originally introduced in 2008 by (anonymous) Satoshi Nakamoto {cite}`bitcoinhistory:online, bitcoin:article` to provide a solution to double-spending problem
+Initial concept originally introduced in 2008 by (anonymous) Satoshi Nakamoto to provide a solution to double-spending problem
 * **Defintion**:
   * peer-to-peer, fault-tolerant, decentralized ledger system that records all transactions across a network of computers
 
@@ -26,7 +26,7 @@ Initial concept originally introduced in 2008 by (anonymous) Satoshi Nakamoto {c
   * blockchain-based applications that run on a peer-to-peer network
 * Onwards:
   * Blockchain in industry and governments (IoT, healthcare, finance, etc.)
-  * Interoperability between blockchains
+  * Interoperability between blockchains 
   * Scalability solutions (sharding, sidechains, etc.)
   * Privacy improvements (zk-SNARKs, etc.)
 
@@ -48,3 +48,12 @@ Initial concept originally introduced in 2008 by (anonymous) Satoshi Nakamoto {c
   * Real estate
   * Energy trading
 
+# References
+
+{cite}`bitcoinhistory:online`
+{cite}`bitcoin:article`
+{cite}`Glaser2017_1000073702:inproceedings`
+{cite}`9076162:article`
+{cite}`9086611:article`
+{cite}`MENGELKAMP2018870:article`
+{cite}`Nitulescu2020zkSNARKsAG:inproceedings`
