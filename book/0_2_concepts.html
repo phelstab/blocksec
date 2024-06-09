@@ -173,7 +173,9 @@
     <div class="bd-toc-item navbar-nav active">
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="0_1_introduction.html">1. Introduction</a></li>
+
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">2. Fundamentals and Principles of Blockchains</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="0_3_concepts_of_security.html">3. Security Aspects and Technical Fundamentals of Blockchain Technology</a></li>
 <li class="toctree-l1"><a class="reference internal" href="0_4_attack_vectors.html">4. Attack Vectors on Blockchains</a></li>
 <li class="toctree-l1"><a class="reference internal" href="1_exercise.html">Exercise 1: Analyzing harmful transactions and unfair behaviour</a></li>
@@ -369,7 +371,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -385,6 +389,26 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">2. Fundamentals and Principles of Blockchains</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#structure-of-a-blockchain">Structure of a Blockchain</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#block-structure">Block Structure</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transactions">Transactions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-transaction">Example Transaction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-role-of-nodes">The role of nodes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#consensus-mechanisms">Consensus Mechanisms</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#proof-of-work-pow">Proof of Work (PoW)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#proof-of-work-pow-ii">Proof of Work (PoW) II</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -396,6 +420,197 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="fundamentals-and-principles-of-blockchains">
 <h1>2. Fundamentals and Principles of Blockchains<a class="headerlink" href="#fundamentals-and-principles-of-blockchains" title="Link to this heading">#</a></h1>
+<section id="structure-of-a-blockchain">
+<h2>Structure of a Blockchain<a class="headerlink" href="#structure-of-a-blockchain" title="Link to this heading">#</a></h2>
+<img src="files/images/Blockchain.drawio.png">
+</section>
+<section id="block-structure">
+<h2>Block Structure<a class="headerlink" href="#block-structure" title="Link to this heading">#</a></h2>
+<img src="files/images/Blockchain_Block.drawio.png">
+<p><strong>Block Header</strong>:</p>
+<ul class="simple">
+<li><p>Block Hash: hash of the block</p></li>
+<li><p>Previous Block Hash: hash of the previous block</p></li>
+<li><p>Version: version of the block</p></li>
+<li><p>Merkle Root: hash of the merkle tree/tree of transactions</p></li>
+<li><p>Timestamp: time of block creation</p></li>
+<li><p>Nonce: random number used in mining</p></li>
+<li><p>Difficulty Target: mining difficulty in PoW-based consensus</p></li>
+</ul>
+<p><strong>Block Body</strong>:</p>
+<ul class="simple">
+<li><p>Transactions: list of transactions within the block</p></li>
+</ul>
+</section>
+<section id="transactions">
+<h2>Transactions<a class="headerlink" href="#transactions" title="Link to this heading">#</a></h2>
+<p>Basic elements of a transaction:</p>
+<ul class="simple">
+<li><p>Sender’s Address (public key)</p></li>
+<li><p>Receiver’s Address (public key)</p></li>
+<li><p>Amount</p></li>
+<li><p>Signature (transaction is signed by sender’s private key)</p></li>
+</ul>
+<p>Transaction lifecycle:</p>
+<ol class="arabic simple">
+<li><p>Transaction is created</p></li>
+<li><p>Transaction is broadcasted to the network</p></li>
+<li><p>Transaction is validated by nodes</p></li>
+<li><p>Transaction is included in a block</p></li>
+<li><p>Block is mined and added to the blockchain</p></li>
+</ol>
+</section>
+<section id="example-transaction">
+<h2>Example Transaction<a class="headerlink" href="#example-transaction" title="Link to this heading">#</a></h2>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;txid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1eabcde1234567890abcdef1234567890abcdef1234567890abcdef1234567890&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;locktime&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;vin&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;txid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;abcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567890&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;vout&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;scriptSig&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;asm&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;3045022100e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855022100fb4b0a063b5f7f8a5c47b7e9e527e55e3e55ffb015e9078578b7d7c8f1fa3d4e&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;hex&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;483045022100e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855022100fb4b0a063b5f7f8a5c47b7e9e527e55e3e55ffb015e9078578b7d7c8f1fa3d4e&quot;</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="nt">&quot;sequence&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4294967295</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="w">  </span><span class="nt">&quot;vout&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.50000000</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;n&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;scriptPubKey&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;asm&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;OP_DUP OP_HASH160 89abcdefabbaabbaabbaabbaabbaabbaabbaabbaabba OP_EQUALVERIFY OP_CHECKSIG&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;hex&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;76a91489abcdefabbaabbaabbaabbaabbaabbaabbaabba88ac&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;reqSigs&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;pubkeyhash&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;addresses&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">          </span><span class="s2">&quot;1Ez69SnzzmePmZX3WpEzMKTrcBF2gpNQ55&quot;</span>
+<span class="w">        </span><span class="p">]</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.49900000</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;n&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;scriptPubKey&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;asm&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;OP_DUP OP_HASH160 89abcdefabbaabbaabbaabbaabbaabbaabbaabbaabba OP_EQUALVERIFY OP_CHECKSIG&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;hex&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;76a91489abcdefabbaabbaabbaabbaabbaabbaabbaabba88ac&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;reqSigs&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;pubkeyhash&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;addresses&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">          </span><span class="s2">&quot;1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa&quot;</span>
+<span class="w">        </span><span class="p">]</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<ol class="arabic simple">
+<li><p>Alice wants to send 0.5 BTC to Bob.</p>
+<ul class="simple">
+<li><p>Inputs: Alice’s address, Bob’s address, amount (0.5 BTC), fee (0.001 BTC).</p></li>
+<li><p>Outputs: Transaction outputs include the amount being sent to Bob and any change back to Alice.</p></li>
+<li><p>Signature: Alice signs the transaction with her private key.</p></li>
+</ul>
+</li>
+<li><p>Transaction Broadcast:</p>
+<ul class="simple">
+<li><p>Alice’s transaction is broadcast to the Bitcoin network.</p></li>
+</ul>
+</li>
+<li><p>Miners Validate:</p>
+<ul class="simple">
+<li><p>Miners validate the transaction, checking Alice’s balance and the signature.</p></li>
+</ul>
+</li>
+<li><p>Inclusion in a Block:</p>
+<ul class="simple">
+<li><p>Once validated, the transaction is included in the next mined block.</p></li>
+</ul>
+</li>
+<li><p>Confirmation:</p>
+<ul class="simple">
+<li><p>Bob sees the transaction after it’s included in a block and has been confirmed by the network.</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="the-role-of-nodes">
+<h2>The role of nodes<a class="headerlink" href="#the-role-of-nodes" title="Link to this heading">#</a></h2>
+<p>Types of nodes:</p>
+<ul class="simple">
+<li><p>Full Nodes: store the entire blockchain, validate and relay transactions and blocks</p></li>
+<li><p>Light Nodes: store only block headers, rely on full nodes for transaction validation</p></li>
+<li><p>Mining Nodes: specialized full nodes that participate in the consensus mechanism</p></li>
+</ul>
+<p>Node Functions:</p>
+<ul class="simple">
+<li><p>Maintaining Blockchain Copy: Every full node keeps a copy of the entire blockchain</p></li>
+<li><p>Validating Transactions: Ensure all transactions comply with network rules before adding them to a block</p>
+<ul>
+<li><p>Double-spending: Ensure that the same funds are not spent twice</p></li>
+<li><p>Transaction format: Check that the transaction is properly formatted</p></li>
+<li><p>Transaction signature: Verify that the transaction is signed by the correct private key</p></li>
+<li><p>Transaction validity: Ensure that the sender has enough funds to complete the transaction</p></li>
+<li><p>Transaction history: Check that the transaction does not conflict with previous transactions</p></li>
+</ul>
+</li>
+<li><p>Relaying Information: Propagate transactions and blocks throughout the network to ensure synchronization</p></li>
+</ul>
+</section>
+<section id="consensus-mechanisms">
+<h2>Consensus Mechanisms<a class="headerlink" href="#consensus-mechanisms" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Hard to achieve agreement in a decentralized network</p></li>
+<li><p>Ensure that all nodes agree on the state of the blockchain</p></li>
+<li><p>Prevent double-spending and other malicious activities</p></li>
+</ul>
+<p>Types of Consensus Mechanisms:</p>
+<ul class="simple">
+<li><p>Proof of Work (PoW): Miners solve complex mathematical puzzles to validate transactions and create new blocks</p></li>
+<li><p>Proof of Stake (PoS): Validators are chosen based on the number of coins they hold</p></li>
+<li><p>Delegate Proof of Stake (DPoS): Validators are elected by coin holders to create new blocks</p></li>
+<li><p>Practical Byzantine Fault Tolerance (PBFT): Nodes reach consensus through a series of voting rounds</p></li>
+</ul>
+</section>
+<section id="proof-of-work-pow">
+<h2>Proof of Work (PoW)<a class="headerlink" href="#proof-of-work-pow" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>random selection prone to attacks -&gt; nodes should prove they did work required to propose a new block</p></li>
+<li><p>concept adapted from digital tokens by Hal Finney in 2004 through the idea of “reusable proof of work” using SHA-1</p>
+<ul>
+<li><p>each node of the network is calculating a hash value of the block header</p></li>
+<li><p>the first node to find a hash value below a certain threshold is allowed to propose a new block</p></li>
+<li><p>when reaching the target value, it broadcasts the block to other nodes</p></li>
+<li><p>all other nodes must mutually confirm the correctness of the hash value</p></li>
+<li><p>if the hash value is correct, the block is added to the blockchain</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="proof-of-work-pow-ii">
+<h2>Proof of Work (PoW) II<a class="headerlink" href="#proof-of-work-pow-ii" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>in decentralized network multiple blocks might be generated simultaneously -&gt; blockchain branches</p></li>
+<li><p>longest chain rule: the chain with the most accumulated proof of work is considered the correct one</p></li>
+<li><p>PoW is energy-intensive and slow -&gt; scalability issues</p></li>
+<li><p>PoW (or mining) is used in Bitcoin, Ethereum (until 2022), and other cryptocurrencies</p></li>
+<li><p>PoW in Bitcoin based on SHA-256 hash function</p></li>
+<li><p>Bitcoin adjusts the mining difficulty every 2016 blocks to maintain a 10-minute block time</p></li>
+</ul>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="references">
+<h1>References<a class="headerlink" href="#references" title="Link to this heading">#</a></h1>
+<p><span id="id1">[<a class="reference internal" href="9_bibliography.html#id12" title="Mubashar Iqbal and Raimundas Matulevičius. Exploring sybil and double-spending risks in blockchain systems. IEEE Access, PP:1-1, 05 2021. doi:10.1109/ACCESS.2021.3081998.">Iqbal and Matulevičius, 2021</a>]</span>
+<span id="id2">[<a class="reference internal" href="9_bibliography.html#id6" title="Satoshi Nakamoto. Bitcoin: a peer-to-peer electronic cash system. Cryptography Mailing list at https://metzdowd.com, pages, 03 2009.">Nakamoto, 2009</a>]</span>
+<span id="id3">[<a class="reference internal" href="9_bibliography.html#id13">Zheng <em>et al.</em>, 2017</a>]</span>
+<span id="id4">[<a class="reference internal" href="9_bibliography.html#id14" title="RPOW - Reusable Proofs of Work. https://nakamotoinstitute.org/finney/rpow/index.html. [Accessed 09-06-2024]."><em>RPOW - Reusable Proofs of Work</em>, n.d.</a>]</span>
+<span id="id5">[<a class="reference internal" href="9_bibliography.html#id15" title="Crypto.com. How Do Bitcoin Transactions Work? https://crypto.com/university/how-do-bitcoin-transactions-work. [Accessed 09-06-2024].">Crypto.com, n.d.</a>]</span>
+<span id="id6">[<a class="reference internal" href="9_bibliography.html#id16" title="Muhammad Saad, Jeffrey Spaulding, Laurent Njilla, Charles Kamhoua, Sachin Shetty, DaeHun Nyang, and David Mohaisen. Exploring the attack surface of blockchain: a comprehensive survey. IEEE Communications Surveys &amp; Tutorials, 22(3):1977-2008, 2020. doi:10.1109/COMST.2020.2975999.">Saad <em>et al.</em>, 2020</a>]</span></p>
 </section>
 
     <script type="text/x-thebe-config">
@@ -452,6 +667,33 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">2. Fundamentals and Principles of Blockchains</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#structure-of-a-blockchain">Structure of a Blockchain</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#block-structure">Block Structure</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transactions">Transactions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-transaction">Example Transaction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-role-of-nodes">The role of nodes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#consensus-mechanisms">Consensus Mechanisms</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#proof-of-work-pow">Proof of Work (PoW)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#proof-of-work-pow-ii">Proof of Work (PoW) II</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
               
             
           </div>
