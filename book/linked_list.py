@@ -26,6 +26,7 @@ class LinkedList:
 
 
 import hashlib
+from IPython.display import display, HTML
 
 class HashNode:
     def __init__(self, data, prev_hash=''):
@@ -56,3 +57,34 @@ class HashLinkedList:
         while current_node:
             print(f"Data: {current_node.data}, Hash: {current_node.hash}, Prev Hash: {current_node.prev_hash}")
             current_node = current_node.next
+
+    def manipulate_data(self, target_data, new_data):
+        current_node = self.head
+        while current_node:
+            if current_node.data == target_data:
+                current_node.data = new_data
+                current_node.hash = current_node.compute_hash()
+                self.update_hashes(current_node.next)
+                break
+            current_node = current_node.next
+
+    def update_hashes(self, node):
+        while node:
+            node.prev_hash = node.prev_hash if node.prev_hash == '' else node.prev_hash
+            node.hash = node.compute_hash()
+            node = node.next
+
+    def visualize(self):
+        current_node = self.head
+        html = '<div style="font-family: monospace;">'
+        while current_node:
+            html += f'<div style="display: inline-block; border: 1px solid black; padding: 10px; margin: 5px;">'
+            html += f'<p>Data: {current_node.data}</p>'
+            html += f'<p>Hash: {current_node.hash[:8]}...</p>'
+            html += f'<p>Prev Hash: {current_node.prev_hash[:8]}...</p>'
+            html += '</div>'
+            if current_node.next:
+                html += '<div style="display: inline-block; vertical-align: top; padding: 10px;">&#8594;</div>'
+            current_node = current_node.next
+        html += '</div>'
+        display(HTML(html))
