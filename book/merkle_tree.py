@@ -1,33 +1,103 @@
 import hashlib
-from IPython.display import display, HTML
-from merkly import MerkleTree
 
-class MerkleTreeVisualizer:
-    def __init__(self, data_list):
-        self.data_list = data_list
-        self.tree = MerkleTree(hash_function=hashlib.sha256)
-        for data in data_list:
-            self.tree.add_leaf(data.encode())
-        self.tree.make_tree()
+# Node class that represents a node of a binary tree
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.left = None
+        self.right = None
 
-    def visualize(self):
-        def hash_short(hash_value):
-            return hash_value.hex()[:8] + '...'
+    def isFull(self):
+        return self.left and self.right
 
-        def node_html(node, level=0):
-            if node is None:
-                return ''
-            left_html = node_html(node.left, level + 1)
-            right_html = node_html(node.right, level + 1)
-            node_data = f'<p>Hash: {hash_short(node.value)}</p>'
-            node_html = f'<div style="display: inline-block; border: 1px solid black; padding: 10px; margin: 5px;">{node_data}</div>'
-            if left_html or right_html:
-                node_html += f'<div style="display: flex; justify-content: space-around;">{left_html}{right_html}</div>'
-            return node_html
+    def __str__(self):
+        return self.data
 
-        root = self.tree.get_root()
-        html = '<div style="font-family: monospace;">'
-        html += node_html(root)
-        html += '</div>'
-        display(HTML(html))
+    def isLeaf(self):
+        return ((self.left == None) and (self.right == None))
 
+# Merkle tree class for actual implementation of the tree
+class merkleTree:
+    def __init__(self):
+        self.root = None
+        self._merkleRoot = ''
+
+    def __returnHash(self, x):
+        return (hashlib.sha256(x.encode()).hexdigest())
+
+    def makeTreeFromArray(self, arr):
+        def __noOfNodesReqd(arr):
+            x = len(arr)
+            return (2*x - 1)
+
+        def __buildTree(arr, root, i, n):
+            if i < n:
+                temp = Node(str(arr[i]))
+                root = temp
+
+                root.left = __buildTree(arr, root.left, 2 * i + 1, n)
+                root.right = __buildTree(arr, root.right, 2 * i + 2, n)
+
+            return root
+
+        def __addLeafData(arr, node):
+            if not node:
+                return
+
+            __addLeafData(arr, node.left)
+            if node.isLeaf():
+                node.data = self.__returnHash(arr.pop(0))
+            else:
+                node.data = ''
+            __addLeafData(arr, node.right)
+
+        nodesReqd = __noOfNodesReqd(arr)
+        nodeArr = [num for num in range(1, nodesReqd+1)]
+        self.root = __buildTree(nodeArr, None, 0, nodesReqd)
+        __addLeafData(arr, self.root)
+
+    def inorderTraversal(self, node):
+        if not node:
+            return
+
+        self.inorderTraversal(node.left)
+        print(node)
+        self.inorderTraversal(node.right)
+
+    def calculateMerkleRoot(self):
+        def __merkleHash(node):
+            if node.isLeaf():
+                return node
+
+            left = __merkleHash(node.left).data
+            right = __merkleHash(node.right).data
+            node.data = self.__returnHash(left + right)
+            return node
+
+        merkleRoot = __merkleHash(self.root)
+        self._merkleRoot = merkleRoot.data
+
+        return self._merkleRoot
+
+    def getMerkleRoot(self):
+        return self._merkleRoot
+
+    def verifyUtil(self, arr1):
+        hash1 = self.getMerkleRoot()
+        new_tree = merkleTree()
+        new_tree.makeTreeFromArray(arr1)
+        new_tree.calculateMerkleRoot()
+        hash2 = new_tree.getMerkleRoot()
+        if hash1 == hash2:
+            print("Transactions verified Successfully")
+            return True
+        else:
+            print("Transactions have been tampered")
+            return False
+
+# Function to visualize the tree
+def visualizeTree(node, level=0, label='.'):
+    if node is not None:
+        print(' ' * (level*4) + label + ': ' + node.data)
+        visualizeTree(node.left, level + 1, 'L')
+        visualizeTree(node.right, level + 1, 'R')
