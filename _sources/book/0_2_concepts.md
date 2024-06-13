@@ -1,8 +1,5 @@
 # 2. Fundamentals and Principles of Blockchains
 
-## Structure of a Blockchain
-<img src="files/images/Blockchain.drawio.png">
-
 ## Block Structure
 <img src="files/images/Blockchain_Block.drawio.png">
 
@@ -17,6 +14,9 @@
 
 **Block Body**:
 * Transactions: list of transactions within the block
+
+## Structure of a Blockchain
+<img src="files/images/Blockchain.drawio.png">
 
 ## Transactions
 Basic elements of a transaction:

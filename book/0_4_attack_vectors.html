@@ -29,7 +29,7 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
@@ -46,7 +46,7 @@
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../_static/copybutton.js?v=f281be69"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
@@ -211,9 +211,9 @@
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -371,7 +371,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -387,6 +389,16 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-attacks">Types of Attacks</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -398,6 +410,103 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="attack-vectors-on-blockchains">
 <h1>4. Attack Vectors on Blockchains<a class="headerlink" href="#attack-vectors-on-blockchains" title="Link to this heading">#</a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>“Blockchain technology can solve all our future problems while ensuring security and privacy”</p>
+<ul>
+<li><p>Well, no</p></li>
+</ul>
+</li>
+<li><p>Blockchains are not immune to attacks (like any IT system)</p>
+<ul>
+<li><p>Various attack vectors exist</p></li>
+<li><p>Understanding these vectors is crucial for developers and users</p></li>
+<li><p>Blockchain “hype” led to a false sense of security</p></li>
+<li><p>According to SlowMist, there were a total of 464 security incidents in 2023, with losses amounting to $2.486 billion <span id="id1">[<a class="reference internal" href="9_bibliography.html#id17" title="SlowMist. Analysis of the SlowMist 2023 Blockchain Security &amp; AML Report — slowmist.medium.com. https://slowmist.medium.com/analysis-of-the-slowmist-2023-blockchain-security-aml-report-1776bb187090, 2024. [Accessed 13-06-2024].">SlowMist, 2024</a>]</span></p>
+<ul>
+<li><p>over 1.7 Billion USD stolen alone in crypto thefts alone</p></li>
+<li><p><a class="reference external" href="https://hacked.slowmist.io/en/">https://hacked.slowmist.io/en/</a></p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading">#</a></h2>
+<img src="files/images/Blockchain_Attack_Overview.jpg">
+<p><span id="id2">[<a class="reference internal" href="9_bibliography.html#id2" title="Lukas König, Stefan Unger, Peter Kieseberg, Simon Tjoa, and Josef Ressel Center Blockchains. The risks of the blockchain a review on current vulnerabilities and attacks. J. Internet Serv. Inf. Secur., 10(3):110–127, 2020.">König <em>et al.</em>, 2020</a>]</span></p>
+</section>
+<section id="types-of-attacks">
+<h2>Types of Attacks<a class="headerlink" href="#types-of-attacks" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Blockchain Structure Vulnerabilities</strong></p>
+<ul>
+<li><p>one of the most fundamental risks of blockchain technology</p></li>
+<li><p>Primarily target integrity, security and availability of the blockchain foundation</p></li>
+<li><p>Attacks exploit flaws in the fundamental design and implementation of the blockchain</p>
+<ul>
+<li><p>protocols, data structures, transaction processing and recording</p></li>
+</ul>
+</li>
+<li><p>byproduct of the technology</p></li>
+<li><p><strong>Examples</strong>:</p>
+<ul>
+<li><p>Blockchain Forks (Soft and Hard Forks, sometimes intentional (DAO Hack revert), sometimes accidental)</p></li>
+<li><p>Stale and Orphaned Blocks</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>Consensus Mechanism Vulnerabilities</strong></p>
+<ul>
+<li><p>Attacks exploit flaws in the consensus mechanism of the blockchain</p></li>
+<li><p>target the agreement among participants on the validity of transactions</p></li>
+<li><p><strong>Examples</strong>:</p>
+<ul>
+<li><p>51% Attack</p></li>
+<li><p>Selfish Mining</p></li>
+<li><p>Nothing at Stake Attack</p></li>
+<li><p>Finney Attack</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>Application Oriented Attacks</strong></p>
+<ul>
+<li><p>Attacks exploit vulnerabilities in the applications built on top of the blockchain</p>
+<ul>
+<li><p>smart contracts, decentralized applications, wallets, etc.</p></li>
+</ul>
+</li>
+<li><p>they exploit the application’s logic and not the blockchain itself</p></li>
+<li><p>outcome heavily depends on the application’s design and implementation</p></li>
+<li><p><strong>Examples</strong>:</p>
+<ul>
+<li><p>Timejacking</p></li>
+<li><p>Replay Attacks</p></li>
+<li><p>Attacks on Smart Contracts and DApps (Overflow attacks, (D)Dos attacks, etc.)</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>Attacks on P2P Network</strong></p>
+<ul>
+<li><p>Attacks exploit vulnerabilities in the peer-to-peer network (the backbone of blockchain technology)</p></li>
+<li><p>network attacks nothing new, however distributed nature of blockchain networks makes them more complex</p></li>
+<li><p>attacks aim to disrupt communication, isolate node or manipulate transmissions</p></li>
+<li><p><strong>Examples</strong>:</p>
+<ul>
+<li><p>Eclipse Attack</p></li>
+<li><p>Block Withholding Attack</p></li>
+<li><p>Sybil Attack</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -454,6 +563,23 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-attacks">Types of Attacks</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
