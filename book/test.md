@@ -150,4 +150,4 @@ document.getElementById('backbtn').onclick = prev_slide;
 
 ### 3.3 Lorem
 
-Lorem Ipsum
+Lorem Ipsum dolor
