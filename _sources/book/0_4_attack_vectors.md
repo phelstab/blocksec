@@ -12,7 +12,7 @@
     * https://hacked.slowmist.io/en/
 
 ## Overview
-<img src="files/images/Blockchain_Attack_Overview.jpg">
+<img src="../_static/images/Blockchain_Attack_Overview.jpg">
 
 {cite}`konig2020risks`
 
