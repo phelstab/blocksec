@@ -173,9 +173,7 @@
     <div class="bd-toc-item navbar-nav active">
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="0_1_introduction.html">1. Introduction</a></li>
-
 <li class="toctree-l1"><a class="reference internal" href="0_2_concepts.html">2. Fundamentals and Principles of Blockchains</a></li>
-
 <li class="toctree-l1"><a class="reference internal" href="0_3_concepts_of_security.html">3. Security Aspects and Technical Fundamentals of Blockchain Technology <!-- (*20 Minuten*) --></a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">4. Attack Vectors on Blockchains</a></li>
 <li class="toctree-l1"><a class="reference internal" href="1_exercise.html">Exercise 1: Analyzing harmful transactions and unfair behaviour</a></li>
@@ -396,7 +394,13 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-attacks">Types of Attacks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-attacks">Types of Attacks</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-attacks-blockchain-structure-vulnerabilities">Types of Attacks - Blockchain Structure Vulnerabilities</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-attacks-consensus-mechanism-vulnerabilities">Types of Attacks - Consensus Mechanism Vulnerabilities</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-attacks-application-oriented-attacks">Types of Attacks - Application Oriented Attacks</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-attacks-network-layer-attacks">Types of Attacks - Network Layer Attacks</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -420,10 +424,10 @@ document.write(`
 </li>
 <li><p>Blockchains are not immune to attacks (like any IT system)</p>
 <ul>
-<li><p>Various attack vectors exist</p></li>
+<li><p>Various attack vectors exist <span id="id1">[<a class="reference internal" href="9_bibliography.html#id16" title="Muhammad Saad, Jeffrey Spaulding, Laurent Njilla, Charles Kamhoua, Sachin Shetty, DaeHun Nyang, and David Mohaisen. Exploring the attack surface of blockchain: a comprehensive survey. IEEE Communications Surveys &amp; Tutorials, 22(3):1977-2008, 2020. doi:10.1109/COMST.2020.2975999.">Saad <em>et al.</em>, 2020</a>]</span></p></li>
 <li><p>Understanding these vectors is crucial for developers and users</p></li>
 <li><p>Blockchain “hype” led to a false sense of security</p></li>
-<li><p>According to SlowMist, there were a total of 464 security incidents in 2023, with losses amounting to $2.486 billion <span id="id1">[<a class="reference internal" href="9_bibliography.html#id17" title="SlowMist. Analysis of the SlowMist 2023 Blockchain Security &amp; AML Report — slowmist.medium.com. https://slowmist.medium.com/analysis-of-the-slowmist-2023-blockchain-security-aml-report-1776bb187090, 2024. [Accessed 13-06-2024].">SlowMist, 2024</a>]</span></p>
+<li><p>According to SlowMist, there were a total of 464 security incidents in 2023, with losses amounting to $2.486 billion <span id="id2">[<a class="reference internal" href="9_bibliography.html#id17" title="SlowMist. Analysis of the SlowMist 2023 Blockchain Security &amp; AML Report — slowmist.medium.com. https://slowmist.medium.com/analysis-of-the-slowmist-2023-blockchain-security-aml-report-1776bb187090, 2024. [Accessed 13-06-2024].">SlowMist, 2024</a>]</span></p>
 <ul>
 <li><p>over 1.7 Billion USD stolen alone in crypto thefts alone</p></li>
 <li><p><a class="reference external" href="https://hacked.slowmist.io/en/">https://hacked.slowmist.io/en/</a></p></li>
@@ -435,14 +439,18 @@ document.write(`
 </section>
 <section id="overview">
 <h2>Overview<a class="headerlink" href="#overview" title="Link to this heading">#</a></h2>
-<img src="../_static/images/Blockchain_Attack_Overview.jpg">
-<p><span id="id2">[<a class="reference internal" href="9_bibliography.html#id2" title="Lukas König, Stefan Unger, Peter Kieseberg, Simon Tjoa, and Josef Ressel Center Blockchains. The risks of the blockchain a review on current vulnerabilities and attacks. J. Internet Serv. Inf. Secur., 10(3):110–127, 2020.">König <em>et al.</em>, 2020</a>]</span></p>
+<figure class="align-default" id="id4">
+<img alt="../_images/Blockchain_Attack_Overview.jpg" src="../_images/Blockchain_Attack_Overview.jpg" />
+<figcaption>
+<p><span class="caption-number">Fig. 3 </span><span class="caption-text">Overview of Blockchain Attacks <span id="id3">[<a class="reference internal" href="9_bibliography.html#id2" title="Lukas König, Stefan Unger, Peter Kieseberg, Simon Tjoa, and Josef Ressel Center Blockchains. The risks of the blockchain a review on current vulnerabilities and attacks. J. Internet Serv. Inf. Secur., 10(3):110–127, 2020.">König <em>et al.</em>, 2020</a>]</span></span><a class="headerlink" href="#id4" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
 </section>
 <section id="types-of-attacks">
 <h2>Types of Attacks<a class="headerlink" href="#types-of-attacks" title="Link to this heading">#</a></h2>
+<section id="types-of-attacks-blockchain-structure-vulnerabilities">
+<h3>Types of Attacks - Blockchain Structure Vulnerabilities<a class="headerlink" href="#types-of-attacks-blockchain-structure-vulnerabilities" title="Link to this heading">#</a></h3>
 <ul class="simple">
-<li><p><strong>Blockchain Structure Vulnerabilities</strong></p>
-<ul>
 <li><p>one of the most fundamental risks of blockchain technology</p></li>
 <li><p>Primarily target integrity, security and availability of the blockchain foundation</p></li>
 <li><p>Attacks exploit flaws in the fundamental design and implementation of the blockchain</p>
@@ -458,9 +466,10 @@ document.write(`
 </ul>
 </li>
 </ul>
-</li>
-<li><p><strong>Consensus Mechanism Vulnerabilities</strong></p>
-<ul>
+</section>
+<section id="types-of-attacks-consensus-mechanism-vulnerabilities">
+<h3>Types of Attacks - Consensus Mechanism Vulnerabilities<a class="headerlink" href="#types-of-attacks-consensus-mechanism-vulnerabilities" title="Link to this heading">#</a></h3>
+<ul class="simple">
 <li><p>Attacks exploit flaws in the consensus mechanism of the blockchain</p></li>
 <li><p>target the agreement among participants on the validity of transactions</p></li>
 <li><p><strong>Examples</strong>:</p>
@@ -472,9 +481,10 @@ document.write(`
 </ul>
 </li>
 </ul>
-</li>
-<li><p><strong>Application Oriented Attacks</strong></p>
-<ul>
+</section>
+<section id="types-of-attacks-application-oriented-attacks">
+<h3>Types of Attacks - Application Oriented Attacks<a class="headerlink" href="#types-of-attacks-application-oriented-attacks" title="Link to this heading">#</a></h3>
+<ul class="simple">
 <li><p>Attacks exploit vulnerabilities in the applications built on top of the blockchain</p>
 <ul>
 <li><p>smart contracts, decentralized applications, wallets, etc.</p></li>
@@ -490,9 +500,10 @@ document.write(`
 </ul>
 </li>
 </ul>
-</li>
-<li><p><strong>Attacks on P2P Network</strong></p>
-<ul>
+</section>
+<section id="types-of-attacks-network-layer-attacks">
+<h3>Types of Attacks - Network Layer Attacks<a class="headerlink" href="#types-of-attacks-network-layer-attacks" title="Link to this heading">#</a></h3>
+<ul class="simple">
 <li><p>Attacks exploit vulnerabilities in the peer-to-peer network (the backbone of blockchain technology)</p></li>
 <li><p>network attacks nothing new, however distributed nature of blockchain networks makes them more complex</p></li>
 <li><p>attacks aim to disrupt communication, isolate node or manipulate transmissions</p></li>
@@ -504,8 +515,7 @@ document.write(`
 </ul>
 </li>
 </ul>
-</li>
-</ul>
+</section>
 </section>
 </section>
 
@@ -575,7 +585,13 @@ document.write(`
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-attacks">Types of Attacks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-attacks">Types of Attacks</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-attacks-blockchain-structure-vulnerabilities">Types of Attacks - Blockchain Structure Vulnerabilities</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-attacks-consensus-mechanism-vulnerabilities">Types of Attacks - Consensus Mechanism Vulnerabilities</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-attacks-application-oriented-attacks">Types of Attacks - Application Oriented Attacks</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-attacks-network-layer-attacks">Types of Attacks - Network Layer Attacks</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 

@@ -1,9 +1,9 @@
 # 1. Introduction
 
 ## Introduction
-Initial concept originally introduced in 2008 by (anonymous) Satoshi Nakamoto to provide a solution to double-spending problem
+Initial concept originally introduced in 2008 by (anonymous) Satoshi Nakamoto to provide a solution to double-spending problem {cite}`bitcoinhistory:online,bitcoin:article`
 * **Defintion**:
-  * peer-to-peer, fault-tolerant, decentralized ledger system that records all transactions across a network of computers
+  * peer-to-peer, fault-tolerant, decentralized ledger system that records all transactions across a network of computers {cite}`Glaser2017_1000073702:inproceedings`
 
 * **Key Characteristics**:
   * Immutable: Once recorded, data cannot be altered
@@ -14,7 +14,7 @@ Initial concept originally introduced in 2008 by (anonymous) Satoshi Nakamoto to
 
 ## Development of Blockchain
 
-* Blockchain 1.0: Cryptocurrency
+* Blockchain 1.0: Cryptocurrency {cite}`vokerla:inproceedings`
   * permissionless, public blockchains
   * main use case: digital currency
 * Blockchain 2.0: Smart Contracts
@@ -25,17 +25,17 @@ Initial concept originally introduced in 2008 by (anonymous) Satoshi Nakamoto to
   * extension of Blockchain 2.0 allowing for decentralized applications
   * blockchain-based applications that run on a peer-to-peer network
 * Onwards:
-  * Blockchain in industry and governments (IoT, healthcare, finance, etc.)
+  * Blockchain in industry and governments (IoT, healthcare, finance, etc.) {cite}`9086611:article`
   * Interoperability between blockchains 
   * Scalability solutions (sharding, sidechains, etc.)
-  * Privacy improvements (zk-SNARKs, etc.)
+  * Privacy improvements (zk-SNARKs, etc.) {cite}`Nitulescu2020zkSNARKsAG:inproceedings`
 
   
 ## Relevance and Use Cases
 * Financial Services:
   * Cross-border payments
   * Decentralized finance (DeFi)
-* Supply Chain Management:
+* Supply Chain Management: {cite}`9076162:article`
   * Transparency and traceability
   * Counterfeit prevention
 * Healthcare:
@@ -46,14 +46,12 @@ Initial concept originally introduced in 2008 by (anonymous) Satoshi Nakamoto to
   * Digital identity
   * Intellectual property rights
   * Real estate
-  * Energy trading
+  * Energy trading {cite}`MENGELKAMP2018870:article`
 
-# References
 
-{cite}`bitcoinhistory:online`
-{cite}`bitcoin:article`
-{cite}`Glaser2017_1000073702:inproceedings`
-{cite}`9076162:article`
-{cite}`9086611:article`
-{cite}`MENGELKAMP2018870:article`
-{cite}`Nitulescu2020zkSNARKsAG:inproceedings`
+
+
+
+
+
+

@@ -1,7 +1,14 @@
 # 2. Fundamentals and Principles of Blockchains
 
 ## Block Structure
-<img src="../_static/images/Blockchain_Block.drawio.png">
+````{figure} ../_static/images/Blockchain_Block.drawio.png
+---
+height: 400px
+align:right
+name: Blockchain_Block
+---
+Structure of a block in a blockchain
+````
 
 **Block Header**:
 * Block Hash: hash of the block
@@ -10,13 +17,21 @@
 * Merkle Root: hash of the merkle tree/tree of transactions
 * Timestamp: time of block creation
 * Nonce: random number used in mining
-* Difficulty Target: mining difficulty in PoW-based consensus
+* Difficulty Target: mining difficulty in PoW-based consensus {cite}`overview:inproceedings`
 
 **Block Body**:
 * Transactions: list of transactions within the block
 
 ## Structure of a Blockchain
-<img src="../_static/images/Blockchain.drawio.png">
+````{figure} ../_static/images/Blockchain.drawio.png
+---
+height: 400px
+align:center
+name: Blockchain
+---
+Structure of a blockchain
+````
+
 
 ## Transactions
 Basic elements of a transaction:
@@ -25,7 +40,7 @@ Basic elements of a transaction:
 * Amount 
 * Signature (transaction is signed by sender's private key)
 
-Transaction lifecycle:
+Transaction lifecycle: {cite}`cryptoBitcoinTransactions:online`
 1. Transaction is created
 2. Transaction is broadcasted to the network
 3. Transaction is validated by nodes
@@ -79,6 +94,7 @@ Transaction lifecycle:
   ]
 }
 ```
+
 1. Alice wants to send 0.5 BTC to Bob. 
    * Inputs: Alice’s address, Bob’s address, amount (0.5 BTC), fee (0.001 BTC).
    * Outputs: Transaction outputs include the amount being sent to Bob and any change back to Alice.
@@ -122,7 +138,7 @@ Types of Consensus Mechanisms:
 
 ## Proof of Work (PoW)
 * random selection prone to attacks -> nodes should prove they did work required to propose a new block
-* concept adapted from digital tokens by Hal Finney in 2004 through the idea of "reusable proof of work" using SHA-1
+* concept adapted from digital tokens by Hal Finney in 2004 through the idea of "reusable proof of work" using SHA-1 {cite}`nakamotoinstituteRPOWReusable:online`
   * each node of the network is calculating a hash value of the block header
   * the first node to find a hash value below a certain threshold is allowed to propose a new block
   * when reaching the target value, it broadcasts the block to other nodes
@@ -136,11 +152,3 @@ Types of Consensus Mechanisms:
 * PoW (or mining) is used in Bitcoin, Ethereum (until 2022), and other cryptocurrencies
 * PoW in Bitcoin based on SHA-256 hash function
 * Bitcoin adjusts the mining difficulty every 2016 blocks to maintain a 10-minute block time
-
-# References
-{cite}`sybilmubashar:article`
-{cite}`bitcoin:article`
-{cite}`overview:inproceedings`
-{cite}`nakamotoinstituteRPOWReusable:online`
-{cite}`cryptoBitcoinTransactions:online`
-{cite}`9019870:article`
