@@ -175,15 +175,22 @@
  </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
-        <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="0_1_introduction.html">1. Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="0_2_concepts.html">2. Fundamentals and Principles of Blockchains</a></li>
-<li class="toctree-l1"><a class="reference internal" href="0_3_concepts_of_security.html">3. Security Aspects and Technical Fundamentals of Blockchain Technology <!-- (*20 Minuten*) --></a></li>
-<li class="toctree-l1"><a class="reference internal" href="0_4_attack_vectors.html">4. Attack Vectors on Blockchains</a></li>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Lecture</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="0_1_introduction.html">1. 1. Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0_2_concepts.html">2. 2. Fundamentals and Principles of Blockchains</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0_3_concepts_of_security.html">3. 3. Security Aspects and Technical Fundamentals of Blockchain Technology <!-- (*20 Minuten*) --></a></li>
+<li class="toctree-l1"><a class="reference internal" href="0_4_attack_vectors.html">4. 4. Attack Vectors on Blockchains</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Exercise</span></p>
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="1_exercise.html">Exercise 1: Simulating Blockchain Attacks Using the Proof-of-Work Network Simulator</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="1_exercise_cheatsheet.html">Cheat Sheet Exercise 1</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Exercise 2: CTF</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="9_bibliography.html">Bibliography</a></li>
 </ul>
 
@@ -587,6 +594,32 @@ document.write(`
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\( d_A = \left( \frac{s_2 \cdot h_1 - s_1 \cdot h_2}{r \cdot (s_1 - s_2)} \right) \mod n \)</span>. With this equation an attacker can obtain two different ECDSA signatures that reused the same nonce, they can use this equation to recover the private key <span class="math notranslate nohighlight">\( d_A \)</span>. This allows the attacker to potentially forge signatures or decrypt messages that were intended to be secure.</p></li>
 </ul>
+<p>The original equation is:</p>
+<div class="math notranslate nohighlight">
+\[
+d_A = \left( \frac{s_2 \cdot h_1 - s_1 \cdot h_2}{r \cdot (s_1 - s_2)} \right) \mod n
+\]</div>
+<p>To express the denominator of the fraction as an inverse modulo equation, we need to find the modular inverse of <span class="math notranslate nohighlight">\( (s_1 - s_2) \pmod{n} \)</span>. The modular inverse of <span class="math notranslate nohighlight">\( (s_1 - s_2) \)</span> is a value <span class="math notranslate nohighlight">\( k \)</span> such that:</p>
+<div class="math notranslate nohighlight">
+\[
+k \cdot (s_1 - s_2) \equiv 1 \pmod{n}
+\]</div>
+<p>This can be written as:</p>
+<div class="math notranslate nohighlight">
+\[
+k = (s_1 - s_2)^{-1} \pmod{n}
+\]</div>
+<p>So, the original equation can be rewritten using the modular inverse as:</p>
+<div class="math notranslate nohighlight">
+\[
+d_A = \left( (s_2 \cdot h_1 - s_1 \cdot h_2) \cdot (r \cdot (s_1 - s_2))^{-1} \right) \mod n
+\]</div>
+<p>Where:</p>
+<div class="math notranslate nohighlight">
+\[
+(r \cdot (s_1 - s_2))^{-1} \pmod{n}
+\]</div>
+<p>is the modular inverse of <span class="math notranslate nohighlight">\( ( r \cdot (s_1 - s_2) ) \pmod{n} \)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">hashlib</span> <span class="kn">import</span> <span class="n">sha256</span>

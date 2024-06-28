@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>3. Security Aspects and Technical Fundamentals of Blockchain Technology &#8212; Blockchain Security</title>
+    <title>3. 3. Security Aspects and Technical Fundamentals of Blockchain Technology &#8212; Blockchain Security</title>
   
   
   
@@ -62,8 +62,8 @@
     <link rel="icon" href="../_static/fav.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="4. Attack Vectors on Blockchains" href="0_4_attack_vectors.html" />
-    <link rel="prev" title="2. Fundamentals and Principles of Blockchains" href="0_2_concepts.html" />
+    <link rel="next" title="4. 4. Attack Vectors on Blockchains" href="0_4_attack_vectors.html" />
+    <link rel="prev" title="2. 2. Fundamentals and Principles of Blockchains" href="0_2_concepts.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -173,15 +173,22 @@
  </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
-        <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="0_1_introduction.html">1. Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="0_2_concepts.html">2. Fundamentals and Principles of Blockchains</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">3. Security Aspects and Technical Fundamentals of Blockchain Technology <!-- (*20 Minuten*) --></a></li>
-<li class="toctree-l1"><a class="reference internal" href="0_4_attack_vectors.html">4. Attack Vectors on Blockchains</a></li>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Lecture</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="0_1_introduction.html">1. 1. Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0_2_concepts.html">2. 2. Fundamentals and Principles of Blockchains</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">3. 3. Security Aspects and Technical Fundamentals of Blockchain Technology <!-- (*20 Minuten*) --></a></li>
+<li class="toctree-l1"><a class="reference internal" href="0_4_attack_vectors.html">4. 4. Attack Vectors on Blockchains</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Exercise</span></p>
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="1_exercise.html">Exercise 1: Simulating Blockchain Attacks Using the Proof-of-Work Network Simulator</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="1_exercise_cheatsheet.html">Cheat Sheet Exercise 1</a></li>
 <li class="toctree-l1"><a class="reference internal" href="2_exercise.html">Exercise 2: CTF</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="9_bibliography.html">Bibliography</a></li>
 </ul>
 
@@ -444,28 +451,28 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cryptographic-hash-functions">3.1.1 Cryptographic Hash Functions</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#computation">Computation</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cryptography">Cryptography</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cryptographic-hash-functions">3.1. 3.1.1 Cryptographic Hash Functions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#computation">3.1.1. Computation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cryptography">3.1.2. Cryptography</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hash-pointers">3.1.2 Hash Pointers</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#merkle-trees">3.1.3 Merkle Trees</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transaction-validation">Transaction Validation</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-does-a-merkle-tree-form-to-blocks-in-a-blockchain">How does a Merkle Tree form to blocks in a blockchain?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-do-we-need-this-in-blockchains">Why do we need this in blockchains?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#proof-of-membership-and-nonmembership">Proof of Membership and Nonmembership</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hash-pointers">3.2. 3.1.2 Hash Pointers</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#merkle-trees">3.3. 3.1.3 Merkle Trees</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transaction-validation">3.4. Transaction Validation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-does-a-merkle-tree-form-to-blocks-in-a-blockchain">3.4.1. How does a Merkle Tree form to blocks in a blockchain?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-do-we-need-this-in-blockchains">3.4.2. Why do we need this in blockchains?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#proof-of-membership-and-nonmembership">3.4.3. Proof of Membership and Nonmembership</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#utxo">3.1.5 UTXO</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#digital-signatures">3.1.5 Digital Signatures</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#elliptic-curve-digital-signature-algorithm-ecdsa">Elliptic Curve Digital Signature Algorithm (ECDSA)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#secp256k1">Secp256k1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#utxo">3.5. 3.1.5 UTXO</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#digital-signatures">3.6. 3.1.5 Digital Signatures</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#elliptic-curve-digital-signature-algorithm-ecdsa">3.6.1. Elliptic Curve Digital Signature Algorithm (ECDSA)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#secp256k1">3.6.2. Secp256k1</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#identities">3.1.6 Identities</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#consensus-algorithm">3.1.7 Consensus Algorithm</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#which-transactions-are-the-valid-ones-mining">Which transactions are the valid ones? (Mining)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#identities-and-wallet-adresses">3.7. 3.1.6 Identities and Wallet Adresses</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#consensus-algorithm">3.8. 3.1.7 Consensus Algorithm</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#which-transactions-are-the-valid-ones-mining">3.8.1. Which transactions are the valid ones? (Mining)</a></li>
 </ul>
 </li>
 </ul>
@@ -480,7 +487,7 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="security-aspects-and-technical-fundamentals-of-blockchain-technology">
-<h1>3. Security Aspects and Technical Fundamentals of Blockchain Technology <!-- (*20 Minuten*) --><a class="headerlink" href="#security-aspects-and-technical-fundamentals-of-blockchain-technology" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">3. </span>3. Security Aspects and Technical Fundamentals of Blockchain Technology <!-- (*20 Minuten*) --><a class="headerlink" href="#security-aspects-and-technical-fundamentals-of-blockchain-technology" title="Link to this heading">#</a></h1>
 <p><strong>Core idea of blockchain technology:</strong></p>
 <ul class="simple">
 <li><p>Create a decentralized system</p></li>
@@ -521,11 +528,11 @@ document.write(`
 <!-- Die Kernidee hinter der Blockchain liegt darin ein System zu schaffen das es ermöglicht komplett Dezentral und somit ohne jegliche Intermediäre und damit auch ohne Treuhänder, Transaktionen zwischen Agenten zu ermöglichen.  -->
 <!-- Dabei übernehmen Mathematische Modelle die auf der Berechenbarkeit und Komplexität Kryptographische verschlüsselungen ermgöglichen, die Aufgaben eines Intermediärs und verteilen diese Aufgaben auf alle Agenten die Teil des Systems sind auch wenn diese eine Aufgabe erhalten die nicht ihrer eigenen Transaktion dient. -->
 <section id="cryptographic-hash-functions">
-<h2>3.1.1 Cryptographic Hash Functions<a class="headerlink" href="#cryptographic-hash-functions" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">3.1. </span>3.1.1 Cryptographic Hash Functions<a class="headerlink" href="#cryptographic-hash-functions" title="Link to this heading">#</a></h2>
 <p>Because the concept of blockchains is built on different aspects of computation theory, cryptography, and distributed computing, we will start with the core aspects that form a blockchain and begin with the <em>cryptographic hash functions</em>.</p>
-<p>This is a more uncommon approach in science, but we want to first define what properties our hash functions must hold so they can be used in common blockchains, and we will understand the “Why?” later when everything comes together. <span id="id1">[<a class="reference internal" href="9_bibliography.html#id20" title="Arvind Narayanan, Joseph Bonneau, Edward Felten, Andrew Miller, and Steven Goldfeder. Bitcoin and cryptocurrency technologies: a comprehensive introduction. Princeton University Press, 2016.">Narayanan <em>et al.</em>, 2016</a>]</span></p>
+<p>This is a more uncommon approach in science, but we want to first define what properties our hash functions must hold so they can be used in common blockchains, and we will understand the “Why?” later when everything comes together. <span id="id1">[<a class="reference internal" href="9_bibliography.html#id20" title="Arvind Narayanan, Joseph Bonneau, Edward Felten, Andrew Miller, and Steven Goldfeder. Bitcoin and cryptocurrency technologies: a comprehensive introduction. 2016.">Narayanan <em>et al.</em>, 2016</a>]</span></p>
 <section id="computation">
-<h3>Computation<a class="headerlink" href="#computation" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">3.1.1. </span>Computation<a class="headerlink" href="#computation" title="Link to this heading">#</a></h3>
 <p><strong>Computational Property 1: <em>Input Flexibility</em></strong></p>
 <ul class="simple">
 <li><p>The input can be any string of any size.</p></li>
@@ -542,7 +549,7 @@ document.write(`
 </ul>
 </section>
 <section id="cryptography">
-<h3>Cryptography<a class="headerlink" href="#cryptography" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">3.1.2. </span>Cryptography<a class="headerlink" href="#cryptography" title="Link to this heading">#</a></h3>
 <p><strong>Cryptographic Property 1: <em>Collision Resistance</em></strong></p>
 <p><strong>Definition:</strong> A hash function ( H ) is said to be collision resistant if it is infeasible to find two values, ( x ) and ( y ), such that ( x \neq y ), yet ( H(x) = H(y) ).</p>
 <p><em>Why we need this?</em></p>
@@ -588,7 +595,7 @@ document.write(`
 </section>
 </section>
 <section id="hash-pointers">
-<h2>3.1.2 Hash Pointers<a class="headerlink" href="#hash-pointers" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">3.2. </span>3.1.2 Hash Pointers<a class="headerlink" href="#hash-pointers" title="Link to this heading">#</a></h2>
 <p>The next thing we need are so called Hash Pointers. Imagine a Linked List</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -714,7 +721,7 @@ Data: Omega, Hash: 51ee1c31e1301e451649b629c4cc06f4f29fe48909c73bf009d412a873ccf
 </div>
 </section>
 <section id="merkle-trees">
-<h2>3.1.3 Merkle Trees<a class="headerlink" href="#merkle-trees" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">3.3. </span>3.1.3 Merkle Trees<a class="headerlink" href="#merkle-trees" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Efficient Verification: In a Merkle tree, each leaf node represents a data block (e.g., a transaction), and each non-leaf node represents the hash of its child nodes. The root of the tree is a hash that represents the entire dataset. Verifying the integrity of a single block only requires a logarithmic number of hash computations (log(n)), making it much more efficient than traversing the entire chain.</p></li>
 </ul>
@@ -750,7 +757,7 @@ Tree Structure:
 </div>
 </section>
 <section id="transaction-validation">
-<h2>Transaction Validation<a class="headerlink" href="#transaction-validation" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">3.4. </span>Transaction Validation<a class="headerlink" href="#transaction-validation" title="Link to this heading">#</a></h2>
 <p><strong>L:</strong> <code class="docutils literal notranslate"><span class="pre">830b7f324af3ff2b2a47cf7cf5ac825fe8d8034294ea8e8f853a4d3fada893fc</span></code></p>
 <p><strong>Should be:</strong></p>
 <ul class="simple">
@@ -830,7 +837,7 @@ Expected: 830b7f324af3ff2b2a47cf7cf5ac825fe8d8034294ea8e8f853a4d3fada893fc
 </div>
 <!-- Erweiterungs-Angriff (Extension-Attack) -->
 <section id="how-does-a-merkle-tree-form-to-blocks-in-a-blockchain">
-<h3>How does a Merkle Tree form to blocks in a blockchain?<a class="headerlink" href="#how-does-a-merkle-tree-form-to-blocks-in-a-blockchain" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">3.4.1. </span>How does a Merkle Tree form to blocks in a blockchain?<a class="headerlink" href="#how-does-a-merkle-tree-form-to-blocks-in-a-blockchain" title="Link to this heading">#</a></h3>
 <img src="../_static/images/merkle_tree.png">
 <p>Important Practical properties Merkle Tree vs. Hashed linked lists:</p>
 <ul class="simple">
@@ -921,7 +928,7 @@ Expected: 830b7f324af3ff2b2a47cf7cf5ac825fe8d8034294ea8e8f853a4d3fada893fc
 </div>
 </section>
 <section id="why-do-we-need-this-in-blockchains">
-<h3>Why do we need this in blockchains?<a class="headerlink" href="#why-do-we-need-this-in-blockchains" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">3.4.2. </span>Why do we need this in blockchains?<a class="headerlink" href="#why-do-we-need-this-in-blockchains" title="Link to this heading">#</a></h3>
 <p>To cheaply (cheaply in the sense of computation) verify if a transaction existed in a block, which we can find out by checking if the merkle root is correct.</p>
 <p>To check we only need:</p>
 <ol class="arabic simple">
@@ -931,7 +938,7 @@ Expected: 830b7f324af3ff2b2a47cf7cf5ac825fe8d8034294ea8e8f853a4d3fada893fc
 </ol>
 </section>
 <section id="proof-of-membership-and-nonmembership">
-<h3>Proof of Membership and Nonmembership<a class="headerlink" href="#proof-of-membership-and-nonmembership" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">3.4.3. </span>Proof of Membership and Nonmembership<a class="headerlink" href="#proof-of-membership-and-nonmembership" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p><strong>Proof of Membership:</strong> To prove that a particular transaction is part of the blockchain, you only need to provide the transaction, its hash, and the hashes of its sibling nodes up to the root. This proof is concise and can be verified in logarithmic time.</p></li>
 <li><p><strong>Proof of Nonmembership:</strong> In a sorted Merkle tree, proving nonmembership involves showing the path to the items just before and after the position where the transaction would be. This proof is also efficient and can be verified in logarithmic time.</p></li>
@@ -939,7 +946,15 @@ Expected: 830b7f324af3ff2b2a47cf7cf5ac825fe8d8034294ea8e8f853a4d3fada893fc
 </section>
 </section>
 <section id="utxo">
-<h2>3.1.5 UTXO<a class="headerlink" href="#utxo" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">3.5. </span>3.1.5 UTXO<a class="headerlink" href="#utxo" title="Link to this heading">#</a></h2>
+<p>Zielt auf CTF aufgabe 1 ab.</p>
+<ol class="arabic simple">
+<li><p>Wie hat man zugriff auf unspent transactions</p></li>
+<li><p>Wie werden transaktionen signiert, validiert bevor sie übertragen werden.</p></li>
+<li><p>Wie ließt man transaktionen wallet adressen etc in einem blockexplorer.
+<a class="reference external" href="https://blockstream.info/testnet/tx/23c9470a2269cf6430569afdd3e2e8f35f633b6cdbc34107ddbab932c4146ba3">https://blockstream.info/testnet/tx/23c9470a2269cf6430569afdd3e2e8f35f633b6cdbc34107ddbab932c4146ba3</a></p></li>
+<li><p>Bitcoin script erklären kurz paar codes</p></li>
+</ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Bitcoin Script</span>
@@ -949,21 +964,47 @@ Expected: 830b7f324af3ff2b2a47cf7cf5ac825fe8d8034294ea8e8f853a4d3fada893fc
 </div>
 </section>
 <section id="digital-signatures">
-<h2>3.1.5 Digital Signatures<a class="headerlink" href="#digital-signatures" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">3.6. </span>3.1.5 Digital Signatures<a class="headerlink" href="#digital-signatures" title="Link to this heading">#</a></h2>
 <section id="elliptic-curve-digital-signature-algorithm-ecdsa">
-<h3>Elliptic Curve Digital Signature Algorithm (ECDSA)<a class="headerlink" href="#elliptic-curve-digital-signature-algorithm-ecdsa" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">3.6.1. </span>Elliptic Curve Digital Signature Algorithm (ECDSA)<a class="headerlink" href="#elliptic-curve-digital-signature-algorithm-ecdsa" title="Link to this heading">#</a></h3>
+<p>Zielt auf CTF aufgabe 3 Nonce reuse ab. Grob erklären.</p>
 </section>
 <section id="secp256k1">
-<h3>Secp256k1<a class="headerlink" href="#secp256k1" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">3.6.2. </span>Secp256k1<a class="headerlink" href="#secp256k1" title="Link to this heading">#</a></h3>
 </section>
 </section>
-<section id="identities">
-<h2>3.1.6 Identities<a class="headerlink" href="#identities" title="Link to this heading">#</a></h2>
+<section id="identities-and-wallet-adresses">
+<h2><span class="section-number">3.7. </span>3.1.6 Identities and Wallet Adresses<a class="headerlink" href="#identities-and-wallet-adresses" title="Link to this heading">#</a></h2>
+<p>Im bezug auf Aufgabe mit den BIB44 (### CTF 2. Dark Net Money)</p>
+<p>Bips wichtige geschichte bei BTC <a class="reference external" href="https://bips.dev/1/">https://bips.dev/1/</a>
+wurden von witzigem typ erfunden: <a class="reference external" href="https://ichef.bbci.co.uk/news/976/cpsprodpb/3D81/production/_95354751_amir_taaki_outside.jpg.webp">https://ichef.bbci.co.uk/news/976/cpsprodpb/3D81/production/_95354751_amir_taaki_outside.jpg.webp</a>
+<a class="reference external" href="https://en.wikipedia.org/wiki/Amir_Taaki">https://en.wikipedia.org/wiki/Amir_Taaki</a></p>
+<p>BIP42 ist hinweis auf inflation :D
+<a class="github reference external" href="https://github.com/bitcoin/bips/blob/master/bip-0042/inflation.png">bitcoin/bips</a></p>
+<ol class="arabic simple">
+<li><p>Derivation Path</p></li>
+<li><p>Private Key Pub Key zusammenhang mit Mnemnonic</p></li>
+</ol>
 </section>
 <section id="consensus-algorithm">
-<h2>3.1.7 Consensus Algorithm<a class="headerlink" href="#consensus-algorithm" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">3.8. </span>3.1.7 Consensus Algorithm<a class="headerlink" href="#consensus-algorithm" title="Link to this heading">#</a></h2>
+<p>Wie mining zusammenhängt letztlich mit dem blockexplorer:</p>
+<p><a class="reference external" href="https://blockstream.info/testnet/tx/23c9470a2269cf6430569afdd3e2e8f35f633b6cdbc34107ddbab932c4146ba3">https://blockstream.info/testnet/tx/23c9470a2269cf6430569afdd3e2e8f35f633b6cdbc34107ddbab932c4146ba3</a></p>
+<ol class="arabic simple">
+<li><p>wenn signiert mit scriptsig + scriptpubkey und dann an peer node übertrage was passiert dann mit validierung der blocks etc.</p></li>
+<li><p>wie werden nonces erraten etc.</p></li>
+</ol>
+<p>Ziel: überleitung wie kann man die untere fragen sozusagen erreichen…</p>
 <section id="which-transactions-are-the-valid-ones-mining">
-<h3>Which transactions are the valid ones? (Mining)<a class="headerlink" href="#which-transactions-are-the-valid-ones-mining" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">3.8.1. </span>Which transactions are the valid ones? (Mining)<a class="headerlink" href="#which-transactions-are-the-valid-ones-mining" title="Link to this heading">#</a></h3>
+<p>Zielt auf CTF aufgabe 1 ab.</p>
+<ol class="arabic simple">
+<li><p>Wie hat man zugriff auf unspent transactions</p></li>
+<li><p>Wie werden transaktionen signiert, validiert bevor sie übertragen werden.</p></li>
+<li><p>Wie ließt man transaktionen wallet adressen etc in einem blockexplorer.
+<a class="reference external" href="https://blockstream.info/testnet/tx/23c9470a2269cf6430569afdd3e2e8f35f633b6cdbc34107ddbab932c4146ba3">https://blockstream.info/testnet/tx/23c9470a2269cf6430569afdd3e2e8f35f633b6cdbc34107ddbab932c4146ba3</a></p></li>
+<li><p>Bitcoin script erklären kurz paar codes</p></li>
+</ol>
 <!-- ## Security Problems -->
 <!-- (Überleitung) -->
 <!-- Sehr sehr wichtig: -->
@@ -1007,7 +1048,7 @@ Expected: 830b7f324af3ff2b2a47cf7cf5ac825fe8d8034294ea8e8f853a4d3fada893fc
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">2. Fundamentals and Principles of Blockchains</p>
+        <p class="prev-next-title"><span class="section-number">2. </span>2. Fundamentals and Principles of Blockchains</p>
       </div>
     </a>
     <a class="right-next"
@@ -1015,7 +1056,7 @@ Expected: 830b7f324af3ff2b2a47cf7cf5ac825fe8d8034294ea8e8f853a4d3fada893fc
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">4. Attack Vectors on Blockchains</p>
+        <p class="prev-next-title"><span class="section-number">4. </span>4. Attack Vectors on Blockchains</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1035,28 +1076,28 @@ Expected: 830b7f324af3ff2b2a47cf7cf5ac825fe8d8034294ea8e8f853a4d3fada893fc
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cryptographic-hash-functions">3.1.1 Cryptographic Hash Functions</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#computation">Computation</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cryptography">Cryptography</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cryptographic-hash-functions">3.1. 3.1.1 Cryptographic Hash Functions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#computation">3.1.1. Computation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cryptography">3.1.2. Cryptography</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hash-pointers">3.1.2 Hash Pointers</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#merkle-trees">3.1.3 Merkle Trees</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transaction-validation">Transaction Validation</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-does-a-merkle-tree-form-to-blocks-in-a-blockchain">How does a Merkle Tree form to blocks in a blockchain?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-do-we-need-this-in-blockchains">Why do we need this in blockchains?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#proof-of-membership-and-nonmembership">Proof of Membership and Nonmembership</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hash-pointers">3.2. 3.1.2 Hash Pointers</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#merkle-trees">3.3. 3.1.3 Merkle Trees</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transaction-validation">3.4. Transaction Validation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-does-a-merkle-tree-form-to-blocks-in-a-blockchain">3.4.1. How does a Merkle Tree form to blocks in a blockchain?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-do-we-need-this-in-blockchains">3.4.2. Why do we need this in blockchains?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#proof-of-membership-and-nonmembership">3.4.3. Proof of Membership and Nonmembership</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#utxo">3.1.5 UTXO</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#digital-signatures">3.1.5 Digital Signatures</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#elliptic-curve-digital-signature-algorithm-ecdsa">Elliptic Curve Digital Signature Algorithm (ECDSA)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#secp256k1">Secp256k1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#utxo">3.5. 3.1.5 UTXO</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#digital-signatures">3.6. 3.1.5 Digital Signatures</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#elliptic-curve-digital-signature-algorithm-ecdsa">3.6.1. Elliptic Curve Digital Signature Algorithm (ECDSA)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#secp256k1">3.6.2. Secp256k1</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#identities">3.1.6 Identities</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#consensus-algorithm">3.1.7 Consensus Algorithm</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#which-transactions-are-the-valid-ones-mining">Which transactions are the valid ones? (Mining)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#identities-and-wallet-adresses">3.7. 3.1.6 Identities and Wallet Adresses</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#consensus-algorithm">3.8. 3.1.7 Consensus Algorithm</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#which-transactions-are-the-valid-ones-mining">3.8.1. Which transactions are the valid ones? (Mining)</a></li>
 </ul>
 </li>
 </ul>

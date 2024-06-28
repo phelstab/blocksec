@@ -64,7 +64,7 @@
     <link rel="icon" href="_static/fav.ico"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="1. Introduction" href="book/0_1_introduction.html" />
+    <link rel="next" title="1. 1. Introduction" href="book/0_1_introduction.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -176,15 +176,22 @@
  </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
-        <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="book/0_1_introduction.html">1. Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="book/0_2_concepts.html">2. Fundamentals and Principles of Blockchains</a></li>
-<li class="toctree-l1"><a class="reference internal" href="book/0_3_concepts_of_security.html">3. Security Aspects and Technical Fundamentals of Blockchain Technology <!-- (*20 Minuten*) --></a></li>
-<li class="toctree-l1"><a class="reference internal" href="book/0_4_attack_vectors.html">4. Attack Vectors on Blockchains</a></li>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Lecture</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="book/0_1_introduction.html">1. 1. Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="book/0_2_concepts.html">2. 2. Fundamentals and Principles of Blockchains</a></li>
+<li class="toctree-l1"><a class="reference internal" href="book/0_3_concepts_of_security.html">3. 3. Security Aspects and Technical Fundamentals of Blockchain Technology <!-- (*20 Minuten*) --></a></li>
+<li class="toctree-l1"><a class="reference internal" href="book/0_4_attack_vectors.html">4. 4. Attack Vectors on Blockchains</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Exercise</span></p>
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="book/1_exercise.html">Exercise 1: Simulating Blockchain Attacks Using the Proof-of-Work Network Simulator</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="book/1_exercise_cheatsheet.html">Cheat Sheet Exercise 1</a></li>
 <li class="toctree-l1"><a class="reference internal" href="book/2_exercise.html">Exercise 2: CTF</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="book/9_bibliography.html">Bibliography</a></li>
 </ul>
 
@@ -398,10 +405,11 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#structure">Structure</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture">Lecture</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#break">Break</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#structure">Structure</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisites-requirements">Prerequisites &amp; Requirements</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-approx-60-minutes">Lecture (approx. ~60 minutes)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#break-15-minutes">Break (15 minutes)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-approx-90-minutes">Exercise (approx. ~90 minutes)</a></li>
 </ul>
 </li>
 </ul>
@@ -421,21 +429,56 @@ document.write(`
 <p>This book is a collection of notes on blockchain security and corresponding attack vectors. The contents cover the lecture and the exercise on June 9, 2024, in the lecture “Praktische IT-Sicherheit”</p>
 <section id="structure">
 <h2>Structure<a class="headerlink" href="#structure" title="Link to this heading">#</a></h2>
-<p>The book is structured into two parts: The lecture and the exercise. The lecture part contains the theoretical background of the topic, while the exercise part contains practical examples and tasks. If any questions arise during the lecture or the exercise, feel free to ask us.</p>
-<section id="lecture">
-<h3>Lecture<a class="headerlink" href="#lecture" title="Link to this heading">#</a></h3>
-<p>The lecture is approximately 60 minutes long and covers the following topics:</p>
-<p>-&gt; Link to Lecture</p>
+<p>The book is structured into two parts: The lecture and the exercise. The lecture part contains the theoretical background of the topic, while the exercise part contains practical examples and tasks. If any questions arise during the lecture or the exercise, feel free to ask us. In between the lecture and the exercise there will be a short break (~15 min).</p>
 </section>
-<section id="break">
-<h3>Break<a class="headerlink" href="#break" title="Link to this heading">#</a></h3>
+<section id="prerequisites-requirements">
+<h2>Prerequisites &amp; Requirements<a class="headerlink" href="#prerequisites-requirements" title="Link to this heading">#</a></h2>
+<p>The lecture will give a broad overview of the blockchain technology and will highlight certain parts more detailed. To take part in the exercise you will need a stable internet connection and an IDE that supports Jupyter Notebooks (e.g. VS Code or PyCharm). There will be some light programming in Python - please download and install the following Python libraries as well:</p>
+<ul class="simple">
+<li><p>blockcypher</p></li>
+<li><p>binascii</p></li>
+<li><p>mnemonic</p></li>
+<li><p>bip-utils</p></li>
+<li><p>ecdsa</p></li>
+</ul>
+<section id="lecture-approx-60-minutes">
+<h3>Lecture (approx. ~60 minutes)<a class="headerlink" href="#lecture-approx-60-minutes" title="Link to this heading">#</a></h3>
+<p>The lecture covers the following topics:</p>
+<ul class="simple">
+<li><p>Introduction to blockchain technology</p></li>
+<li><p>Blockchain fundamentals and principles</p></li>
+<li><p>Security fundamentals of Blockchain technology</p></li>
+<li><p>Attack vectors on Blockchains</p></li>
+</ul>
 </section>
-<section id="exercise">
-<h3>Exercise<a class="headerlink" href="#exercise" title="Link to this heading">#</a></h3>
-<p>The exercise is approximately 90 minutes long and covers the following topics:</p>
-<p>-&gt; Link to Exercise</p>
+<section id="break-15-minutes">
+<h3>Break (15 minutes)<a class="headerlink" href="#break-15-minutes" title="Link to this heading">#</a></h3>
+</section>
+<section id="exercise-approx-90-minutes">
+<h3>Exercise (approx. ~90 minutes)<a class="headerlink" href="#exercise-approx-90-minutes" title="Link to this heading">#</a></h3>
+<p>The exercise covers the following topics:</p>
+<ul class="simple">
+<li><p>Performing PoW Blockchain Attacks in a simulated environment</p>
+<ul>
+<li><p>51% Attack</p></li>
+<li><p>Partitioning Attack</p></li>
+<li><p>DoS Attacks to Blockchain Nodes</p></li>
+</ul>
+</li>
+<li><p>Blockchain oriented CTF challenges <a class="reference external" href="https://blocksec.pythonanywhere.com">Blocksec UUlm CTF</a></p>
+<ul>
+<li><p>Unlocking a bitcoin transaction</p></li>
+<li><p>Reverse a wallet adress from mnemonik phrases</p></li>
+<li><p>Getting access to bitcoin wallets (signing messages) via nonce reuse attack</p></li>
+</ul>
+</li>
+</ul>
 </section>
 </section>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
 <div class="toctree-wrapper compound">
 </div>
 </section>
@@ -475,7 +518,7 @@ document.write(`
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">1. Introduction</p>
+        <p class="prev-next-title"><span class="section-number">1. </span>1. Introduction</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -495,10 +538,11 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#structure">Structure</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture">Lecture</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#break">Break</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#structure">Structure</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisites-requirements">Prerequisites &amp; Requirements</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-approx-60-minutes">Lecture (approx. ~60 minutes)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#break-15-minutes">Break (15 minutes)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-approx-90-minutes">Exercise (approx. ~90 minutes)</a></li>
 </ul>
 </li>
 </ul>

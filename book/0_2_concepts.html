@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>2. Fundamentals and Principles of Blockchains &#8212; Blockchain Security</title>
+    <title>2. 2. Fundamentals and Principles of Blockchains &#8212; Blockchain Security</title>
   
   
   
@@ -62,8 +62,8 @@
     <link rel="icon" href="../_static/fav.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="3. Security Aspects and Technical Fundamentals of Blockchain Technology" href="0_3_concepts_of_security.html" />
-    <link rel="prev" title="1. Introduction" href="0_1_introduction.html" />
+    <link rel="next" title="3. 3. Security Aspects and Technical Fundamentals of Blockchain Technology" href="0_3_concepts_of_security.html" />
+    <link rel="prev" title="1. 1. Introduction" href="0_1_introduction.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -173,15 +173,22 @@
  </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
-        <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="0_1_introduction.html">1. Introduction</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">2. Fundamentals and Principles of Blockchains</a></li>
-<li class="toctree-l1"><a class="reference internal" href="0_3_concepts_of_security.html">3. Security Aspects and Technical Fundamentals of Blockchain Technology <!-- (*20 Minuten*) --></a></li>
-<li class="toctree-l1"><a class="reference internal" href="0_4_attack_vectors.html">4. Attack Vectors on Blockchains</a></li>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Lecture</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="0_1_introduction.html">1. 1. Introduction</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">2. 2. Fundamentals and Principles of Blockchains</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0_3_concepts_of_security.html">3. 3. Security Aspects and Technical Fundamentals of Blockchain Technology <!-- (*20 Minuten*) --></a></li>
+<li class="toctree-l1"><a class="reference internal" href="0_4_attack_vectors.html">4. 4. Attack Vectors on Blockchains</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Exercise</span></p>
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="1_exercise.html">Exercise 1: Simulating Blockchain Attacks Using the Proof-of-Work Network Simulator</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="1_exercise_cheatsheet.html">Cheat Sheet Exercise 1</a></li>
 <li class="toctree-l1"><a class="reference internal" href="2_exercise.html">Exercise 2: CTF</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="9_bibliography.html">Bibliography</a></li>
 </ul>
 
@@ -395,14 +402,14 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#block-structure">Block Structure</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#structure-of-a-blockchain">Structure of a Blockchain</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transactions">Transactions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-transaction">Example Transaction</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-role-of-nodes">The role of nodes</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#consensus-mechanisms">Consensus Mechanisms</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#proof-of-work-pow">Proof of Work (PoW)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#proof-of-work-pow-ii">Proof of Work (PoW) II</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#block-structure">2.1. Block Structure</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#structure-of-a-blockchain">2.2. Structure of a Blockchain</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transactions">2.3. Transactions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-transaction">2.4. Example Transaction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-role-of-nodes">2.5. The role of nodes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#consensus-mechanisms">2.6. Consensus Mechanisms</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#proof-of-work-pow">2.7. Proof of Work (PoW)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#proof-of-work-pow-ii">2.8. Proof of Work (PoW) II</a></li>
 </ul>
             </nav>
         </div>
@@ -415,13 +422,13 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="fundamentals-and-principles-of-blockchains">
-<h1>2. Fundamentals and Principles of Blockchains<a class="headerlink" href="#fundamentals-and-principles-of-blockchains" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">2. </span>2. Fundamentals and Principles of Blockchains<a class="headerlink" href="#fundamentals-and-principles-of-blockchains" title="Link to this heading">#</a></h1>
 <section id="block-structure">
-<h2>Block Structure<a class="headerlink" href="#block-structure" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">2.1. </span>Block Structure<a class="headerlink" href="#block-structure" title="Link to this heading">#</a></h2>
 <figure class="align-default" id="id4">
 <img alt="../_images/Blockchain_Block.drawio.png" src="../_images/Blockchain_Block.drawio.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 1 </span><span class="caption-text">Structure of a block in a blockchain</span><a class="headerlink" href="#id4" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 2.1 </span><span class="caption-text">Structure of a block in a blockchain</span><a class="headerlink" href="#id4" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p><strong>Block Header</strong>:</p>
@@ -440,16 +447,16 @@ document.write(`
 </ul>
 </section>
 <section id="structure-of-a-blockchain">
-<h2>Structure of a Blockchain<a class="headerlink" href="#structure-of-a-blockchain" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">2.2. </span>Structure of a Blockchain<a class="headerlink" href="#structure-of-a-blockchain" title="Link to this heading">#</a></h2>
 <figure class="align-default" id="id5">
 <img alt="../_images/Blockchain.drawio.png" src="../_images/Blockchain.drawio.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 2 </span><span class="caption-text">Structure of a blockchain</span><a class="headerlink" href="#id5" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 2.2 </span><span class="caption-text">Structure of a blockchain</span><a class="headerlink" href="#id5" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
 <section id="transactions">
-<h2>Transactions<a class="headerlink" href="#transactions" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">2.3. </span>Transactions<a class="headerlink" href="#transactions" title="Link to this heading">#</a></h2>
 <p>Basic elements of a transaction:</p>
 <ul class="simple">
 <li><p>Sender’s Address (public key)</p></li>
@@ -467,7 +474,7 @@ document.write(`
 </ol>
 </section>
 <section id="example-transaction">
-<h2>Example Transaction<a class="headerlink" href="#example-transaction" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">2.4. </span>Example Transaction<a class="headerlink" href="#example-transaction" title="Link to this heading">#</a></h2>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;txid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1eabcde1234567890abcdef1234567890abcdef1234567890abcdef1234567890&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
@@ -545,7 +552,7 @@ document.write(`
 </ol>
 </section>
 <section id="the-role-of-nodes">
-<h2>The role of nodes<a class="headerlink" href="#the-role-of-nodes" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">2.5. </span>The role of nodes<a class="headerlink" href="#the-role-of-nodes" title="Link to this heading">#</a></h2>
 <p>Types of nodes:</p>
 <ul class="simple">
 <li><p>Full Nodes: store the entire blockchain, validate and relay transactions and blocks</p></li>
@@ -568,7 +575,7 @@ document.write(`
 </ul>
 </section>
 <section id="consensus-mechanisms">
-<h2>Consensus Mechanisms<a class="headerlink" href="#consensus-mechanisms" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">2.6. </span>Consensus Mechanisms<a class="headerlink" href="#consensus-mechanisms" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Hard to achieve agreement in a decentralized network</p></li>
 <li><p>Ensure that all nodes agree on the state of the blockchain</p></li>
@@ -583,7 +590,7 @@ document.write(`
 </ul>
 </section>
 <section id="proof-of-work-pow">
-<h2>Proof of Work (PoW)<a class="headerlink" href="#proof-of-work-pow" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">2.7. </span>Proof of Work (PoW)<a class="headerlink" href="#proof-of-work-pow" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>random selection prone to attacks -&gt; nodes should prove they did work required to propose a new block</p></li>
 <li><p>concept adapted from digital tokens by Hal Finney in 2004 through the idea of “reusable proof of work” using SHA-1 <span id="id3">[<a class="reference internal" href="9_bibliography.html#id14" title="RPOW - Reusable Proofs of Work. https://nakamotoinstitute.org/finney/rpow/index.html. [Accessed 09-06-2024]."><em>RPOW - Reusable Proofs of Work</em>, n.d.</a>]</span></p>
@@ -598,7 +605,7 @@ document.write(`
 </ul>
 </section>
 <section id="proof-of-work-pow-ii">
-<h2>Proof of Work (PoW) II<a class="headerlink" href="#proof-of-work-pow-ii" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">2.8. </span>Proof of Work (PoW) II<a class="headerlink" href="#proof-of-work-pow-ii" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>in decentralized network multiple blocks might be generated simultaneously -&gt; blockchain branches</p></li>
 <li><p>longest chain rule: the chain with the most accumulated proof of work is considered the correct one</p></li>
@@ -646,7 +653,7 @@ document.write(`
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">1. Introduction</p>
+        <p class="prev-next-title"><span class="section-number">1. </span>1. Introduction</p>
       </div>
     </a>
     <a class="right-next"
@@ -654,7 +661,7 @@ document.write(`
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">3. Security Aspects and Technical Fundamentals of Blockchain Technology <!-- (*20 Minuten*) --></p>
+        <p class="prev-next-title"><span class="section-number">3. </span>3. Security Aspects and Technical Fundamentals of Blockchain Technology <!-- (*20 Minuten*) --></p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -674,14 +681,14 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#block-structure">Block Structure</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#structure-of-a-blockchain">Structure of a Blockchain</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transactions">Transactions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-transaction">Example Transaction</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-role-of-nodes">The role of nodes</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#consensus-mechanisms">Consensus Mechanisms</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#proof-of-work-pow">Proof of Work (PoW)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#proof-of-work-pow-ii">Proof of Work (PoW) II</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#block-structure">2.1. Block Structure</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#structure-of-a-blockchain">2.2. Structure of a Blockchain</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transactions">2.3. Transactions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-transaction">2.4. Example Transaction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-role-of-nodes">2.5. The role of nodes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#consensus-mechanisms">2.6. Consensus Mechanisms</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#proof-of-work-pow">2.7. Proof of Work (PoW)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#proof-of-work-pow-ii">2.8. Proof of Work (PoW) II</a></li>
 </ul>
   </nav></div>
 
