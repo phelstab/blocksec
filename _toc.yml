@@ -3,31 +3,19 @@
 
 format: jb-book
 root: index
-chapters:
-  - file: book/0_1_introduction
-  - file: book/0_2_concepts
-  - file: book/0_3_concepts_of_security
-  - file: book/0_4_attack_vectors
-  - file: book/1_exercise
-  - file: book/1_exercise_cheatsheet.md
-  - file: book/2_exercise
-  - file: book/9_bibliography
-  # - file: book/concept
-  # - file: book/markdown
-  # - file: book/attack_list
-  # - file: book/notebooks
-  # - file: book/test
-
-# Or you organize the TOC by parts
-
-# parts:
-#   - caption: Chapters
-#     numbered: true
-#     maxdepth: 2
-#     chapters:
-#       - file: book/markdown
-#       - file: book/notebooks
-#   - caption: Appendices
-#     chapters:
-#       - file: book/bibliography
-
+parts:
+  - caption: Lecture
+  - numbered: true
+  - chapters:
+    - file: book/0_1_introduction
+    - file: book/0_2_concepts
+    - file: book/0_3_concepts_of_security
+    - file: book/0_4_attack_vectors
+  - caption: Exercise
+  - chapters:
+    - file: book/1_exercise
+    - file: book/1_exercise_cheatsheet.md
+    - file: book/2_exercise
+  - caption: Appendix
+  - chapters:
+    - file: book/9_bibliography
