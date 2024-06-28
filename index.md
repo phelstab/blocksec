@@ -32,5 +32,5 @@ The exercise covers the following topics:
 
 * Blockchain oriented CTF challenges
   * Unlocking a bitcoin transaction
-  * Reverse a wallet adress from mnemonik phrase
+  * Reverse a wallet adress from mnemonik phrases
   * Getting access to bitcoin wallets (signing messages) via nonce reuse attack
