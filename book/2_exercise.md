@@ -1,1 +1,0 @@
-# Exercise 2: Double-Spend Attacks
