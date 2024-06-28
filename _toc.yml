@@ -9,8 +9,8 @@ chapters:
   - file: book/0_3_concepts_of_security
   - file: book/0_4_attack_vectors
   - file: book/1_exercise
+  - file: book/1_exercise_cheatsheet.md
   - file: book/2_exercise
-  - file: book/3_exercise
   - file: book/9_bibliography
   # - file: book/concept
   # - file: book/markdown
