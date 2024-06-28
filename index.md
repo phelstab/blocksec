@@ -30,7 +30,7 @@ The exercise covers the following topics:
   * Partitioning Attack
   * DoS Attacks to Blockchain Nodes
 
-* Blockchain oriented CTF challenges
+* Blockchain oriented CTF challenges [Blocksec UUlm CTF](https://blocksec.pythonanywhere.com)
   * Unlocking a bitcoin transaction
   * Reverse a wallet adress from mnemonik phrases
   * Getting access to bitcoin wallets (signing messages) via nonce reuse attack
