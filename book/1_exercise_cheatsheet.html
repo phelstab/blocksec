@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Exercise 3: Lattice Attacks &#8212; Blockchain Security</title>
+    <title>Cheat Sheet Exercise 1 &#8212; Blockchain Security</title>
   
   
   
@@ -57,13 +57,13 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'book/3_exercise';</script>
-    <link rel="canonical" href="https://phelstab.github.io/blocksec/book/3_exercise.html" />
+    <script>DOCUMENTATION_OPTIONS.pagename = 'book/1_exercise_cheatsheet';</script>
+    <link rel="canonical" href="https://phelstab.github.io/blocksec/book/1_exercise_cheatsheet.html" />
     <link rel="icon" href="../_static/fav.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Bibliography" href="9_bibliography.html" />
-    <link rel="prev" title="Exercise 2: CTF" href="2_exercise.html" />
+    <link rel="next" title="Exercise 2: CTF" href="2_exercise.html" />
+    <link rel="prev" title="Exercise 1: Simulating Blockchain Attacks Using the Proof-of-Work Network Simulator" href="1_exercise.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -178,9 +178,10 @@
 <li class="toctree-l1"><a class="reference internal" href="0_2_concepts.html">2. Fundamentals and Principles of Blockchains</a></li>
 <li class="toctree-l1"><a class="reference internal" href="0_3_concepts_of_security.html">3. Security Aspects and Technical Fundamentals of Blockchain Technology <!-- (*20 Minuten*) --></a></li>
 <li class="toctree-l1"><a class="reference internal" href="0_4_attack_vectors.html">4. Attack Vectors on Blockchains</a></li>
-<li class="toctree-l1"><a class="reference internal" href="1_exercise.html">Exercise 1: Analyzing harmful transactions and unfair behaviour</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1_exercise.html">Exercise 1: Simulating Blockchain Attacks Using the Proof-of-Work Network Simulator</a></li>
+
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Cheat Sheet Exercise 1</a></li>
 <li class="toctree-l1"><a class="reference internal" href="2_exercise.html">Exercise 2: CTF</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Exercise 3: Lattice Attacks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="9_bibliography.html">Bibliography</a></li>
 </ul>
 
@@ -253,7 +254,7 @@
       
       
       
-      <li><a href="https://github.com/phelstab/blocksec/edit/main/book/3_exercise.md" target="_blank"
+      <li><a href="https://github.com/phelstab/blocksec/edit/main/book/1_exercise_cheatsheet.md" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -270,7 +271,7 @@
       
       
       
-      <li><a href="https://github.com/phelstab/blocksec/issues/new?title=Issue%20on%20page%20%2Fbook/3_exercise.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/phelstab/blocksec/issues/new?title=Issue%20on%20page%20%2Fbook/1_exercise_cheatsheet.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -300,7 +301,7 @@
       
       
       
-      <li><a href="../_sources/book/3_exercise.md" target="_blank"
+      <li><a href="../_sources/book/1_exercise_cheatsheet.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -371,7 +372,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -382,11 +385,20 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Exercise 3: Lattice Attacks</h1>
+    <h1>Cheat Sheet Exercise 1</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-controls">Basic controls</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#network">Network</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -396,8 +408,60 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="exercise-3-lattice-attacks">
-<h1>Exercise 3: Lattice Attacks<a class="headerlink" href="#exercise-3-lattice-attacks" title="Link to this heading">#</a></h1>
+  <section id="cheat-sheet-exercise-1">
+<h1>Cheat Sheet Exercise 1<a class="headerlink" href="#cheat-sheet-exercise-1" title="Link to this heading">#</a></h1>
+<p>The simulator can be found here: <a class="reference external" href="https://simewu.com/blockchain-simulator/">Blockchain Simulator</a></p>
+<section id="basic-controls">
+<h2>Basic controls<a class="headerlink" href="#basic-controls" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Load a network file: File &gt; Load network from clipbaord</p></li>
+<li><p>Toggle visualisations: Display &gt; Toggle visualizations (Network overview &amp; Time plot)</p></li>
+<li><p>Toggle stats table: Display &gt; Toggle miner stats table</p></li>
+<li><p>Refresh the visualizer: Display &gt; Refresh visualizer (or press <code class="docutils literal notranslate"><span class="pre">R</span></code>)</p></li>
+<li><p>Start the miners by pressing <code class="docutils literal notranslate"><span class="pre">Start</span> <span class="pre">All</span> <span class="pre">Miners</span></code></p>
+<ul>
+<li><p>Start individual nodes by selecting the node and using the dropdown menu next to the button</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="network">
+<h2>Network<a class="headerlink" href="#network" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Remove all miners: <code class="docutils literal notranslate"><span class="pre">Shift</span> <span class="pre">+</span> <span class="pre">Del</span></code></p></li>
+<li><p>Remove individual node: <code class="docutils literal notranslate"><span class="pre">Del</span></code></p></li>
+<li><p>Clear the current data: Network &gt; Clear all blockchains</p></li>
+<li><p>Add miners to the network: Network &gt; Add/edit miner</p>
+<ul>
+<li><p>Computing power = mining power of the node</p></li>
+<li><p>Network latency can be unchanged</p></li>
+<li><p>Network Downlink/Uplink = Node connection bandwidth</p></li>
+<li><p>Peers &gt; Connections to other nodes</p>
+<ul>
+<li><p>Can be changed in the network visualizer by selecting one node and double clicking/pressing shift while selecting other node</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<figure class="align-default">
+<img alt="../_images/cheatsheet_img_1.png" src="../_images/cheatsheet_img_1.png" />
+</figure>
+<ol class="arabic simple">
+<li><p>Menu</p></li>
+<li><p>Node Explorer</p></li>
+<li><p>Start/toggle mining</p></li>
+<li><p>Network visualization</p></li>
+<li><p>Time plot</p></li>
+</ol>
+<figure class="align-default">
+<img alt="../_images/cheatsheet_img_2.png" src="../_images/cheatsheet_img_2.png" />
+</figure>
+<ol class="arabic simple" start="6">
+<li><p>Mining statistics</p></li>
+<li><p>Sampling/Code execution</p></li>
+</ol>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -431,20 +495,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="2_exercise.html"
+       href="1_exercise.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Exercise 2: CTF</p>
+        <p class="prev-next-title">Exercise 1: Simulating Blockchain Attacks Using the Proof-of-Work Network Simulator</p>
       </div>
     </a>
     <a class="right-next"
-       href="9_bibliography.html"
+       href="2_exercise.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Bibliography</p>
+        <p class="prev-next-title">Exercise 2: CTF</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -454,6 +518,22 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-controls">Basic controls</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#network">Network</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

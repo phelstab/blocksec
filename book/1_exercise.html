@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Exercise 1: Analyzing harmful transactions and unfair behaviour &#8212; Blockchain Security</title>
+    <title>Exercise 1: Simulating Blockchain Attacks Using the Proof-of-Work Network Simulator &#8212; Blockchain Security</title>
   
   
   
@@ -62,7 +62,7 @@
     <link rel="icon" href="../_static/fav.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Exercise 2: CTF" href="2_exercise.html" />
+    <link rel="next" title="Cheat Sheet Exercise 1" href="1_exercise_cheatsheet.html" />
     <link rel="prev" title="4. Attack Vectors on Blockchains" href="0_4_attack_vectors.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -178,9 +178,10 @@
 <li class="toctree-l1"><a class="reference internal" href="0_2_concepts.html">2. Fundamentals and Principles of Blockchains</a></li>
 <li class="toctree-l1"><a class="reference internal" href="0_3_concepts_of_security.html">3. Security Aspects and Technical Fundamentals of Blockchain Technology <!-- (*20 Minuten*) --></a></li>
 <li class="toctree-l1"><a class="reference internal" href="0_4_attack_vectors.html">4. Attack Vectors on Blockchains</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Exercise 1: Analyzing harmful transactions and unfair behaviour</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Exercise 1: Simulating Blockchain Attacks Using the Proof-of-Work Network Simulator</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="1_exercise_cheatsheet.html">Cheat Sheet Exercise 1</a></li>
 <li class="toctree-l1"><a class="reference internal" href="2_exercise.html">Exercise 2: CTF</a></li>
-<li class="toctree-l1"><a class="reference internal" href="3_exercise.html">Exercise 3: Lattice Attacks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="9_bibliography.html">Bibliography</a></li>
 </ul>
 
@@ -371,7 +372,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -382,11 +385,32 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Exercise 1: Analyzing harmful transactions and unfair behaviour</h1>
+    <h1>Exercise 1: Simulating Blockchain Attacks Using the Proof-of-Work Network Simulator</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Exercise 1: Simulating Blockchain Attacks Using the Proof-of-Work Network Simulator</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-started">Getting started</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task-1-51-attack">Task 1: 51% Attack</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#questions">Questions:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task-2-partitioning-attack">Task 2: Partitioning Attack</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Questions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#task-3-dos-attack">Task 3: DoS-Attack</a></li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -396,8 +420,112 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="exercise-1-analyzing-harmful-transactions-and-unfair-behaviour">
-<h1>Exercise 1: Analyzing harmful transactions and unfair behaviour<a class="headerlink" href="#exercise-1-analyzing-harmful-transactions-and-unfair-behaviour" title="Link to this heading">#</a></h1>
+  <section id="exercise-1-simulating-blockchain-attacks-using-the-proof-of-work-network-simulator">
+<h1>Exercise 1: Simulating Blockchain Attacks Using the Proof-of-Work Network Simulator<a class="headerlink" href="#exercise-1-simulating-blockchain-attacks-using-the-proof-of-work-network-simulator" title="Link to this heading">#</a></h1>
+<section id="getting-started">
+<h2>Getting started<a class="headerlink" href="#getting-started" title="Link to this heading">#</a></h2>
+<p>Open the simulator using the following link: <a class="reference external" href="https://simewu.com/blockchain-simulator/">Blockchain Simulator</a></p>
+<p>For guidance on how to use the simulator, please refer to the cheat sheet</p>
+</section>
+<section id="task-1-51-attack">
+<h2>Task 1: 51% Attack<a class="headerlink" href="#task-1-51-attack" title="Link to this heading">#</a></h2>
+<blockquote>
+<div><p>A 51% attack occurs when a malicious miner or group of miners control more than 50% of the network’s mining hash rate. This allows them to manipulate the blockchain by preventing other miners from completing blocks, reversing transactions, and double-spending coins.</p>
+</div></blockquote>
+<ol class="arabic simple">
+<li><p><strong>Configure Network</strong></p>
+<ul class="simple">
+<li><p>Set up a network with at least five nodes</p></li>
+<li><p>Ensure all nodes have equal hash rates except the attacker node</p></li>
+</ul>
+</li>
+<li><p><strong>Set up the Attack</strong></p>
+<ul class="simple">
+<li><p>Designate one node as the attacker with a hash rate higher than the combined hash rate of all other nodes (eg. four honest nodes with a hash rate of 25 hashes/s -&gt; attacker’s hash rate needs to be at least 101 hashes/s)</p></li>
+</ul>
+</li>
+<li><p><strong>Execute the Simulation</strong></p></li>
+</ol>
+<section id="questions">
+<h3>Questions:<a class="headerlink" href="#questions" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Why is it significant for a single entity to control more than 50% of the network’s hash rate?</p></li>
+<li><p>What did you observe about the block generation process once the attacker node started mining?</p></li>
+<li><p>How does the attacker’s ability to create the longest chain impact the other nodes blocks?</p></li>
+<li><p>What are the potential real-world consequences of a successful 51% attack on a popular cryptocurrency?</p></li>
+</ul>
+</section>
+</section>
+<section id="task-2-partitioning-attack">
+<h2>Task 2: Partitioning Attack<a class="headerlink" href="#task-2-partitioning-attack" title="Link to this heading">#</a></h2>
+<blockquote>
+<div><p>A partitioning attack divides the network into separate segments that cannot communicate with each other. This can lead to forks and multiple competing chains, weakening the blockchain’s security.</p>
+</div></blockquote>
+<ol class="arabic simple">
+<li><p><strong>Configure Network</strong></p>
+<ul class="simple">
+<li><p>Set up a network with at least eight nodes arranged in two groups (e.g. 3 &amp; 5)</p></li>
+<li><p>Ensure there are connections between nodes within each group, but no connections between the groups</p></li>
+</ul>
+</li>
+<li><p><strong>Set up the Attack</strong></p>
+<ul class="simple">
+<li><p>Introduce an attacker node between the two groups, effectively partitioning the network</p>
+<ul>
+<li><p>Connect the smaller network with a unidirectional link to the attacker node and fully integrate the attacker node to the bigger network</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>Execute the Simulation</strong></p></li>
+</ol>
+<section id="id1">
+<h3>Questions<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<p>Why are forks and competing chains problematic for blockchain security?</p>
+<p>What were the effects on the blockchain within each partition during the attack?</p>
+<p>What vulnerabilities in the blockchain protocol does a partitioning attack exploit?</p>
+<p>What would happen if the smaller group is now reconnected to the network?</p>
+</section>
+</section>
+</section>
+<section id="task-3-dos-attack">
+<h1>Task 3: DoS-Attack<a class="headerlink" href="#task-3-dos-attack" title="Link to this heading">#</a></h1>
+<blockquote>
+<div><p>A Denial of Service (DoS) attack involves overwhelming the network or specific nodes with excessive traffic, causing disruptions and preventing normal operations.</p>
+</div></blockquote>
+<ol class="arabic simple">
+<li><p><strong>Configure Network</strong></p>
+<ul class="simple">
+<li><p>Set up a network with at least four nodes and set the bandwidth of each node to 100 MBps</p></li>
+<li><p>Set the buffer size limit of the individual nodes by using the code execution window (<em>unfortunately, there is a bug when setting it directly in the tree</em>)</p>
+<ul>
+<li><p>Set the buffer size limit to <code class="docutils literal notranslate"><span class="pre">1000</span></code> in the “Run before sampling” editor and start the sampling once (you can terminate it right after, check if it worked in the tree)</p></li>
+<li><p><em>HINT</em>: you can use <code class="docutils literal notranslate"><span class="pre">NODE_ID.networkBuffer.bufferSizeLimit</span></code> to modify the values</p></li>
+</ul>
+</li>
+<li><p>Start the miners to establish a baseline</p></li>
+</ul>
+</li>
+<li><p><strong>Set up the Attack</strong></p>
+<ul class="simple">
+<li><p>Introduce an attacker node with greater mining power (e.g. 100), a bandwidth of 1000 MBps and check the box <code class="docutils literal notranslate"><span class="pre">sendInvalidMaliciousBlocks</span></code></p></li>
+<li><p>Use a unidirectional link to connect the attacker to one node (the victim)</p></li>
+</ul>
+</li>
+<li><p><strong>Execute the Simulation</strong></p>
+<ul class="simple">
+<li><p>After letting the network run for some time, toggle the attacker node and observe the attack</p></li>
+<li><p><em>TIP</em>: Use <code class="docutils literal notranslate"><span class="pre">miner.networkBuffer.buffer</span></code> to visualize the buffer of the individual nodes in the Time Plot</p></li>
+</ul>
+</li>
+</ol>
+<p><strong>Questions</strong></p>
+<ul class="simple">
+<li><p>What impact did the DoS attack have on the victim node’s ability to process and broadcast blocks?</p></li>
+<li><p>How did the attack affect the overall network performance and block propagation?</p></li>
+<li><p>Why do nodes continue to mine valid blocks during a DoS attack, yet fail to broadcast them?</p></li>
+<li><p>Also pay close attention to the balance of the victim. What are you observing?</p></li>
+</ul>
 </section>
 
     <script type="text/x-thebe-config">
@@ -440,11 +568,11 @@ document.write(`
       </div>
     </a>
     <a class="right-next"
-       href="2_exercise.html"
+       href="1_exercise_cheatsheet.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Exercise 2: CTF</p>
+        <p class="prev-next-title">Cheat Sheet Exercise 1</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -454,6 +582,34 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Exercise 1: Simulating Blockchain Attacks Using the Proof-of-Work Network Simulator</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-started">Getting started</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task-1-51-attack">Task 1: 51% Attack</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#questions">Questions:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task-2-partitioning-attack">Task 2: Partitioning Attack</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Questions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#task-3-dos-attack">Task 3: DoS-Attack</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
               
             
           </div>
