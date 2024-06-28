@@ -1,0 +1,93 @@
+Traceback (most recent call last):
+  File "/opt/hostedtoolcache/Python/3.9.19/x64/lib/python3.9/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+    executenb(
+  File "/opt/hostedtoolcache/Python/3.9.19/x64/lib/python3.9/site-packages/nbclient/client.py", line 1314, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "/opt/hostedtoolcache/Python/3.9.19/x64/lib/python3.9/site-packages/jupyter_core/utils/__init__.py", line 165, in wrapped
+    return loop.run_until_complete(inner)
+  File "/opt/hostedtoolcache/Python/3.9.19/x64/lib/python3.9/asyncio/base_events.py", line 647, in run_until_complete
+    return future.result()
+  File "/opt/hostedtoolcache/Python/3.9.19/x64/lib/python3.9/site-packages/nbclient/client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "/opt/hostedtoolcache/Python/3.9.19/x64/lib/python3.9/site-packages/nbclient/client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/opt/hostedtoolcache/Python/3.9.19/x64/lib/python3.9/site-packages/nbclient/client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+from hashlib import sha256
+from ecdsa import SECP256k1, SigningKey
+from ecdsa.util import sigdecode_string
+from ecdsa.numbertheory import inverse_mod
+
+def hash_message(message):
+    """Hash the message using SHA-256."""
+    message = 0
+
+    assert len("{0:b}".format(message)) == 255, f"Expected binary length of 255, but got {len("{0:b}".format(message))}" # Helpful assertion
+    return None
+
+def recover_private_key(h1, h2, s1, s2, r1, r2, n):
+    """Recover the private key via nonce reuse.
+
+    Recover the private key from two different signatures
+    that use the same random nonce `k` during signature
+    generation. Note that if the same `k` is used in two
+    signatures, this implies that the secp256k1 32-byte
+    signature parameter `r` is identical.
+
+    Parameters
+    ----------
+        h1: int
+            The 32-byte message digest of the message `m1`.
+        h2: int
+            The 32-byte message digest of the message `m2`.
+        s1: int
+            The secp256k1 32-byte signature parameter `s1`.
+        s2: int
+            The secp256k1 32-byte signature parameter `s2`.
+        r1: int
+            The secp256k1 32-byte signature parameter `r1`.
+        r2: int
+            The secp256k1 32-byte signature parameter `r2`.
+        n:  int
+            The 32-byte integer order of G (part of the public key).
+
+    Returns
+    -------
+        pk: int
+            Return a 32-byte private key.
+
+    """
+    assert r1 == r2, "No ECDSA nonce reuse detected."
+    return None
+
+if __name__ == "__main__":
+    # Provided values
+    r = 0x5d66e837a35ddc34be6fb126a3ec37153ff4767ff63cbfbbb32c04a795680491
+    signature1 = 0x1a53499a4aafb33d59ed9a4c5fcc92c5850dcb23d208de40a909357f6fa2c12c
+    signature2 = 0xd67006bc8b7375e236e11154d576eed0fc8539c3bba566f696e9a5340bb92bee
+    n = 0xfffffffffffffffffffffffffffffffebaaedce6af48a03bbfd25e8cd0364141
+
+    # Messages
+    message1 = "what up defcon"
+    message2 = "uh oh this isn't good"
+
+    # Step 1: Hash the messages
+    z1 = hash_message(message1)
+    z2 = hash_message(message2)
+
+    # Step 2: Solve for the private key
+    recovered_private_key = recover_private_key(z1, z2, signature1, signature2, r, r, n)
+
+    print(f"Recovered private key: {recovered_private_key}")
+
+------------------
+
+
+[0;36m  Cell [0;32mIn[2], line 10[0;36m[0m
+[0;31m    assert len("{0:b}".format(message)) == 255, f"Expected binary length of 255, but got {len("{0:b}".format(message))}" # Helpful assertion[0m
+[0m                                                                                               ^[0m
+[0;31mSyntaxError[0m[0;31m:[0m f-string: unmatched '('
+
+

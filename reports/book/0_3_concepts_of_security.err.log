@@ -20,16 +20,13 @@ def verify_merkle_tree():
         txn2_hash = '4beace8bdcf9b5b74630eaee2e7f501180e46025ca89b05e7e041fbe953d817a'
         expected = '830b7f324af3ff2b2a47cf7cf5ac825fe8d8034294ea8e8f853a4d3fada893fc'
         
-        
         combined_hash = sha256_hash(txn1_hash + txn2_hash)
 
         print(f"Combined hash: {combined_hash}")
         print(f"Expected: {expected}")
         assert combined_hash == expected, f"Hash mismatch: {combined_hash} != {expected}"
 
-
 verify_merkle_tree()
-
 ------------------
 
 ----- stdout -----
@@ -39,15 +36,15 @@ Expected: 830b7f324af3ff2b2a47cf7cf5ac825fe8d8034294ea8e8f853a4d3fada893fc
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mAssertionError[0m                            Traceback (most recent call last)
-Cell [0;32mIn[7], line 14[0m
-[1;32m     10[0m         [38;5;28mprint[39m([38;5;124mf[39m[38;5;124m"[39m[38;5;124mExpected: [39m[38;5;132;01m{[39;00mexpected[38;5;132;01m}[39;00m[38;5;124m"[39m)
-[1;32m     11[0m         [38;5;28;01massert[39;00m combined_hash [38;5;241m==[39m expected, [38;5;124mf[39m[38;5;124m"[39m[38;5;124mHash mismatch: [39m[38;5;132;01m{[39;00mcombined_hash[38;5;132;01m}[39;00m[38;5;124m != [39m[38;5;132;01m{[39;00mexpected[38;5;132;01m}[39;00m[38;5;124m"[39m
-[0;32m---> 14[0m [43mverify_merkle_tree[49m[43m([49m[43m)[49m
+Cell [0;32mIn[7], line 12[0m
+[1;32m      9[0m         [38;5;28mprint[39m([38;5;124mf[39m[38;5;124m"[39m[38;5;124mExpected: [39m[38;5;132;01m{[39;00mexpected[38;5;132;01m}[39;00m[38;5;124m"[39m)
+[1;32m     10[0m         [38;5;28;01massert[39;00m combined_hash [38;5;241m==[39m expected, [38;5;124mf[39m[38;5;124m"[39m[38;5;124mHash mismatch: [39m[38;5;132;01m{[39;00mcombined_hash[38;5;132;01m}[39;00m[38;5;124m != [39m[38;5;132;01m{[39;00mexpected[38;5;132;01m}[39;00m[38;5;124m"[39m
+[0;32m---> 12[0m [43mverify_merkle_tree[49m[43m([49m[43m)[49m
 
-Cell [0;32mIn[7], line 11[0m, in [0;36mverify_merkle_tree[0;34m()[0m
-[1;32m      9[0m [38;5;28mprint[39m([38;5;124mf[39m[38;5;124m"[39m[38;5;124mCombined hash: [39m[38;5;132;01m{[39;00mcombined_hash[38;5;132;01m}[39;00m[38;5;124m"[39m)
-[1;32m     10[0m [38;5;28mprint[39m([38;5;124mf[39m[38;5;124m"[39m[38;5;124mExpected: [39m[38;5;132;01m{[39;00mexpected[38;5;132;01m}[39;00m[38;5;124m"[39m)
-[0;32m---> 11[0m [38;5;28;01massert[39;00m combined_hash [38;5;241m==[39m expected, [38;5;124mf[39m[38;5;124m"[39m[38;5;124mHash mismatch: [39m[38;5;132;01m{[39;00mcombined_hash[38;5;132;01m}[39;00m[38;5;124m != [39m[38;5;132;01m{[39;00mexpected[38;5;132;01m}[39;00m[38;5;124m"[39m
+Cell [0;32mIn[7], line 10[0m, in [0;36mverify_merkle_tree[0;34m()[0m
+[1;32m      8[0m [38;5;28mprint[39m([38;5;124mf[39m[38;5;124m"[39m[38;5;124mCombined hash: [39m[38;5;132;01m{[39;00mcombined_hash[38;5;132;01m}[39;00m[38;5;124m"[39m)
+[1;32m      9[0m [38;5;28mprint[39m([38;5;124mf[39m[38;5;124m"[39m[38;5;124mExpected: [39m[38;5;132;01m{[39;00mexpected[38;5;132;01m}[39;00m[38;5;124m"[39m)
+[0;32m---> 10[0m [38;5;28;01massert[39;00m combined_hash [38;5;241m==[39m expected, [38;5;124mf[39m[38;5;124m"[39m[38;5;124mHash mismatch: [39m[38;5;132;01m{[39;00mcombined_hash[38;5;132;01m}[39;00m[38;5;124m != [39m[38;5;132;01m{[39;00mexpected[38;5;132;01m}[39;00m[38;5;124m"[39m
 
 [0;31mAssertionError[0m: Hash mismatch: ed16d3014e104c1dea31d8cf9d137daf0231f620b7c39bc291957f15e3ebda4d != 830b7f324af3ff2b2a47cf7cf5ac825fe8d8034294ea8e8f853a4d3fada893fc
 

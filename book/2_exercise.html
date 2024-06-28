@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Exercise 2: Double-Spend Attacks &#8212; Blockchain Security</title>
+    <title>Exercise 2: CTF &#8212; Blockchain Security</title>
   
   
   
@@ -57,6 +57,8 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'book/2_exercise';</script>
     <link rel="canonical" href="https://phelstab.github.io/blocksec/book/2_exercise.html" />
     <link rel="icon" href="../_static/fav.ico"/>
@@ -179,7 +181,7 @@
 <li class="toctree-l1"><a class="reference internal" href="0_3_concepts_of_security.html">3. Security Aspects and Technical Fundamentals of Blockchain Technology <!-- (*20 Minuten*) --></a></li>
 <li class="toctree-l1"><a class="reference internal" href="0_4_attack_vectors.html">4. Attack Vectors on Blockchains</a></li>
 <li class="toctree-l1"><a class="reference internal" href="1_exercise.html">Exercise 1: Analyzing harmful transactions and unfair behaviour</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Exercise 2: Double-Spend Attacks</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Exercise 2: CTF</a></li>
 <li class="toctree-l1"><a class="reference internal" href="3_exercise.html">Exercise 3: Lattice Attacks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="9_bibliography.html">Bibliography</a></li>
 </ul>
@@ -228,6 +230,55 @@
 
 
 
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/phelstab/blocksec/master?urlpath=tree/book/2_exercise.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Binder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Binder logo" src="../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/phelstab/blocksec/blob/master/book/2_exercise.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
 <div class="dropdown dropdown-source-buttons">
   <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
     <i class="fab fa-github"></i>
@@ -253,7 +304,7 @@
       
       
       
-      <li><a href="https://github.com/phelstab/blocksec/edit/main/book/2_exercise.md" target="_blank"
+      <li><a href="https://github.com/phelstab/blocksec/edit/main/book/2_exercise.ipynb" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -300,7 +351,7 @@
       
       
       
-      <li><a href="../_sources/book/2_exercise.md" target="_blank"
+      <li><a href="../_sources/book/2_exercise.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -310,7 +361,7 @@
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.md</span>
+<span class="btn__text-container">.ipynb</span>
 </a>
 </li>
       
@@ -371,7 +422,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -382,11 +435,24 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Exercise 2: Double-Spend Attacks</h1>
+    <h1>Exercise 2: CTF</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#requirements">Requirements</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ctf-1-unlocking-a-bitcoin-transaction-100">CTF 1. Unlocking a bitcoin transaction — 100</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ctf-2-dark-net-money-200">CTF 2. Dark Net Money — 200</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ctf-3-ecdsa-nonce-reuse-200">CTF 3. ECDSA Nonce Reuse - 200</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -396,8 +462,213 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="exercise-2-double-spend-attacks">
-<h1>Exercise 2: Double-Spend Attacks<a class="headerlink" href="#exercise-2-double-spend-attacks" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="exercise-2-ctf">
+<h1>Exercise 2: CTF<a class="headerlink" href="#exercise-2-ctf" title="Link to this heading">#</a></h1>
+<p>Enter flags here: <a class="reference external" href="https://blocksec.pythonanywhere.com">Blocksec UUlm CTF</a></p>
+<p>Containing 3 Challenges</p>
+<section id="requirements">
+<h2>Requirements<a class="headerlink" href="#requirements" title="Link to this heading">#</a></h2>
+<p><strong>Prog. Lang.:</strong></p>
+<ul class="simple">
+<li><p>Python 3</p></li>
+</ul>
+<p><strong>Python libraries:</strong></p>
+<ul class="simple">
+<li><p>blockcypher</p></li>
+<li><p>binascii</p></li>
+<li><p>mnemonic</p></li>
+<li><p>bip-utils</p></li>
+<li><p>hashlib</p></li>
+<li><p>ecdsa</p></li>
+</ul>
+<p><strong>Tools:</strong></p>
+<ul class="simple">
+<li><p>A web browser</p></li>
+<li><p>IDE that supports Jupyter Notebooks (e.g. VSCode)</p></li>
+<li><p><a class="reference external" href="https://live.blockcypher.com">https://live.blockcypher.com</a> (block explorer)</p></li>
+<li><p><a class="reference external" href="https://iancoleman.io/bip39/">https://iancoleman.io/bip39/</a> (mnemonic code converter)</p></li>
+</ul>
+<hr class="docutils" />
+<section id="ctf-1-unlocking-a-bitcoin-transaction-100">
+<h3>CTF 1. Unlocking a bitcoin transaction — 100<a class="headerlink" href="#ctf-1-unlocking-a-bitcoin-transaction-100" title="Link to this heading">#</a></h3>
+<p>We are given the Bitcoin testnet transaction hash:
+<a class="reference external" href="https://blockstream.info/testnet/tx/23c9470a2269cf6430569afdd3e2e8f35f633b6cdbc34107ddbab932c4146ba3">23c9470a2269cf6430569afdd3e2e8f35f633b6cdbc34107ddbab932c4146ba3</a></p>
+<ul class="simple">
+<li><p>Goal: We want to know <strong>how to spent this tBTC output</strong>.</p></li>
+<li><p>Hint: The unlocking script (scriptSig) can be find in 8 Byte of HEX and can be converted to Cleartext ASCII.</p></li>
+</ul>
+<p>Hints:</p>
+<ol class="arabic simple">
+<li><p>Find the SCRIPTPUBKEY that locks the output value</p></li>
+<li><p>Understand how the input must look like, to unlock this locking script.</p></li>
+<li><p>Find a way and search for hints to unlock the transaction with the (scriptSig)</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Helpful functions for the challenge.</span>
+<span class="sd"># Alternative https://www.rapidtables.com/convert/number/hex-to-ascii.html</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">binascii</span>
+
+<span class="n">hex_string</span> <span class="o">=</span> <span class="s2">&quot;68656C6C6F776F726C64&quot;</span>
+<span class="n">decoded_string</span> <span class="o">=</span> <span class="n">binascii</span><span class="o">.</span><span class="n">unhexlify</span><span class="p">(</span><span class="n">hex_string</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">decoded_string</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>helloworld
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="ctf-2-dark-net-money-200">
+<h3>CTF 2. Dark Net Money — 200<a class="headerlink" href="#ctf-2-dark-net-money-200" title="Link to this heading">#</a></h3>
+<p>You are given the following mnemonic phrase:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">play</span> <span class="n">fever</span> <span class="n">bullet</span> <span class="n">unlock</span> <span class="n">error</span> <span class="n">palm</span> <span class="n">insect</span> <span class="n">pottery</span> <span class="n">tower</span> <span class="n">torch</span> <span class="n">memory</span> <span class="n">liquid</span>
+</pre></div>
+</div>
+<p>Your task is to find how much tBTC this wallet holds unspent.</p>
+<p><strong>Hint</strong>: The correct derivation path follows the classic BIP44 scheme. You need to find the receiving address of the first account at a specific index.</p>
+<p>Use the mnemonic phrase on a well-known BIP39 tool.</p>
+<p>This could be helpful:</p>
+<ol class="arabic simple">
+<li><p>You need to select Bitcoin Testnet as the coin type.</p></li>
+<li><p>The derivation path is m/44’/1’/0’/0/137. <a class="reference external" href="https://learnmeabitcoin.com/technical/keys/hd-wallets/derivation-paths/#:~:text=A%20derivation%20path%20provides%20the,more%20children%2C%20and%20so%20on.">Documentation</a>.</p></li>
+</ol>
+<p>For the developers:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">mnemonic</span> <span class="kn">import</span> <span class="n">Mnemonic</span>
+<span class="kn">from</span> <span class="nn">bip_utils</span> <span class="kn">import</span> <span class="n">Bip39SeedGenerator</span><span class="p">,</span> <span class="n">Bip44</span><span class="p">,</span> <span class="n">Bip44Coins</span><span class="p">,</span> <span class="n">Bip44Changes</span>
+</pre></div>
+</div>
+<p>Alternatively for the tool users:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://iancoleman.io/bip39/">Mnemonic Code Converter</a>.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="ctf-3-ecdsa-nonce-reuse-200">
+<h3>CTF 3. ECDSA Nonce Reuse - 200<a class="headerlink" href="#ctf-3-ecdsa-nonce-reuse-200" title="Link to this heading">#</a></h3>
+<p>In this challenge, you are given two ECDSA signatures that have reused the same nonce. Your task is to recover the private key used to generate these signatures. This is a classic cryptographic vulnerability that occurs when the same nonce is used in multiple ECDSA signatures.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">r</span><span class="p">:</span> <span class="mh">0x5d66e837a35ddc34be6fb126a3ec37153ff4767ff63cbfbbb32c04a795680491</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">s1</span><span class="p">:</span> <span class="mh">0x1a53499a4aafb33d59ed9a4c5fcc92c5850dcb23d208de40a909357f6fa2c12c</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">message1</span><span class="p">:</span> <span class="s2">&quot;what up defcon&quot;</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">s2</span><span class="p">:</span> <span class="mh">0xd67006bc8b7375e236e11154d576eed0fc8539c3bba566f696e9a5340bb92bee</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">message2</span><span class="p">:</span> <span class="s2">&quot;uh oh this isn&#39;t good&quot;</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="mh">0xfffffffffffffffffffffffffffffffebaaedce6af48a03bbfd25e8cd0364141</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>s1 and s2 are the signature parameters.</p></li>
+<li><p>h1 and h2 are the message digests.</p></li>
+<li><p>r is the same nonce for both signatures due to nonce reuse.</p></li>
+<li><p>n is the order of the elliptic curve group.</p></li>
+</ul>
+<p>Task:</p>
+<ul class="simple">
+<li><p>Use the Python script for performing a ECDSA Nonce Reuse and recover the private key using the provided information and hints.</p></li>
+</ul>
+<p>Once the private key is recovered, we as a attacker can use it to sign new transactions, effectively allowing them to transfer Bitcoin from the compromised wallet to our own addresses. This can lead to unauthorized spending of the victim’s Bitcoin.</p>
+<p>Hint:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\( d_A = \left( \frac{s_2 \cdot h_1 - s_1 \cdot h_2}{r \cdot (s_1 - s_2)} \right) \mod n \)</span>. With this equation an attacker can obtain two different ECDSA signatures that reused the same nonce, they can use this equation to recover the private key <span class="math notranslate nohighlight">\( d_A \)</span>. This allows the attacker to potentially forge signatures or decrypt messages that were intended to be secure.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">hashlib</span> <span class="kn">import</span> <span class="n">sha256</span>
+<span class="kn">from</span> <span class="nn">ecdsa</span> <span class="kn">import</span> <span class="n">SECP256k1</span><span class="p">,</span> <span class="n">SigningKey</span>
+<span class="kn">from</span> <span class="nn">ecdsa.util</span> <span class="kn">import</span> <span class="n">sigdecode_string</span>
+<span class="kn">from</span> <span class="nn">ecdsa.numbertheory</span> <span class="kn">import</span> <span class="n">inverse_mod</span>
+
+<span class="k">def</span> <span class="nf">hash_message</span><span class="p">(</span><span class="n">message</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Hash the message using SHA-256.&quot;&quot;&quot;</span>
+    <span class="n">message</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{0:b}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">message</span><span class="p">))</span> <span class="o">==</span> <span class="mi">255</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;Expected binary length of 255, but got </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{0:b}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">message</span><span class="p">))</span><span class="si">}</span><span class="s2">&quot;</span> <span class="c1"># Helpful assertion</span>
+    <span class="k">return</span> <span class="kc">None</span>
+
+<span class="k">def</span> <span class="nf">recover_private_key</span><span class="p">(</span><span class="n">h1</span><span class="p">,</span> <span class="n">h2</span><span class="p">,</span> <span class="n">s1</span><span class="p">,</span> <span class="n">s2</span><span class="p">,</span> <span class="n">r1</span><span class="p">,</span> <span class="n">r2</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Recover the private key via nonce reuse.</span>
+
+<span class="sd">    Recover the private key from two different signatures</span>
+<span class="sd">    that use the same random nonce `k` during signature</span>
+<span class="sd">    generation. Note that if the same `k` is used in two</span>
+<span class="sd">    signatures, this implies that the secp256k1 32-byte</span>
+<span class="sd">    signature parameter `r` is identical.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">        h1: int</span>
+<span class="sd">            The 32-byte message digest of the message `m1`.</span>
+<span class="sd">        h2: int</span>
+<span class="sd">            The 32-byte message digest of the message `m2`.</span>
+<span class="sd">        s1: int</span>
+<span class="sd">            The secp256k1 32-byte signature parameter `s1`.</span>
+<span class="sd">        s2: int</span>
+<span class="sd">            The secp256k1 32-byte signature parameter `s2`.</span>
+<span class="sd">        r1: int</span>
+<span class="sd">            The secp256k1 32-byte signature parameter `r1`.</span>
+<span class="sd">        r2: int</span>
+<span class="sd">            The secp256k1 32-byte signature parameter `r2`.</span>
+<span class="sd">        n:  int</span>
+<span class="sd">            The 32-byte integer order of G (part of the public key).</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">        pk: int</span>
+<span class="sd">            Return a 32-byte private key.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">assert</span> <span class="n">r1</span> <span class="o">==</span> <span class="n">r2</span><span class="p">,</span> <span class="s2">&quot;No ECDSA nonce reuse detected.&quot;</span>
+    <span class="k">return</span> <span class="kc">None</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="c1"># Provided values</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="mh">0x5d66e837a35ddc34be6fb126a3ec37153ff4767ff63cbfbbb32c04a795680491</span>
+    <span class="n">signature1</span> <span class="o">=</span> <span class="mh">0x1a53499a4aafb33d59ed9a4c5fcc92c5850dcb23d208de40a909357f6fa2c12c</span>
+    <span class="n">signature2</span> <span class="o">=</span> <span class="mh">0xd67006bc8b7375e236e11154d576eed0fc8539c3bba566f696e9a5340bb92bee</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="mh">0xfffffffffffffffffffffffffffffffebaaedce6af48a03bbfd25e8cd0364141</span>
+
+    <span class="c1"># Messages</span>
+    <span class="n">message1</span> <span class="o">=</span> <span class="s2">&quot;what up defcon&quot;</span>
+    <span class="n">message2</span> <span class="o">=</span> <span class="s2">&quot;uh oh this isn&#39;t good&quot;</span>
+
+    <span class="c1"># Step 1: Hash the messages</span>
+    <span class="n">z1</span> <span class="o">=</span> <span class="n">hash_message</span><span class="p">(</span><span class="n">message1</span><span class="p">)</span>
+    <span class="n">z2</span> <span class="o">=</span> <span class="n">hash_message</span><span class="p">(</span><span class="n">message2</span><span class="p">)</span>
+
+    <span class="c1"># Step 2: Solve for the private key</span>
+    <span class="n">recovered_private_key</span> <span class="o">=</span> <span class="n">recover_private_key</span><span class="p">(</span><span class="n">z1</span><span class="p">,</span> <span class="n">z2</span><span class="p">,</span> <span class="n">signature1</span><span class="p">,</span> <span class="n">signature2</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Recovered private key: </span><span class="si">{</span><span class="n">recovered_private_key</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">10</span>
+    <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{0:b}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">message</span><span class="p">))</span> <span class="o">==</span> <span class="mi">255</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;Expected binary length of 255, but got </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{0:b}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">message</span><span class="p">))</span><span class="si">}</span><span class="s2">&quot;</span> <span class="c1"># Helpful assertion</span>
+                                                                                               <span class="o">^</span>
+<span class="ne">SyntaxError</span>: f-string: unmatched &#39;(&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -454,6 +725,26 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#requirements">Requirements</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ctf-1-unlocking-a-bitcoin-transaction-100">CTF 1. Unlocking a bitcoin transaction — 100</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ctf-2-dark-net-money-200">CTF 2. Dark Net Money — 200</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ctf-3-ecdsa-nonce-reuse-200">CTF 3. ECDSA Nonce Reuse - 200</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
