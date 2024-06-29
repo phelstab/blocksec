@@ -156,6 +156,21 @@
 	}
 }
 ```
+1.	**Why is it significant for a single entity to control more than 50% of the network’s hash rate?**
+
+_Controlling more than 50% of the network’s hash rate means that a single entity can consistently generate the longest blockchain, effectively allowing them to override the consensus rules. This control enables them to double-spend coins, prevent transactions from being confirmed, and invalidate the blocks mined by other nodes. It undermines the decentralized nature of the blockchain, leading to potential centralization and loss of trust._
+2.	**What did you observe about the block generation process once the attacker node started mining?**
+
+_Once the attacker node starts mining, it generates blocks more frequently than the rest of the network combined. This results in the attacker’s blocks being accepted into the blockchain while the blocks mined by the honest nodes are often orphaned or rejected, leading to a disproportionate increase in the attacker’s block reward balance._
+
+3. **How does the attacker’s ability to create the longest chain impact the other nodes’ blocks?**
+
+_The attacker’s ability to create the longest chain causes the blockchain network to recognize their chain as the valid one. Consequently, blocks mined by other nodes are discarded and become stale blocks. This discourages honest miners and can lead to loss of mining rewards and increased forking._ 
+
+4. **What are the potential real-world consequences of a successful 51% attack on a popular cryptocurrency?** 
+
+_Real-world consequences include double-spending attacks where the attacker spends coins on the main chain and then invalidates the transaction by creating a longer chain without it. This erodes trust in the cryptocurrency, leading to potential loss of value, decreased user confidence, and reduced network security. It can also lead to exchanges halting trades, negatively impacting liquidity and adoption._
+
 
 ## Task 2: Partitioning Attack
 
@@ -415,6 +430,21 @@
 	}
 }
 ```
+1. **Why are forks and competing chains problematic for blockchain security?**
+
+_Forks and competing chains create uncertainty about the true state of the blockchain. They can lead to double-spending as transactions may be accepted in one chain and invalidated in another. This weakens the trust in the immutability and finality of transactions, critical aspects of blockchain security. It also wastes computational resources and can lead to network instability._
+
+2. **What were the effects on the blockchain within each partition during the attack?**
+
+_Each partition of the network starts to operate independently, creating its own separate chain of blocks. Transactions and blocks generated within one partition are not recognized by the other, leading to inconsistencies and a lack of consensus across the entire network. This results in multiple versions of the blockchain coexisting, with no single authoritative version._
+
+3. **What vulnerabilities in the blockchain protocol does a partitioning attack exploit?**
+
+_Partitioning attacks exploit the reliance of blockchain on network connectivity and consensus. They take advantage of the lack of coordination and communication between network segments to create isolated groups that can’t validate each other’s transactions and blocks. This fragmentation undermines the decentralized consensus mechanism._
+
+4. **What would happen if the smaller group is now reconnected to the network?**
+
+_Upon reconnection, the smaller group’s blocks are typically rejected if they are not part of the longest chain. The nodes in the smaller partition will switch to the longer chain of the larger partition, causing all the blocks mined in the smaller partition to become stale. This leads to a loss of mining rewards and transaction validations within the smaller partition, causing potential disruptions and inconsistencies._
 
 ## Task 3: DoS-Attack
 
@@ -577,3 +607,19 @@
 	}
 }
 ```
+
+1. **What impact did the DoS attack have on the victim node’s ability to process and broadcast blocks?** 
+
+_The DoS attack overwhelms the victim node with excessive traffic, significantly impairing its ability to process new blocks and broadcast them to the network. The node becomes congested, leading to delays and dropped packets, which prevent it from effectively participating in the network consensus._
+
+2. **How did the attack affect the overall network performance and block propagation?** 
+
+_The attack causes a bottleneck at the victim node, leading to slower block propagation times across the network. Other nodes may not receive blocks from the victim in a timely manner, resulting in increased stale blocks and potential forks. This degradation in network performance reduces overall efficiency and can disrupt the regular functioning of the blockchain._
+
+3. **Why do nodes continue to mine valid blocks during a DoS attack, yet fail to broadcast them?** 
+
+_Nodes continue to mine valid blocks because the mining process itself is unaffected by the network congestion. However, the excessive traffic caused by the DoS attack clogs the network buffer and bandwidth, preventing the nodes from broadcasting their mined blocks to the rest of the network. As a result, these blocks do not get included in the blockchain, and the mining efforts go unrewarded._
+
+4. **Also pay close attention to the balance of the victim. What are you observing?**
+
+_Interestingly, the balance of the victim node varies due to the DoS attack. While the inability to broadcast and validate most of its mined blocks, some blocks are still accepted by the network. However, some rewards may become nullified later on, as the blocks are replaced by oder nodes' blocks due to the delayed or dropped block propagation. This results in an inconsistent balance for the victim node, reflecting the impact of the DoS attack on its mining rewards and transaction processing capabilities._
