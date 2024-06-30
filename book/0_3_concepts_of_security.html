@@ -485,8 +485,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bitcoin-improvement-proposals-bips">3.8. Bitcoin Improvement Proposals (BIPs)</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bip44-multi-account-hierarchy-for-deterministic-wallets">3.8.1. BIP44: Multi-Account Hierarchy for Deterministic Wallets</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interaction-of-private-key-public-key-and-mnemonic-phrase">3.8.2. Interaction of Private Key, Public Key, and Mnemonic Phrase</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">3.8.3. Interaction of Private Key, Public Key, and Mnemonic Phrase</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example">3.8.4. Example</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example">3.8.3. Example</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#consensus-algorithm">3.9. Consensus Algorithm</a><ul class="nav section-nav flex-column">
@@ -1204,38 +1203,8 @@ In ECDSA, if the same nonce (k) is used to sign two different messages, it becom
 </li>
 </ul>
 </section>
-<section id="id3">
-<h3><span class="section-number">3.8.3. </span>Interaction of Private Key, Public Key, and Mnemonic Phrase<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p>BIP39 introduced mnemonic phrases to generate a seed from which private keys are derived</p>
-<ul>
-<li><p>typically consist of 12 to 24 words from standardized wordlist</p>
-<ul>
-<li><p>each word corresponds to a unique combination of binary digits</p></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p><strong>Private Key</strong></p>
-<ul>
-<li><p>master private key is derived from the seed</p>
-<ul>
-<li><p>tree of keys (both private and public) can then be generated from master</p></li>
-<li><p>each private key corresponds to a public key through elliptic curve cryptography</p></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p><strong>Public Key</strong></p>
-<ul>
-<li><p>derived from the private key</p></li>
-<li><p>hashed (SHA-256 and RIPEMD-160) and encoded (Base58 for Bitcoin) to create the wallet address</p></li>
-</ul>
-</li>
-</ul>
-</section>
 <section id="example">
-<h3><span class="section-number">3.8.4. </span>Example<a class="headerlink" href="#example" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">3.8.3. </span>Example<a class="headerlink" href="#example" title="Link to this heading">#</a></h3>
 <ol class="arabic simple">
 <li><p>Mnemonic Phrase Generation (BIP39)</p>
 <ul class="simple">
@@ -1493,8 +1462,7 @@ Bitcoin Improvement Proposals were introduced by a very interesting guy called A
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bitcoin-improvement-proposals-bips">3.8. Bitcoin Improvement Proposals (BIPs)</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bip44-multi-account-hierarchy-for-deterministic-wallets">3.8.1. BIP44: Multi-Account Hierarchy for Deterministic Wallets</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interaction-of-private-key-public-key-and-mnemonic-phrase">3.8.2. Interaction of Private Key, Public Key, and Mnemonic Phrase</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">3.8.3. Interaction of Private Key, Public Key, and Mnemonic Phrase</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example">3.8.4. Example</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example">3.8.3. Example</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#consensus-algorithm">3.9. Consensus Algorithm</a><ul class="nav section-nav flex-column">
