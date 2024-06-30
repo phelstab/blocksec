@@ -57,6 +57,8 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'book/0_3_concepts_of_security';</script>
     <link rel="canonical" href="https://phelstab.github.io/blocksec/book/0_3_concepts_of_security.html" />
     <link rel="icon" href="../_static/fav.ico"/>
@@ -460,28 +462,38 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#merkle-trees">3.3. 3.1.3 Merkle Trees</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transaction-validation">3.4. Transaction Validation</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-does-a-merkle-tree-form-to-blocks-in-a-blockchain">3.4.1. How does a Merkle Tree form to blocks in a blockchain?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-do-we-need-this-in-blockchains">3.4.2. Why do we need this in blockchains?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-do-we-need-merkle-trees-in-blockchains">3.4.2. Why do we need Merkle Trees in blockchains?</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#proof-of-membership-and-nonmembership">3.4.3. Proof of Membership and Nonmembership</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#utxo">3.5. 3.1.5 UTXO</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#digital-signatures">3.6. 3.1.5 Digital Signatures</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#elliptic-curve-digital-signature-algorithm-ecdsa">3.6.1. Elliptic Curve Digital Signature Algorithm (ECDSA)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#secp256k1">3.6.2. Secp256k1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#identities-and-digital-signatures">3.5. 3.1.5 Identities and Digital Signatures</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#identities">3.5.1. Identities</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#digital-signatures">3.5.2. Digital Signatures</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unforgeability">3.5.3. Unforgeability</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#digital-signatures-in-bitcoin">3.5.4. Digital Signatures in Bitcoin</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#elliptic-curve-digital-signature-algorithm-ecdsa">3.5.5. Elliptic Curve Digital Signature Algorithm (ECDSA)</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#identities-and-wallet-addresses">3.7. 3.1.6 Identities and Wallet Addresses</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#identities">3.7.1. Identities</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bitcoin-improvement-proposals-bips">3.7.2. Bitcoin Improvement Proposals (BIPs)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bip44-multi-account-hierarchy-for-deterministic-wallets">3.7.3. BIP44: Multi-Account Hierarchy for Deterministic Wallets</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interaction-of-private-key-public-key-and-mnemonic-phrase">3.7.4. Interaction of Private Key, Public Key, and Mnemonic Phrase</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example">3.7.5. Example</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bitcoin-ecdsa-signing-process">3.6. Bitcoin ECDSA Signing Process</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#components">3.6.1. Components:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#formula-explanation">3.6.2. Formula Explanation:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#steps-in-the-ecdsa-signing-process">3.6.3. Steps in the ECDSA Signing Process:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#purpose-of-the-formula">3.6.4. Purpose of the Formula:</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#consensus-algorithm">3.8. 3.1.7 Consensus Algorithm</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#which-transactions-are-the-valid-ones-mining">3.8.1. Which transactions are the valid ones? (Mining)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#verification">3.7. Verification:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bitcoin-improvement-proposals-bips">3.8. 3.1.6 Bitcoin Improvement Proposals (BIPs)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bip44-multi-account-hierarchy-for-deterministic-wallets">3.8.1. BIP44: Multi-Account Hierarchy for Deterministic Wallets</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interaction-of-private-key-public-key-and-mnemonic-phrase">3.8.2. Interaction of Private Key, Public Key, and Mnemonic Phrase</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">3.8.3. Interaction of Private Key, Public Key, and Mnemonic Phrase</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example">3.8.4. Example</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#consensus-algorithm">3.9. 3.1.7 Consensus Algorithm</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#which-transactions-are-the-valid-ones-mining">3.9.1. Which transactions are the valid ones? (Mining)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#peer-to-peer-electronic-cash-system-syntax">3.10. 3.1.5 Peer-to-Peer Electronic Cash System Syntax</a></li>
 </ul>
             </nav>
         </div>
@@ -497,7 +509,7 @@ document.write(`
 <h1><span class="section-number">3. </span>3. Security Aspects and Technical Fundamentals of Blockchain Technology <!-- (*20 Minuten*) --><a class="headerlink" href="#security-aspects-and-technical-fundamentals-of-blockchain-technology" title="Link to this heading">#</a></h1>
 <p><strong>Core idea of blockchain technology:</strong></p>
 <ul class="simple">
-<li><p>Create a decentralized system</p></li>
+<li><p>Create a decentralized transaction system</p></li>
 <li><p>Enable transactions between parties (agents)</p></li>
 <li><p>Eliminate the need for intermediaries</p></li>
 <li><p>Remove reliance on trusted third parties</p></li>
@@ -558,7 +570,7 @@ document.write(`
 <section id="cryptography">
 <h3><span class="section-number">3.1.2. </span>Cryptography<a class="headerlink" href="#cryptography" title="Link to this heading">#</a></h3>
 <p><strong>Cryptographic Property 1: <em>Collision Resistance</em></strong></p>
-<p><strong>Definition:</strong> A hash function ( H ) is said to be collision resistant if it is infeasible to find two values, ( x ) and ( y ), such that ( x \neq y ), yet ( H(x) = H(y) ).</p>
+<p><strong>Definition:</strong> A hash function <span class="math notranslate nohighlight">\( H \)</span> is said to be collision resistant if it is infeasible to find two values, <span class="math notranslate nohighlight">\( x \)</span> and <span class="math notranslate nohighlight">\( y \)</span>, such that <span class="math notranslate nohighlight">\( x \neq y \)</span>, yet <span class="math notranslate nohighlight">\( H(x) = H(y) \)</span>.</p>
 <p><em>Why we need this?</em></p>
 <ul class="simple">
 <li><p>We need collision resistance to ensure that it is infeasible to find two different inputs that produce the same hash output.</p></li>
@@ -571,7 +583,7 @@ document.write(`
 <li><p>This would undermine the integrity of the blockchain.</p></li>
 </ul>
 <p><strong>Cryptographic Property 2: <em>Hiding</em></strong></p>
-<p><strong>Definition:</strong> A hash function ( H ) is said to be hiding if, when a secret value ( r ) is chosen from a probability distribution that has high min-entropy, then, given ( H(r \parallel x) ), it is infeasible to find ( x ).</p>
+<p><strong>Definition:</strong> A hash function <span class="math notranslate nohighlight">\( H \)</span> is said to be hiding if, when a secret value <span class="math notranslate nohighlight">\( r \)</span> is chosen from a probability distribution that has high min-entropy, then, given <span class="math notranslate nohighlight">\( H(r \parallel x) \)</span>, it is infeasible to find <span class="math notranslate nohighlight">\( x \)</span>.</p>
 <p><em>Why we need this?</em></p>
 <ul class="simple">
 <li><p>We need the hiding property to ensure that given a hash output, it is infeasible to determine the original input.</p></li>
@@ -583,7 +595,7 @@ document.write(`
 <li><p>Maintains the difficulty and security of the mining process.</p></li>
 </ul>
 <p><strong>Cryptographic Property 3: <em>Puzzle Friendliness</em></strong></p>
-<p><strong>Definition:</strong> A hash function ( H ) is said to be puzzle friendly if for every possible ( n )-bit output value ( y ), if ( k ) is chosen from a distribution with high min-entropy, then it is infeasible to find ( x ) such that ( H(k | x) = y ) in time significantly less than ( 2^n ).</p>
+<p><strong>Definition:</strong> A hash function <span class="math notranslate nohighlight">\( H \)</span> is said to be puzzle friendly if for every possible <span class="math notranslate nohighlight">\( n \)</span>-bit output value <span class="math notranslate nohighlight">\( y \)</span>, if <span class="math notranslate nohighlight">\( k \)</span> is chosen from a distribution with high min-entropy, then it is infeasible to find <span class="math notranslate nohighlight">\( x \)</span> such that <span class="math notranslate nohighlight">\( H(k \| x) = y \)</span> in time significantly less than <span class="math notranslate nohighlight">\( 2^n \)</span>.</p>
 <p><em>Why we need this?</em></p>
 <ul class="simple">
 <li><p>Puzzle friendliness ensures that solving the hash function requires a brute-force search.</p></li>
@@ -719,13 +731,7 @@ Data: Omega, Hash: 51ee1c31e1301e451649b629c4cc06f4f29fe48909c73bf009d412a873ccf
 <li><p>Proof of Nonmembership: Proving that a particular transaction does not exist is even more complex and inefficient.</p></li>
 </ul>
 <p>Merkle trees address these inefficiencies by providing a more structured and efficient way to verify data integrity and membership.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># https://en.wikipedia.org/wiki/Merkle%E2%80%93Damg%C3%A5rd_construction</span>
-</pre></div>
-</div>
-</div>
-</div>
+<!-- # https://en.wikipedia.org/wiki/Merkle%E2%80%93Damg%C3%A5rd_construction -->
 </section>
 <section id="merkle-trees">
 <h2><span class="section-number">3.3. </span>3.1.3 Merkle Trees<a class="headerlink" href="#merkle-trees" title="Link to this heading">#</a></h2>
@@ -827,12 +833,12 @@ Expected: 830b7f324af3ff2b2a47cf7cf5ac825fe8d8034294ea8e8f853a4d3fada893fc
 </div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">AssertionError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">7</span><span class="p">],</span> <span class="n">line</span> <span class="mi">12</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="n">line</span> <span class="mi">12</span>
 <span class="g g-Whitespace">      </span><span class="mi">9</span>         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Expected: </span><span class="si">{</span><span class="n">expected</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="g g-Whitespace">     </span><span class="mi">10</span>         <span class="k">assert</span> <span class="n">combined_hash</span> <span class="o">==</span> <span class="n">expected</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;Hash mismatch: </span><span class="si">{</span><span class="n">combined_hash</span><span class="si">}</span><span class="s2"> != </span><span class="si">{</span><span class="n">expected</span><span class="si">}</span><span class="s2">&quot;</span>
 <span class="ne">---&gt; </span><span class="mi">12</span> <span class="n">verify_merkle_tree</span><span class="p">()</span>
 
-<span class="nn">Cell In[7], line 10,</span> in <span class="ni">verify_merkle_tree</span><span class="nt">()</span>
+<span class="nn">Cell In[6], line 10,</span> in <span class="ni">verify_merkle_tree</span><span class="nt">()</span>
 <span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Combined hash: </span><span class="si">{</span><span class="n">combined_hash</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Expected: </span><span class="si">{</span><span class="n">expected</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="ne">---&gt; </span><span class="mi">10</span> <span class="k">assert</span> <span class="n">combined_hash</span> <span class="o">==</span> <span class="n">expected</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;Hash mismatch: </span><span class="si">{</span><span class="n">combined_hash</span><span class="si">}</span><span class="s2"> != </span><span class="si">{</span><span class="n">expected</span><span class="si">}</span><span class="s2">&quot;</span>
@@ -932,16 +938,25 @@ Expected: 830b7f324af3ff2b2a47cf7cf5ac825fe8d8034294ea8e8f853a4d3fada893fc
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Block size: 4292
+Steps taken: 4299
+True
+</pre></div>
+</div>
+</div>
 </div>
 </section>
-<section id="why-do-we-need-this-in-blockchains">
-<h3><span class="section-number">3.4.2. </span>Why do we need this in blockchains?<a class="headerlink" href="#why-do-we-need-this-in-blockchains" title="Link to this heading">#</a></h3>
-<p>To cheaply (cheaply in the sense of computation) verify if a transaction existed in a block, which we can find out by checking if the merkle root is correct.</p>
-<p>To check we only need:</p>
+<section id="why-do-we-need-merkle-trees-in-blockchains">
+<h3><span class="section-number">3.4.2. </span>Why do we need Merkle Trees in blockchains?<a class="headerlink" href="#why-do-we-need-merkle-trees-in-blockchains" title="Link to this heading">#</a></h3>
+<div class="alert alert-info"><b>INFO</b><br />
+To cheaply (cheaply in the sense of computation) verify if a transaction existed/not existed in a block, which we can find out by checking if the merkle root is correct. 
+</div>
+<p>To check a transaction only need:</p>
 <ol class="arabic simple">
 <li><p>The merkle root</p></li>
-<li><p>The hash of the transaction that I want to check.</p></li>
-<li></li>
+<li><p>The hash of the transaction that you want to check.</p></li>
+<li><p>Hashes of the sibling nodes along the path from the transaction hash to the merkle root</p></li>
 </ol>
 </section>
 <section id="proof-of-membership-and-nonmembership">
@@ -952,38 +967,10 @@ Expected: 830b7f324af3ff2b2a47cf7cf5ac825fe8d8034294ea8e8f853a4d3fada893fc
 </ul>
 </section>
 </section>
-<section id="utxo">
-<h2><span class="section-number">3.5. </span>3.1.5 UTXO<a class="headerlink" href="#utxo" title="Link to this heading">#</a></h2>
-<p>Zielt auf CTF aufgabe 1 ab.</p>
-<ol class="arabic simple">
-<li><p>Wie hat man zugriff auf unspent transactions</p></li>
-<li><p>Wie werden transaktionen signiert, validiert bevor sie übertragen werden.</p></li>
-<li><p>Wie ließt man transaktionen wallet adressen etc in einem blockexplorer.
-<a class="reference external" href="https://blockstream.info/testnet/tx/23c9470a2269cf6430569afdd3e2e8f35f633b6cdbc34107ddbab932c4146ba3">https://blockstream.info/testnet/tx/23c9470a2269cf6430569afdd3e2e8f35f633b6cdbc34107ddbab932c4146ba3</a></p></li>
-<li><p>Bitcoin script erklären kurz paar codes</p></li>
-</ol>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Bitcoin Script</span>
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="digital-signatures">
-<h2><span class="section-number">3.6. </span>3.1.5 Digital Signatures<a class="headerlink" href="#digital-signatures" title="Link to this heading">#</a></h2>
-<section id="elliptic-curve-digital-signature-algorithm-ecdsa">
-<h3><span class="section-number">3.6.1. </span>Elliptic Curve Digital Signature Algorithm (ECDSA)<a class="headerlink" href="#elliptic-curve-digital-signature-algorithm-ecdsa" title="Link to this heading">#</a></h3>
-<p>Zielt auf CTF aufgabe 3 Nonce reuse ab. Grob erklären.</p>
-</section>
-<section id="secp256k1">
-<h3><span class="section-number">3.6.2. </span>Secp256k1<a class="headerlink" href="#secp256k1" title="Link to this heading">#</a></h3>
-</section>
-</section>
-<section id="identities-and-wallet-addresses">
-<h2><span class="section-number">3.7. </span>3.1.6 Identities and Wallet Addresses<a class="headerlink" href="#identities-and-wallet-addresses" title="Link to this heading">#</a></h2>
+<section id="identities-and-digital-signatures">
+<h2><span class="section-number">3.5. </span>3.1.5 Identities and Digital Signatures<a class="headerlink" href="#identities-and-digital-signatures" title="Link to this heading">#</a></h2>
 <section id="identities">
-<h3><span class="section-number">3.7.1. </span>Identities<a class="headerlink" href="#identities" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">3.5.1. </span>Identities<a class="headerlink" href="#identities" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p><strong>Public Key:</strong> cryptographic key used to receive funds</p>
 <ul>
@@ -998,8 +985,169 @@ Expected: 830b7f324af3ff2b2a47cf7cf5ac825fe8d8034294ea8e8f853a4d3fada893fc
 <li><p><strong>Wallet Address:</strong> shorter, user-friendly form of the public key</p></li>
 </ul>
 </section>
+<section id="digital-signatures">
+<h3><span class="section-number">3.5.2. </span>Digital Signatures<a class="headerlink" href="#digital-signatures" title="Link to this heading">#</a></h3>
+<div class="alert alert-info"><b>INFO</b><br />
+Digital signatures are cryptographic mechanisms that provide a digital equivalent to handwritten signatures.
+</div>
+<p><strong>Properties:</strong></p>
+<ul class="simple">
+<li><p><strong>Authenticity:</strong> Only the owner of the private key can create a valid signature.</p></li>
+<li><p><strong>Verification:</strong> Anyone with the corresponding public key can verify the authenticity of the signature.</p></li>
+<li><p><strong>Document Binding:</strong> The signature is tied to a specific document, preventing it from being reused on different documents.</p></li>
+</ul>
+<p><strong>General Digital Signature Scheme:</strong></p>
+<ul class="simple">
+<li><p><strong>generateKeys(keysize)</strong>: Produces a pair of keys—a private key (sk) for signing and a public key (pk) for verification.</p></li>
+<li><p><strong>sign(sk, message)</strong>: Uses the private key to generate a signature for a given message.</p></li>
+<li><p><strong>verify(pk, message, sig)</strong>: Uses the public key to verify if a given signature is valid for the message.</p></li>
+</ul>
+<p><strong>Security Properties:</strong></p>
+<ul class="simple">
+<li><p>Transaction Integrity: Digital signatures ensure that only the owner of a cryptocurrency can authorize transactions, preventing unauthorized spending.</p></li>
+<li><p>Verification: Nodes in the network can verify transactions using the public key, ensuring the authenticity and integrity of transactions.</p></li>
+<li><p>Security: The unforgeability property protects against fraudulent transactions, maintaining the trust and security of the cryptocurrency system.</p></li>
+</ul>
+</section>
+<section id="unforgeability">
+<h3><span class="section-number">3.5.3. </span>Unforgeability<a class="headerlink" href="#unforgeability" title="Link to this heading">#</a></h3>
+<div class="alert alert-info"><b>INFO</b><br />
+An attacker should not be able to forge signatures on messages that were not signed by the legitimate signer.
+</div>
+<ul class="simple">
+<li><p>The unforgeability property is formalized through a game played between a challenger and an adversary. The challenger generates a key pair and gives the public key to the adversary.</p></li>
+</ul>
+<img src="../_static/images/unforge.png">
+<ul class="simple">
+<li><p>In the game, the adversary is allowed to request signatures on messages of their choice from the challenger, who uses the secret key to sign them. This models a real-world scenario where an attacker may see valid signatures on some messages.</p></li>
+<li><p>After seeing some signatures, the adversary picks a message M that they will attempt to forge a signature on. The only restriction is that M must not be a message the adversary previously requested a signature for.</p></li>
+<li><p>The adversary wins the game if they can produce a valid signature on M that verifies under the public key. The signature scheme is considered unforgeable if no adversary can win this game with a non-negligible probability.</p></li>
+</ul>
+<div class="alert alert-info"><b>INFO</b><br />
+For a signature scheme to be secure, it must be computationally infeasible for any adversary to win the unforgeability game, even if they can see signatures on other messages of their choosing.
+</div>
+</section>
+<section id="digital-signatures-in-bitcoin">
+<h3><span class="section-number">3.5.4. </span>Digital Signatures in Bitcoin<a class="headerlink" href="#digital-signatures-in-bitcoin" title="Link to this heading">#</a></h3>
+<p><strong>Bitcoin Transaction Structure:</strong></p>
+<ul class="simple">
+<li><p><strong>scriptSig:</strong> This is part of the transaction input and contains the digital signature and the public key. It proves that the transaction is authorized by the owner of the private key.</p></li>
+<li><p><strong>scriptPubKey</strong>: This is part of the transaction output and specifies the conditions under which the output can be spent. This includes the public key hash, which must match the public key provided in the <em>scriptSig</em>.</p></li>
+</ul>
+<p><strong>Bitcoin Digital Signature Scheme:</strong></p>
+<ul class="simple">
+<li><p><strong>Key Generation (Wallet creation):</strong> A user generates a private key and a corresponding public key.</p></li>
+<li><p><strong>Signing:</strong> When creating a transaction, the user signs the transaction data with their private key. This signature is included in the <em>scriptSig</em>.</p></li>
+<li><p><strong>Verification:</strong> Nodes in the Bitcoin network use the public key (included in the <em>scriptSig</em>) and the conditions specified in the scriptPubKey to verify the signature. If the signature is valid, the transaction is considered authentic and is added to the blockchain.</p></li>
+</ul>
+<img src="../_static/images/transaction.png">
+<!-- https://blockstream.info/testnet/tx/da2d3adf3777c29c8b2b053ce189c29fd17431a643917449bcd047a7bd0cb754?expand -->
+</section>
+<section id="elliptic-curve-digital-signature-algorithm-ecdsa">
+<h3><span class="section-number">3.5.5. </span>Elliptic Curve Digital Signature Algorithm (ECDSA)<a class="headerlink" href="#elliptic-curve-digital-signature-algorithm-ecdsa" title="Link to this heading">#</a></h3>
+<div class="alert alert-info"><b>INFO</b><br />
+A digital signature system allows you to generate your own private/public key pair. You can then use the private key to generate signatures that prove you are the owner of the public key, without having to reveal the private key.
+</div>
+<p>ECDSA allows the owner of a private key to sign a transaction, providing proof that they authorize the Bitcoin transfer. Anyone can then verify this signature using the corresponding public key.</p>
+<img src="../_static/images/ecdsa.png">
+<img src="../_static/images/ecdsa2.png">
+<ul class="simple">
+<li><p>The intersection points look like they are randomly distributed.</p></li>
+<li><p>We intersect with only 1 point (never &gt; 1)</p></li>
+<li><p>Public Key is <span class="math notranslate nohighlight">\(Q=xG\)</span></p>
+<ul>
+<li><p><em>This is also known as a “trapdoor function” because it is easy to compute the public key from the private key, but infeasible to reverse the process.</em></p></li>
+</ul>
+</li>
+<li><p>Private Key is <span class="math notranslate nohighlight">\(x\)</span></p></li>
+<li><p>When you have the private key, you know exactly how many steps you have to take</p></li>
+<li><p>When you only have the Public Key, you only have the end point.</p>
+<ul>
+<li><p><em>So by guessing you have to try every of these steps &amp; you don’t know how many steps to get there.</em></p></li>
+</ul>
+</li>
+</ul>
+<img src="https://blog.cloudflare.com/content/images/image02.gif">
+<div class="alert alert-warning">
+<b>Fun fact:</b><br />
+Satoshi Nakamoto chose the elliptic curve secp256k1 for Bitcoin, which is very rarely used outside of Bitcoin for practical applications (e.g., TLS key exchange uses the more common secp256r1 curve). Conspiracy theorists believe it is due to its mistrust of the U.S. National Security Agency (NSA) and other secret services.
+</div>
+</section>
+</section>
+<section id="bitcoin-ecdsa-signing-process">
+<h2><span class="section-number">3.6. </span>Bitcoin ECDSA Signing Process<a class="headerlink" href="#bitcoin-ecdsa-signing-process" title="Link to this heading">#</a></h2>
+<img src="https://static.learnmeabitcoin.com/diagrams/png/ecdsa-bitcoin.png">
+<section id="components">
+<h3><span class="section-number">3.6.1. </span>Components:<a class="headerlink" href="#components" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong><span class="math notranslate nohighlight">\( k \)</span></strong>: A randomly chosen integer for each signature, known as the ephemeral key.</p></li>
+<li><p><strong><span class="math notranslate nohighlight">\( k^{-1} \)</span></strong>: The modular inverse of <span class="math notranslate nohighlight">\( k \)</span>.</p></li>
+<li><p><strong><span class="math notranslate nohighlight">\( z \)</span></strong>: The hash of the message being signed.</p></li>
+<li><p><strong><span class="math notranslate nohighlight">\( d \)</span></strong>: The private key.</p></li>
+<li><p><strong><span class="math notranslate nohighlight">\( r \)</span></strong>: The x-coordinate of the point <span class="math notranslate nohighlight">\( R \)</span> on the elliptic curve, where <span class="math notranslate nohighlight">\( R = kG \)</span>.</p></li>
+</ul>
+</section>
+<section id="formula-explanation">
+<h3><span class="section-number">3.6.2. </span>Formula Explanation:<a class="headerlink" href="#formula-explanation" title="Link to this heading">#</a></h3>
+<p><span class="math notranslate nohighlight">\( s = k^{-1}(z + d \cdot r) \)</span></p>
+</section>
+<section id="steps-in-the-ecdsa-signing-process">
+<h3><span class="section-number">3.6.3. </span>Steps in the ECDSA Signing Process:<a class="headerlink" href="#steps-in-the-ecdsa-signing-process" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><strong>Generate a Random Integer <span class="math notranslate nohighlight">\( k \)</span></strong>:</p>
+<ul class="simple">
+<li><p>Choose a random integer <span class="math notranslate nohighlight">\( k \)</span> from the interval <span class="math notranslate nohighlight">\([1, n-1]\)</span>, where <span class="math notranslate nohighlight">\( n \)</span> is the order of the elliptic curve.</p></li>
+</ul>
+</li>
+<li><p><strong>Calculate the Point <span class="math notranslate nohighlight">\( R \)</span></strong>:</p>
+<ul class="simple">
+<li><p>Compute the elliptic curve point <span class="math notranslate nohighlight">\( R = kG \)</span>, where <span class="math notranslate nohighlight">\( G \)</span> is the generator point of the curve.</p></li>
+<li><p>Extract the x-coordinate of <span class="math notranslate nohighlight">\( R \)</span>, denoted as <span class="math notranslate nohighlight">\( r \)</span>.</p></li>
+</ul>
+</li>
+<li><p><strong>Calculate <span class="math notranslate nohighlight">\( s \)</span></strong>:</p>
+<ul class="simple">
+<li><p>Compute the modular inverse of <span class="math notranslate nohighlight">\( k \)</span>, denoted as <span class="math notranslate nohighlight">\( k^{-1} \)</span>.</p></li>
+<li><p>Compute the value <span class="math notranslate nohighlight">\( s \)</span> using the formula:
+<span class="math notranslate nohighlight">\( s = k^{-1}(z + d \cdot r) \)</span></p></li>
+</ul>
+</li>
+</ol>
+<img src="https://static.learnmeabitcoin.com/technical/cryptography/elliptic-curve/ecdsa/point-sign.gif">
+</section>
+<section id="purpose-of-the-formula">
+<h3><span class="section-number">3.6.4. </span>Purpose of the Formula:<a class="headerlink" href="#purpose-of-the-formula" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>The formula <span class="math notranslate nohighlight">\( s = k^{-1}(z + d \cdot r) \)</span> is used to generate the second part of the ECDSA signature.</p></li>
+<li><p>The signature consists of the pair <span class="math notranslate nohighlight">\((r, s)\)</span>.</p></li>
+<li><p>This ensures that the signature is unique for each message and private key combination, and it can be verified using the corresponding public key.</p></li>
+</ul>
+</section>
+</section>
+<section id="verification">
+<h2><span class="section-number">3.7. </span>Verification:<a class="headerlink" href="#verification" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>The signature <span class="math notranslate nohighlight">\((r, s)\)</span> can be verified by anyone who has the public key <span class="math notranslate nohighlight">\( Q \)</span> and the message.</p></li>
+<li><p>The verification process involves checking that the signature was indeed generated using the private key corresponding to the public key.</p></li>
+</ul>
+<div class="alert alert-info"><b>INFO NONCE REUSE ATTACK</b><br />
+In ECDSA, if the same nonce (k) is used to sign two different messages, it becomes possible for an attacker to recover the private key.
+<ul class="simple">
+<li><p>Signature 1: (r, s1) for message1</p></li>
+<li><p>Signature 2: (r, s2) for message2</p></li>
+</ul>
+<p>The attacker can recover the private key d using this equation:</p>
+<p><span class="math notranslate nohighlight">\(d = \frac{h_1 \cdot s_2 - h_2 \cdot s_1}{r \cdot (s_1 - s_2)} \mod n\)</span></p>
+<p>Where:</p>
+<ul class="simple">
+<li><p>h1 and h2 are the hashes of message1 and message2</p></li>
+<li><p>n is the order of the elliptic curve group</p></li>
+</ul>
+<p>Once the attacker has the private key d, they can forge signatures and spend the victim’s bitcoins.</p>
+</div>
+</section>
 <section id="bitcoin-improvement-proposals-bips">
-<h3><span class="section-number">3.7.2. </span>Bitcoin Improvement Proposals (BIPs)<a class="headerlink" href="#bitcoin-improvement-proposals-bips" title="Link to this heading">#</a></h3>
+<h2><span class="section-number">3.8. </span>3.1.6 Bitcoin Improvement Proposals (BIPs)<a class="headerlink" href="#bitcoin-improvement-proposals-bips" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>design document providing information to the Bitcoin community, or describing a new feature for Bitcoin or its processes or environment <span id="id2">[<a class="reference internal" href="9_bibliography.html#id21" title="Bips.dev - Read BIPs like a pro. — bips.dev. https://bips.dev. [Accessed 30-06-2024]."><em>bips.dev - Read BIPs like a pro. — bips.dev</em>, n.d.</a>]</span></p></li>
 <li><p>aim to standardize changes and improvements in protocol and software</p></li>
@@ -1011,9 +1159,8 @@ Expected: 830b7f324af3ff2b2a47cf7cf5ac825fe8d8034294ea8e8f853a4d3fada893fc
 </ul>
 </li>
 </ul>
-</section>
 <section id="bip44-multi-account-hierarchy-for-deterministic-wallets">
-<h3><span class="section-number">3.7.3. </span>BIP44: Multi-Account Hierarchy for Deterministic Wallets<a class="headerlink" href="#bip44-multi-account-hierarchy-for-deterministic-wallets" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">3.8.1. </span>BIP44: Multi-Account Hierarchy for Deterministic Wallets<a class="headerlink" href="#bip44-multi-account-hierarchy-for-deterministic-wallets" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>BIP44 defines a derivation path for HD Wallets to manage multiple cryptocurrencies and accounts</p></li>
 <li><p><strong>Derivation path</strong>: <code class="docutils literal notranslate"><span class="pre">m</span> <span class="pre">/</span> <span class="pre">purpose'</span> <span class="pre">/</span> <span class="pre">coin_type'</span> <span class="pre">/</span> <span class="pre">account'</span> <span class="pre">/</span> <span class="pre">change</span> <span class="pre">/</span> <span class="pre">address_index</span></code></p>
@@ -1028,7 +1175,37 @@ Expected: 830b7f324af3ff2b2a47cf7cf5ac825fe8d8034294ea8e8f853a4d3fada893fc
 </ul>
 </section>
 <section id="interaction-of-private-key-public-key-and-mnemonic-phrase">
-<h3><span class="section-number">3.7.4. </span>Interaction of Private Key, Public Key, and Mnemonic Phrase<a class="headerlink" href="#interaction-of-private-key-public-key-and-mnemonic-phrase" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">3.8.2. </span>Interaction of Private Key, Public Key, and Mnemonic Phrase<a class="headerlink" href="#interaction-of-private-key-public-key-and-mnemonic-phrase" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>BIP39 introduced mnemonic phrases to generate a seed from which private keys are derived</p>
+<ul>
+<li><p>typically consist of 12 to 24 words from standardized wordlist</p>
+<ul>
+<li><p>each word corresponds to a unique combination of binary digits</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>Private Key</strong></p>
+<ul>
+<li><p>master private key is derived from the seed</p>
+<ul>
+<li><p>tree of keys (both private and public) can then be generated from master</p></li>
+<li><p>each private key corresponds to a public key through elliptic curve cryptography</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>Public Key</strong></p>
+<ul>
+<li><p>derived from the private key</p></li>
+<li><p>hashed (SHA-256 and RIPEMD-160) and encoded (Base58 for Bitcoin) to create the wallet address</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="id3">
+<h3><span class="section-number">3.8.3. </span>Interaction of Private Key, Public Key, and Mnemonic Phrase<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>BIP39 introduced mnemonic phrases to generate a seed from which private keys are derived</p>
 <ul>
@@ -1058,7 +1235,7 @@ Expected: 830b7f324af3ff2b2a47cf7cf5ac825fe8d8034294ea8e8f853a4d3fada893fc
 </ul>
 </section>
 <section id="example">
-<h3><span class="section-number">3.7.5. </span>Example<a class="headerlink" href="#example" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">3.8.4. </span>Example<a class="headerlink" href="#example" title="Link to this heading">#</a></h3>
 <ol class="arabic simple">
 <li><p>Mnemonic Phrase Generation (BIP39)</p>
 <ul class="simple">
@@ -1084,32 +1261,140 @@ Expected: 830b7f324af3ff2b2a47cf7cf5ac825fe8d8034294ea8e8f853a4d3fada893fc
 </ul>
 </li>
 </ol>
+<div class="alert alert-warning">
+<b>Fun fact (or not so funny maybe):</b><br />
+Bitcoin Improvement Proposals were introduced by a very interesting guy called Amir Taaki which made his living as a professional poker player, served for the YPG military in the fight against Islamic State (ISIS) in Syrian Civil War and resided since 2013 in an anarchist squat in the former anti-G8 HQ building in London, England. {cite}`BitcoinI83:online` {cite}`HowAnarc47:online` {cite}`webarchi80:online` {cite}`webarchi80:online` {cite}`Hidingcu87:online`
+<p><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKauKLc9SprlwfhFLG33MWsBCgc_SKvHFB--E_Zyc8rZMLmzEA" width="200"></div></p>
 </section>
 </section>
 <section id="consensus-algorithm">
-<h2><span class="section-number">3.8. </span>3.1.7 Consensus Algorithm<a class="headerlink" href="#consensus-algorithm" title="Link to this heading">#</a></h2>
-<p>Wie mining zusammenhängt letztlich mit dem blockexplorer:</p>
-<p><a class="reference external" href="https://blockstream.info/testnet/tx/23c9470a2269cf6430569afdd3e2e8f35f633b6cdbc34107ddbab932c4146ba3">https://blockstream.info/testnet/tx/23c9470a2269cf6430569afdd3e2e8f35f633b6cdbc34107ddbab932c4146ba3</a></p>
+<h2><span class="section-number">3.9. </span>3.1.7 Consensus Algorithm<a class="headerlink" href="#consensus-algorithm" title="Link to this heading">#</a></h2>
+<p>Now we know nearly fundamental technical details of blockchains and we now can understand how the consensus algorithm works in practice.</p>
+<div class="alert alert-info"><b>Why Consensus Algorithms are Needed:</b><br />
+<ul class="simple">
+<li><p>Decentralization: To ensure that no single entity controls the entire system.</p></li>
+<li><p>Agreement: To ensure all nodes in the network agree on the state of the blockchain.</p></li>
+<li><p>Security: To protect against malicious actors and ensure the integrity of transactions.</p></li>
+</ul>
+</div>
+<p>What are aspects need to be adressed by the Consensus Algorithm in Blockchains?</p>
+<ul class="simple">
+<li><p>Transaction Validation: Ensuring that all transactions are valid and have not been spent before.</p></li>
+<li><p>Order of Transactions: Agreeing on the order in which transactions are added to the blockchain.</p></li>
+<li><p>Fault Tolerance: Handling nodes that may crash or act maliciously.</p></li>
+<li><p>Network Imperfections: Dealing with issues like latency and network partitions.</p></li>
+<li><p>Randomness and Incentives: Introducing randomness and incentives to encourage honest participation.</p></li>
+<li><p>Global Time: Achieving consensus without relying on a global clock or synchronized timestamps.</p></li>
+</ul>
+<p>What major security restrictions that need to be taken care by the Consensus Algorithms in Blockchains?</p>
+<ul class="simple">
+<li><p>The Byzantine Generals Problem:</p></li>
+<li><p>Summary: Ensuring that all honest nodes can reach consensus even if some nodes in the whole system are malicious.</p></li>
+<li><p>The Fischer-Lynch-Paterson Impossibility Result:</p></li>
+<li><p>Description: In a deterministic consensus algorithm (nodes acting deterministic), it is impossible to guarantee consensus if there is even a single faulty process.</p></li>
+</ul>
+<div class="alert alert-info"><b>How Consensus is Addressed in Bitcoin (simplified):</b><br />
 <ol class="arabic simple">
-<li><p>wenn signiert mit scriptsig + scriptpubkey und dann an peer node übertrage was passiert dann mit validierung der blocks etc.</p></li>
-<li><p>wie werden nonces erraten etc.</p></li>
+<li><p>Broadcasting Transactions: New transactions are broadcast to all nodes in the network.</p></li>
+<li><p>Block Proposal: Each node collects new transactions into a block.</p></li>
+<li><p>Random Node Selection: In each round, a random node is selected to propose the next block.</p></li>
+<li><p>Block Validation: Other nodes accept the block only if all transactions in it are valid.</p></li>
+<li><p>Implicit Consensus: Nodes express their acceptance by including the hash of the accepted block in the next block they create.</p></li>
 </ol>
-<p>Ziel: überleitung wie kann man die untere fragen sozusagen erreichen…</p>
+</div>
+<p><strong>What is mining now exactly?</strong></p>
+<ul class="simple">
+<li><p><strong>Role of Mining:</strong> Mining is the process by which nodes (miners) <em>compete to propose the next block</em>.</p></li>
+<li><p><strong>Proof of Work</strong>: Miners solve (brute force try and error) a computational puzzle to earn the right to propose a block, ensuring randomness and security.</p></li>
+<li><p><strong>Incentives</strong>: Miners are rewarded with newly minted bitcoins (currently 3.125 bitcoins per block and halves approx. every 210,000 blocks == approx. 4 years.) and the paid transaction fees (ranging from few hundred dollars to thousands of dollars per block), incentivizing honest behavior.</p></li>
+</ul>
 <section id="which-transactions-are-the-valid-ones-mining">
-<h3><span class="section-number">3.8.1. </span>Which transactions are the valid ones? (Mining)<a class="headerlink" href="#which-transactions-are-the-valid-ones-mining" title="Link to this heading">#</a></h3>
-<p>Zielt auf CTF aufgabe 1 ab.</p>
-<ol class="arabic simple">
-<li><p>Wie hat man zugriff auf unspent transactions</p></li>
-<li><p>Wie werden transaktionen signiert, validiert bevor sie übertragen werden.</p></li>
-<li><p>Wie ließt man transaktionen wallet adressen etc in einem blockexplorer.
-<a class="reference external" href="https://blockstream.info/testnet/tx/23c9470a2269cf6430569afdd3e2e8f35f633b6cdbc34107ddbab932c4146ba3">https://blockstream.info/testnet/tx/23c9470a2269cf6430569afdd3e2e8f35f633b6cdbc34107ddbab932c4146ba3</a></p></li>
-<li><p>Bitcoin script erklären kurz paar codes</p></li>
-</ol>
+<h3><span class="section-number">3.9.1. </span>Which transactions are the valid ones? (Mining)<a class="headerlink" href="#which-transactions-are-the-valid-ones-mining" title="Link to this heading">#</a></h3>
+<p><strong>Important aspects:</strong></p>
+<ul class="simple">
+<li><p><strong>Block Height as Global Time:</strong> It is used as the global time because it determines the timing of halvings and other protocol events (activation of soft forks etc.).</p></li>
+<li><p><strong>Proposing new blocks with adjusted Difficulty:</strong> Approx. Every 10 minutes a new block with validated transactions is proposed.</p>
+<ul>
+<li><p>Why can this happen with Moores Law?</p>
+<ul>
+<li><p>Block headers contain a field called “difficulty target” which determines how hard it is to find a valid hash for that block. The difficulty target is a 256-bit number, and a valid block hash must be less than this target.</p></li>
+<li><p>The network adjusts the difficulty target every 2016 blocks.</p>
+<ul>
+<li><p>The adjustment is based on the actual time it took to mine the last 2016 blocks compared to the target time of 20160 minutes (2016 blocks * approx. this 10 minutes (read from a UTC unix timestamp in the block headers).</p>
+<ul>
+<li><p>If the actual time is less than 20160 minutes, the difficulty increases (finding more leading zeros in the hash).</p></li>
+<li><p>If the actual time is more than 20160 minutes, the difficulty decreases (finding less leading zeros in the hash).</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>Confirmations:</strong></p>
+<ul>
+<li><p>0 Confirmations: The transaction has been broadcast to the network but has not yet been included in a block. It is still in the mempool and is considered unconfirmed.</p></li>
+<li><p>1 Confirmation: When a transaction is first included in a block and that block is added to the blockchain, the transaction is said to have one confirmation.</p></li>
+<li><p>2 Confirmations: One additional block has been added to the blockchain after the block containing the transaction.</p></li>
+<li><p>… More confirmations mean higher security and lower risk of transaction reversal.</p></li>
+</ul>
+</li>
+</ul>
+<img src="../_static/images/bitcoin_trans.png">
+<div class="alert alert-warning">
+<b>Questions: </b><br/>
+<ul class="simple">
+<li><p>How much fees was paid to the miners for this transaction?</p></li>
+<li><p>How much Bitcoin was sent in this transaction?</p></li>
+<li><p>How many blocks have been added after the block that included this transaction?</p></li>
+</ul>
+</div>
+<!-- https://blockstream.info/testnet/tx/23c9470a2269cf6430569afdd3e2e8f35f633b6cdbc34107ddbab932c4146ba3 -->
+<!-- Wie mining zusammenhängt letztlich mit dem blockexplorer: -->
+</section>
+</section>
+<section id="peer-to-peer-electronic-cash-system-syntax">
+<h2><span class="section-number">3.10. </span>3.1.5 Peer-to-Peer Electronic Cash System Syntax<a class="headerlink" href="#peer-to-peer-electronic-cash-system-syntax" title="Link to this heading">#</a></h2>
+<div class="alert alert-info"><b>Bitcoin Script in Unspent Transaction Output (UTXO)</b><br />
+<p>Bitcoin Script in practice is a stack based programming language similar to Forth, RPL, and PostScript but with a few important differences, most importantly that its <strong>not Turing complete</strong>.</p>
+<p>Main purpose in Bitcoin is to have a flexible language that can provide following:</p>
+<ul class="simple">
+<li><p><strong>Locking and Unlocking Scripts:</strong> Bitcoin transactions use a combination of locking scripts (also known as scriptPubKey) and unlocking scripts (also known as scriptSig). The locking script specifies the conditions that must be met to spend the output, while the unlocking script provides the data to satisfy those conditions.</p></li>
+<li><p><strong>Script Execution:</strong> When a transaction is being validated, the Bitcoin network executes the scripts to ensure that the unlocking script correctly satisfies the locking script’s conditions. If the conditions are met, the transaction is considered valid.</p></li>
+</ul>
+</div>
+<p>Bitcoin Script has a very simple syntax:</p>
+<ul class="simple">
+<li><p>Sequence of Operations: Consists of a sequence of operations.</p></li>
+<li><p>Single Byte Operations: Each operation has a single byte that indicates the operation.</p></li>
+<li><p>OP_CODE: The operation is defined via an OP_CODE.</p>
+<ul>
+<li><p>Some OP_CODEs are followed by data. (e.g. OP_PUSHBYTES_32)</p></li>
+<li><p>Some OP_CODEs have special functions, such as checking equality (e.g. OP_EQUAL Returns 1 if the inputs are exactly equal, 0 otherwise.).</p></li>
+</ul>
+</li>
+</ul>
+<p>Example:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>OP_DUP<span class="w"> </span>OP_HASH256<span class="w"> </span>&lt;PubKeyHash&gt;<span class="w"> </span>OP_EQUALVERIFY<span class="w"> </span>OP_CHECKSIG
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>OP_DUP (0x76): Duplicates the top stack item.</p></li>
+<li><p>OP_HASH256 (0xaa): The input is hashed two times with SHA-256.</p></li>
+<li><p>&lt; PubKeyHash &gt;: The public key hash to which the output is locked. This is the data associated with the operation.</p></li>
+<li><p>OP_EQUALVERIFY (0x88): Verifies that the top two stack items are equal.</p></li>
+<li><p>OP_CHECKSIG (0xac): Checks the signature against the public key. If it is, 1 is returned, 0 otherwise.</p></li>
+</ul>
+<p>There are also very famous IDE’s for this type of language like <a class="reference external" href="https://siminchen.github.io/bitcoinIDE/build/editor.html">bitcoinIDE</a></p>
+<div class="alert alert-warning">
+<b>Important: </b><br/>
+<p>At the end that a transaction is considered valid if the script execution returns 1 (true). This is checked by the network to ensure that the transaction was correctly signed by the owner of the private key, which in other words <strong>gives access to the unspent value of the transaction</strong>.</p>
+</div>
 <!-- ## Security Problems -->
 <!-- (Überleitung) -->
 <!-- Sehr sehr wichtig: -->
 <!-- https://bitcoin.org/en/bitcoin-core/features/validation --></section>
-</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -1185,28 +1470,38 @@ Expected: 830b7f324af3ff2b2a47cf7cf5ac825fe8d8034294ea8e8f853a4d3fada893fc
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#merkle-trees">3.3. 3.1.3 Merkle Trees</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transaction-validation">3.4. Transaction Validation</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-does-a-merkle-tree-form-to-blocks-in-a-blockchain">3.4.1. How does a Merkle Tree form to blocks in a blockchain?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-do-we-need-this-in-blockchains">3.4.2. Why do we need this in blockchains?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-do-we-need-merkle-trees-in-blockchains">3.4.2. Why do we need Merkle Trees in blockchains?</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#proof-of-membership-and-nonmembership">3.4.3. Proof of Membership and Nonmembership</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#utxo">3.5. 3.1.5 UTXO</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#digital-signatures">3.6. 3.1.5 Digital Signatures</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#elliptic-curve-digital-signature-algorithm-ecdsa">3.6.1. Elliptic Curve Digital Signature Algorithm (ECDSA)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#secp256k1">3.6.2. Secp256k1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#identities-and-digital-signatures">3.5. 3.1.5 Identities and Digital Signatures</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#identities">3.5.1. Identities</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#digital-signatures">3.5.2. Digital Signatures</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unforgeability">3.5.3. Unforgeability</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#digital-signatures-in-bitcoin">3.5.4. Digital Signatures in Bitcoin</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#elliptic-curve-digital-signature-algorithm-ecdsa">3.5.5. Elliptic Curve Digital Signature Algorithm (ECDSA)</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#identities-and-wallet-addresses">3.7. 3.1.6 Identities and Wallet Addresses</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#identities">3.7.1. Identities</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bitcoin-improvement-proposals-bips">3.7.2. Bitcoin Improvement Proposals (BIPs)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bip44-multi-account-hierarchy-for-deterministic-wallets">3.7.3. BIP44: Multi-Account Hierarchy for Deterministic Wallets</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interaction-of-private-key-public-key-and-mnemonic-phrase">3.7.4. Interaction of Private Key, Public Key, and Mnemonic Phrase</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example">3.7.5. Example</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bitcoin-ecdsa-signing-process">3.6. Bitcoin ECDSA Signing Process</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#components">3.6.1. Components:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#formula-explanation">3.6.2. Formula Explanation:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#steps-in-the-ecdsa-signing-process">3.6.3. Steps in the ECDSA Signing Process:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#purpose-of-the-formula">3.6.4. Purpose of the Formula:</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#consensus-algorithm">3.8. 3.1.7 Consensus Algorithm</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#which-transactions-are-the-valid-ones-mining">3.8.1. Which transactions are the valid ones? (Mining)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#verification">3.7. Verification:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bitcoin-improvement-proposals-bips">3.8. 3.1.6 Bitcoin Improvement Proposals (BIPs)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bip44-multi-account-hierarchy-for-deterministic-wallets">3.8.1. BIP44: Multi-Account Hierarchy for Deterministic Wallets</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interaction-of-private-key-public-key-and-mnemonic-phrase">3.8.2. Interaction of Private Key, Public Key, and Mnemonic Phrase</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">3.8.3. Interaction of Private Key, Public Key, and Mnemonic Phrase</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example">3.8.4. Example</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#consensus-algorithm">3.9. 3.1.7 Consensus Algorithm</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#which-transactions-are-the-valid-ones-mining">3.9.1. Which transactions are the valid ones? (Mining)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#peer-to-peer-electronic-cash-system-syntax">3.10. 3.1.5 Peer-to-Peer Electronic Cash System Syntax</a></li>
 </ul>
   </nav></div>
 
