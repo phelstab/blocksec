@@ -1,4 +1,4 @@
-# 1. Introduction
+# Introduction
 
 ## Introduction
 Initial concept originally introduced in 2008 by (anonymous) Satoshi Nakamoto to provide a solution to double-spending problem {cite}`bitcoinhistory:online,bitcoin:article`
