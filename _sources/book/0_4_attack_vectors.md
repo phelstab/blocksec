@@ -54,7 +54,7 @@ Overview of Blockchain Attacks {cite}`konig2020risks`
 
 ### Types of Attacks - Network Layer Attacks
   * Attacks exploit vulnerabilities in the peer-to-peer network (the backbone of blockchain technology)
-  * network attacks nothing new, however distributed nature of blockchain networks makes them more complex
+  * network attacks nothing new, however distributed nature of blockchain networks further complicates them
   * attacks aim to disrupt communication, isolate node or manipulate transmissions
   * **Examples**:
     * Eclipse Attack

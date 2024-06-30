@@ -6,7 +6,7 @@
 
 Open the simulator using the following link: [Blockchain Simulator](https://simewu.com/blockchain-simulator/)
 
-For guidance on how to use the simulator, please refer to the cheat sheet
+For guidance on how to use the simulator, please refer to the [cheat sheet](https://phelstab.github.io/blocksec/book/1_exercise_cheatsheet.html)
 
 
 
@@ -18,7 +18,7 @@ For guidance on how to use the simulator, please refer to the cheat sheet
    - Set up a network with at least five nodes
    - Ensure all nodes have equal hash rates except the attacker node
 2. **Set up the Attack**
-   - Designate one node as the attacker with a hash rate higher than the combined hash rate of all other nodes (eg. four honest nodes with a hash rate of 25 hashes/s -> attacker’s hash rate needs to be at least 101 hashes/s)
+   - Designate one node as the attacker with a hash rate higher than the combined hash rate of all other nodes (e.g. four honest nodes with a hash rate of 25 hashes/s -> attacker’s hash rate needs to be at least 101 hashes/s)
 
 3. **Execute the Simulation**
 
@@ -26,10 +26,10 @@ For guidance on how to use the simulator, please refer to the cheat sheet
 
 #### Questions:
 
-- Why is it significant for a single entity to control more than 50% of the network’s hash rate?
-- What did you observe about the block generation process once the attacker node started mining?
-- How does the attacker’s ability to create the longest chain impact the other nodes blocks?
-- What are the potential real-world consequences of a successful 51% attack on a popular cryptocurrency?
+1. Why is it significant for a single entity to control more than 50% of the network’s hash rate? 
+2. What did you observe about the block generation process once the attacker node started mining? 
+3. How does the attacker’s ability to create the longest chain impact the other nodes blocks? 
+4. What are the potential real-world consequences of a successful 51% attack on a popular cryptocurrency?
 
 
 
@@ -38,7 +38,7 @@ For guidance on how to use the simulator, please refer to the cheat sheet
 > A partitioning attack divides the network into separate segments that cannot communicate with each other. This can lead to forks and multiple competing chains, weakening the blockchain’s security.
 
 1. **Configure Network**
-   - Set up a network with at least eight nodes arranged in two groups (e.g. 3 & 5)
+   - Set up a network with at least eight nodes arranged in two groups (e.g., 3 & 5)
    - Ensure there are connections between nodes within each group, but no connections between the groups
 2. **Set up the Attack**
    - Introduce an attacker node between the two groups, effectively partitioning the network
@@ -50,13 +50,10 @@ For guidance on how to use the simulator, please refer to the cheat sheet
 
 #### Questions
 
-Why are forks and competing chains problematic for blockchain security?
-
-What were the effects on the blockchain within each partition during the attack?
-
-What vulnerabilities in the blockchain protocol does a partitioning attack exploit?
-
-What would happen if the smaller group is now reconnected to the network?
+1. Why are forks and competing chains problematic for blockchain security? 
+2. What were the effects on the blockchain within each partition during the attack? 
+3. What vulnerabilities in the blockchain protocol does a partitioning attack exploit?
+4. What would happen if the smaller group is now reconnected to the network?
 
 
 
@@ -79,10 +76,10 @@ What would happen if the smaller group is now reconnected to the network?
 
 
 
-**Questions**
+#### Questions
 
-- What impact did the DoS attack have on the victim node’s ability to process and broadcast blocks?
-- How did the attack affect the overall network performance and block propagation?
-- Why do nodes continue to mine valid blocks during a DoS attack, yet fail to broadcast them?
-- Also pay close attention to the balance of the victim. What are you observing?
+1. What impact did the DoS attack have on the victim node’s ability to process and broadcast blocks? 
+2. How did the attack affect the overall network performance and block propagation? 
+3. Why do nodes continue to mine valid blocks during a DoS attack, yet fail to broadcast them? 
+4. Also pay close attention to the balance of the victim. What are you observing?
 

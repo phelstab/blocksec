@@ -2,7 +2,7 @@
 
 ## Introduction
 Initial concept originally introduced in 2008 by (anonymous) Satoshi Nakamoto to provide a solution to double-spending problem {cite}`bitcoinhistory:online,bitcoin:article`
-* **Defintion**:
+* **Definition**:
   * peer-to-peer, fault-tolerant, decentralized ledger system that records all transactions across a network of computers {cite}`Glaser2017_1000073702:inproceedings`
 
 * **Key Characteristics**:
@@ -27,7 +27,7 @@ Initial concept originally introduced in 2008 by (anonymous) Satoshi Nakamoto to
 * Onwards:
   * Blockchain in industry and governments (IoT, healthcare, finance, etc.) {cite}`9086611:article`
   * Interoperability between blockchains 
-  * Scalability solutions (sharding, sidechains, etc.)
+  * Scalability solutions (sharding, side chains, etc.)
   * Privacy improvements (zk-SNARKs, etc.) {cite}`Nitulescu2020zkSNARKsAG:inproceedings`
 
   

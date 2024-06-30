@@ -414,7 +414,10 @@ document.write(`
 </li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#task-3-dos-attack">Task 3: DoS-Attack</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#task-3-dos-attack">Task 3: DoS-Attack</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Questions</a></li>
+</ul>
+</li>
 </ul>
 
             </nav>
@@ -432,7 +435,7 @@ document.write(`
 <section id="getting-started">
 <h2>Getting started<a class="headerlink" href="#getting-started" title="Link to this heading">#</a></h2>
 <p>Open the simulator using the following link: <a class="reference external" href="https://simewu.com/blockchain-simulator/">Blockchain Simulator</a></p>
-<p>For guidance on how to use the simulator, please refer to the cheat sheet</p>
+<p>For guidance on how to use the simulator, please refer to the <a class="reference external" href="https://phelstab.github.io/blocksec/book/1_exercise_cheatsheet.html">cheat sheet</a></p>
 </section>
 <section id="task-1-51-attack">
 <h2>Task 1: 51% Attack<a class="headerlink" href="#task-1-51-attack" title="Link to this heading">#</a></h2>
@@ -448,19 +451,19 @@ document.write(`
 </li>
 <li><p><strong>Set up the Attack</strong></p>
 <ul class="simple">
-<li><p>Designate one node as the attacker with a hash rate higher than the combined hash rate of all other nodes (eg. four honest nodes with a hash rate of 25 hashes/s -&gt; attacker’s hash rate needs to be at least 101 hashes/s)</p></li>
+<li><p>Designate one node as the attacker with a hash rate higher than the combined hash rate of all other nodes (e.g. four honest nodes with a hash rate of 25 hashes/s -&gt; attacker’s hash rate needs to be at least 101 hashes/s)</p></li>
 </ul>
 </li>
 <li><p><strong>Execute the Simulation</strong></p></li>
 </ol>
 <section id="questions">
 <h3>Questions:<a class="headerlink" href="#questions" title="Link to this heading">#</a></h3>
-<ul class="simple">
+<ol class="arabic simple">
 <li><p>Why is it significant for a single entity to control more than 50% of the network’s hash rate?</p></li>
 <li><p>What did you observe about the block generation process once the attacker node started mining?</p></li>
 <li><p>How does the attacker’s ability to create the longest chain impact the other nodes blocks?</p></li>
 <li><p>What are the potential real-world consequences of a successful 51% attack on a popular cryptocurrency?</p></li>
-</ul>
+</ol>
 </section>
 </section>
 <section id="task-2-partitioning-attack">
@@ -471,7 +474,7 @@ document.write(`
 <ol class="arabic simple">
 <li><p><strong>Configure Network</strong></p>
 <ul class="simple">
-<li><p>Set up a network with at least eight nodes arranged in two groups (e.g. 3 &amp; 5)</p></li>
+<li><p>Set up a network with at least eight nodes arranged in two groups (e.g., 3 &amp; 5)</p></li>
 <li><p>Ensure there are connections between nodes within each group, but no connections between the groups</p></li>
 </ul>
 </li>
@@ -488,10 +491,12 @@ document.write(`
 </ol>
 <section id="id1">
 <h3>Questions<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
-<p>Why are forks and competing chains problematic for blockchain security?</p>
-<p>What were the effects on the blockchain within each partition during the attack?</p>
-<p>What vulnerabilities in the blockchain protocol does a partitioning attack exploit?</p>
-<p>What would happen if the smaller group is now reconnected to the network?</p>
+<ol class="arabic simple">
+<li><p>Why are forks and competing chains problematic for blockchain security?</p></li>
+<li><p>What were the effects on the blockchain within each partition during the attack?</p></li>
+<li><p>What vulnerabilities in the blockchain protocol does a partitioning attack exploit?</p></li>
+<li><p>What would happen if the smaller group is now reconnected to the network?</p></li>
+</ol>
 </section>
 </section>
 </section>
@@ -526,13 +531,15 @@ document.write(`
 </ul>
 </li>
 </ol>
-<p><strong>Questions</strong></p>
-<ul class="simple">
+<section id="id2">
+<h2>Questions<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
 <li><p>What impact did the DoS attack have on the victim node’s ability to process and broadcast blocks?</p></li>
 <li><p>How did the attack affect the overall network performance and block propagation?</p></li>
 <li><p>Why do nodes continue to mine valid blocks during a DoS attack, yet fail to broadcast them?</p></li>
 <li><p>Also pay close attention to the balance of the victim. What are you observing?</p></li>
-</ul>
+</ol>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -611,7 +618,10 @@ document.write(`
 </li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#task-3-dos-attack">Task 3: DoS-Attack</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#task-3-dos-attack">Task 3: DoS-Attack</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Questions</a></li>
+</ul>
+</li>
 </ul>
 
   </nav></div>

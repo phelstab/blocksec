@@ -470,7 +470,14 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#secp256k1">3.6.2. Secp256k1</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#identities-and-wallet-adresses">3.7. 3.1.6 Identities and Wallet Adresses</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#identities-and-wallet-addresses">3.7. 3.1.6 Identities and Wallet Addresses</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#identities">3.7.1. Identities</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bitcoin-improvement-proposals-bips">3.7.2. Bitcoin Improvement Proposals (BIPs)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bip44-multi-account-hierarchy-for-deterministic-wallets">3.7.3. BIP44: Multi-Account Hierarchy for Deterministic Wallets</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interaction-of-private-key-public-key-and-mnemonic-phrase">3.7.4. Interaction of Private Key, Public Key, and Mnemonic Phrase</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example">3.7.5. Example</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#consensus-algorithm">3.8. 3.1.7 Consensus Algorithm</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#which-transactions-are-the-valid-ones-mining">3.8.1. Which transactions are the valid ones? (Mining)</a></li>
 </ul>
@@ -973,18 +980,111 @@ Expected: 830b7f324af3ff2b2a47cf7cf5ac825fe8d8034294ea8e8f853a4d3fada893fc
 <h3><span class="section-number">3.6.2. </span>Secp256k1<a class="headerlink" href="#secp256k1" title="Link to this heading">#</a></h3>
 </section>
 </section>
-<section id="identities-and-wallet-adresses">
-<h2><span class="section-number">3.7. </span>3.1.6 Identities and Wallet Adresses<a class="headerlink" href="#identities-and-wallet-adresses" title="Link to this heading">#</a></h2>
-<p>Im bezug auf Aufgabe mit den BIB44 (### CTF 2. Dark Net Money)</p>
-<p>Bips wichtige geschichte bei BTC <a class="reference external" href="https://bips.dev/1/">https://bips.dev/1/</a>
-wurden von witzigem typ erfunden: <a class="reference external" href="https://ichef.bbci.co.uk/news/976/cpsprodpb/3D81/production/_95354751_amir_taaki_outside.jpg.webp">https://ichef.bbci.co.uk/news/976/cpsprodpb/3D81/production/_95354751_amir_taaki_outside.jpg.webp</a>
-<a class="reference external" href="https://en.wikipedia.org/wiki/Amir_Taaki">https://en.wikipedia.org/wiki/Amir_Taaki</a></p>
-<p>BIP42 ist hinweis auf inflation :D
-<a class="github reference external" href="https://github.com/bitcoin/bips/blob/master/bip-0042/inflation.png">bitcoin/bips</a></p>
+<section id="identities-and-wallet-addresses">
+<h2><span class="section-number">3.7. </span>3.1.6 Identities and Wallet Addresses<a class="headerlink" href="#identities-and-wallet-addresses" title="Link to this heading">#</a></h2>
+<section id="identities">
+<h3><span class="section-number">3.7.1. </span>Identities<a class="headerlink" href="#identities" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Public Key:</strong> cryptographic key used to receive funds</p>
+<ul>
+<li><p>derived from the private key and can be shared publicly</p></li>
+</ul>
+</li>
+<li><p><strong>Private Key:</strong> cryptographic key used to sign transactions</p>
+<ul>
+<li><p>must be kept secret and secure</p></li>
+</ul>
+</li>
+<li><p><strong>Wallet Address:</strong> shorter, user-friendly form of the public key</p></li>
+</ul>
+</section>
+<section id="bitcoin-improvement-proposals-bips">
+<h3><span class="section-number">3.7.2. </span>Bitcoin Improvement Proposals (BIPs)<a class="headerlink" href="#bitcoin-improvement-proposals-bips" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>design document providing information to the Bitcoin community, or describing a new feature for Bitcoin or its processes or environment <span id="id2">[<a class="reference internal" href="9_bibliography.html#id21" title="Bips.dev - Read BIPs like a pro. — bips.dev. https://bips.dev. [Accessed 30-06-2024]."><em>bips.dev - Read BIPs like a pro. — bips.dev</em>, n.d.</a>]</span></p></li>
+<li><p>aim to standardize changes and improvements in protocol and software</p></li>
+<li><p><strong>Examples</strong></p>
+<ul>
+<li><p><strong>BIP32</strong> Hierarchical Deterministic Wallets (HD Wallets)</p></li>
+<li><p><strong>BIP39</strong> Introduced Mnemonic phrases for generating deterministic keys</p></li>
+<li><p><strong>BIP44</strong> Multi-Account Hierarchy for Deterministic Wallets</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="bip44-multi-account-hierarchy-for-deterministic-wallets">
+<h3><span class="section-number">3.7.3. </span>BIP44: Multi-Account Hierarchy for Deterministic Wallets<a class="headerlink" href="#bip44-multi-account-hierarchy-for-deterministic-wallets" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>BIP44 defines a derivation path for HD Wallets to manage multiple cryptocurrencies and accounts</p></li>
+<li><p><strong>Derivation path</strong>: <code class="docutils literal notranslate"><span class="pre">m</span> <span class="pre">/</span> <span class="pre">purpose'</span> <span class="pre">/</span> <span class="pre">coin_type'</span> <span class="pre">/</span> <span class="pre">account'</span> <span class="pre">/</span> <span class="pre">change</span> <span class="pre">/</span> <span class="pre">address_index</span></code></p>
+<ul>
+<li><p><strong>Purpose</strong>: constant set to 44’ (or 0x8000002C) to indicate the following path is according to BIP44</p></li>
+<li><p><strong>Coin Type</strong>: constant representing a particular cryptocurrency (e.g., 0’ for Bitcoin, 1’ for Testnet)</p></li>
+<li><p><strong>Account</strong>: index of the account (0-indexed)</p></li>
+<li><p><strong>Change</strong>: 0 for external addresses (used for receiving funds) and 1 for internal addresses (used for change)</p></li>
+<li><p><strong>Address Index</strong>: index of the address (0-indexed)</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="interaction-of-private-key-public-key-and-mnemonic-phrase">
+<h3><span class="section-number">3.7.4. </span>Interaction of Private Key, Public Key, and Mnemonic Phrase<a class="headerlink" href="#interaction-of-private-key-public-key-and-mnemonic-phrase" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>BIP39 introduced mnemonic phrases to generate a seed from which private keys are derived</p>
+<ul>
+<li><p>typically consist of 12 to 24 words from standardized wordlist</p>
+<ul>
+<li><p>each word corresponds to a unique combination of binary digits</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>Private Key</strong></p>
+<ul>
+<li><p>master private key is derived from the seed</p>
+<ul>
+<li><p>tree of keys (both private and public) can then be generated from master</p></li>
+<li><p>each private key corresponds to a public key through elliptic curve cryptography</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>Public Key</strong></p>
+<ul>
+<li><p>derived from the private key</p></li>
+<li><p>hashed (SHA-256 and RIPEMD-160) and encoded (Base58 for Bitcoin) to create the wallet address</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="example">
+<h3><span class="section-number">3.7.5. </span>Example<a class="headerlink" href="#example" title="Link to this heading">#</a></h3>
 <ol class="arabic simple">
-<li><p>Derivation Path</p></li>
-<li><p>Private Key Pub Key zusammenhang mit Mnemnonic</p></li>
+<li><p>Mnemonic Phrase Generation (BIP39)</p>
+<ul class="simple">
+<li><p>choose 12 to 24 words from <a class="reference external" href="https://github.com/bitcoin/bips/blob/master/bip-0039/english.txt">BIP39 wordlist</a></p></li>
+<li><p>“submit exhaust essence weasel minimum credit avocado unknown rent organ approve wise”</p></li>
+<li><p>creates seed <em>19896a7b301a9c5396e7666d89522094ff8c0bde15b2b5bc3d3457aa1a2137c962b873bb83eec73c226fdd6f7662d7f3c9237c07b9c4dcbbd9e917393bc6f274</em></p></li>
+</ul>
+</li>
+<li><p>Master Key Derivation (BIP32)</p>
+<ul class="simple">
+<li><p>hashing the seed with HMAC-SHA512</p></li>
+<li><p><em>xprv9s21ZrQH143K4PC6Ew4TQvWME3vFqFzJdYYdGQKBxCdH7pbPi7f2sHp4JPeuBXxNMjNyoTtqAxLAv54ZhbEHBoF9u13EzEiJjpfqUimiF5j</em></p></li>
+</ul>
+</li>
+<li><p>BIP 44 Path Derivation</p>
+<ul class="simple">
+<li><p>e.g., m/44’/0’/0’/0/0</p>
+<ul>
+<li><p>extended private key: <em>xprv9xiKcHqg5gajx98dfsxk9yWE4Fc7NwjehvsoCLoZZNv6rFL8RNMJGsoqMZXS1sNYZpXthgtLLELSZdRKjxMdA1ugiTRbfMShthWzNFK9qnz</em></p></li>
+<li><p>extended public key: <em>xpub6Bhg1oNZv493AdD6muVkX7SxcHSbnQTW59oPzjDB7iT5j3fGxufYpg8KCqcH9jh17Csuuc8ievqHrkKPevZmWbKLobtskqoaDdW2cNbEXMf</em></p></li>
+</ul>
+</li>
+</ul>
+</li>
 </ol>
+</section>
 </section>
 <section id="consensus-algorithm">
 <h2><span class="section-number">3.8. </span>3.1.7 Consensus Algorithm<a class="headerlink" href="#consensus-algorithm" title="Link to this heading">#</a></h2>
@@ -1095,7 +1195,14 @@ wurden von witzigem typ erfunden: <a class="reference external" href="https://ic
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#secp256k1">3.6.2. Secp256k1</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#identities-and-wallet-adresses">3.7. 3.1.6 Identities and Wallet Adresses</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#identities-and-wallet-addresses">3.7. 3.1.6 Identities and Wallet Addresses</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#identities">3.7.1. Identities</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bitcoin-improvement-proposals-bips">3.7.2. Bitcoin Improvement Proposals (BIPs)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bip44-multi-account-hierarchy-for-deterministic-wallets">3.7.3. BIP44: Multi-Account Hierarchy for Deterministic Wallets</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interaction-of-private-key-public-key-and-mnemonic-phrase">3.7.4. Interaction of Private Key, Public Key, and Mnemonic Phrase</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example">3.7.5. Example</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#consensus-algorithm">3.8. 3.1.7 Consensus Algorithm</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#which-transactions-are-the-valid-ones-mining">3.8.1. Which transactions are the valid ones? (Mining)</a></li>
 </ul>

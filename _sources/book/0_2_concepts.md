@@ -146,7 +146,7 @@ Types of Consensus Mechanisms:
   * if the hash value is correct, the block is added to the blockchain
 
 ## Proof of Work (PoW) II
-* in decentralized network multiple blocks might be generated simultaneously -> blockchain branches
+* in decentralized network, multiple blocks might be generated simultaneously -> blockchain branches
 * longest chain rule: the chain with the most accumulated proof of work is considered the correct one
 * PoW is energy-intensive and slow -> scalability issues
 * PoW (or mining) is used in Bitcoin, Ethereum (until 2022), and other cryptocurrencies
