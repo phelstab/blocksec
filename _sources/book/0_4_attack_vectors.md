@@ -1,4 +1,4 @@
-# 4. Attack Vectors on Blockchains
+# Attack Vectors on Blockchains
 
 ## Introduction
 * "Blockchain technology can solve all our future problems while ensuring security and privacy"

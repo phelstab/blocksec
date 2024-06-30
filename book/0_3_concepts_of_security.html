@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>3. 3. Security Aspects and Technical Fundamentals of Blockchain Technology &#8212; Blockchain Security</title>
+    <title>3. Security Aspects and Technical Fundamentals of Blockchain Technology &#8212; Blockchain Security</title>
   
   
   
@@ -64,8 +64,8 @@
     <link rel="icon" href="../_static/fav.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="4. 4. Attack Vectors on Blockchains" href="0_4_attack_vectors.html" />
-    <link rel="prev" title="2. 2. Fundamentals and Principles of Blockchains" href="0_2_concepts.html" />
+    <link rel="next" title="4. Attack Vectors on Blockchains" href="0_4_attack_vectors.html" />
+    <link rel="prev" title="2. Fundamentals and Principles of Blockchains" href="0_2_concepts.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -177,10 +177,10 @@
     <div class="bd-toc-item navbar-nav active">
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Lecture</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="0_1_introduction.html">1. 1. Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="0_2_concepts.html">2. 2. Fundamentals and Principles of Blockchains</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">3. 3. Security Aspects and Technical Fundamentals of Blockchain Technology <!-- (*20 Minuten*) --></a></li>
-<li class="toctree-l1"><a class="reference internal" href="0_4_attack_vectors.html">4. 4. Attack Vectors on Blockchains</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0_1_introduction.html">1. Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0_2_concepts.html">2. Fundamentals and Principles of Blockchains</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">3. Security Aspects and Technical Fundamentals of Blockchain Technology <!-- (*20 Minuten*) --></a></li>
+<li class="toctree-l1"><a class="reference internal" href="0_4_attack_vectors.html">4. Attack Vectors on Blockchains</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Exercise</span></p>
 <ul class="nav bd-sidenav">
@@ -443,7 +443,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>3. Security Aspects and Technical Fundamentals of Blockchain Technology <!-- (*20 Minuten*) --></h1>
+    <h1>Security Aspects and Technical Fundamentals of Blockchain Technology <!-- (*20 Minuten*) --></h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -453,20 +453,20 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cryptographic-hash-functions">3.1. 3.1.1 Cryptographic Hash Functions</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cryptographic-hash-functions">3.1. Cryptographic Hash Functions</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#computation">3.1.1. Computation</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cryptography">3.1.2. Cryptography</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hash-pointers">3.2. 3.1.2 Hash Pointers</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#merkle-trees">3.3. 3.1.3 Merkle Trees</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hash-pointers">3.2. Hash Pointers</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#merkle-trees">3.3. Merkle Trees</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transaction-validation">3.4. Transaction Validation</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-does-a-merkle-tree-form-to-blocks-in-a-blockchain">3.4.1. How does a Merkle Tree form to blocks in a blockchain?</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-do-we-need-merkle-trees-in-blockchains">3.4.2. Why do we need Merkle Trees in blockchains?</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#proof-of-membership-and-nonmembership">3.4.3. Proof of Membership and Nonmembership</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#identities-and-digital-signatures">3.5. 3.1.5 Identities and Digital Signatures</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#identities-and-digital-signatures">3.5. Identities and Digital Signatures</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#identities">3.5.1. Identities</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#digital-signatures">3.5.2. Digital Signatures</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unforgeability">3.5.3. Unforgeability</a></li>
@@ -482,18 +482,18 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#verification">3.7. Verification:</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bitcoin-improvement-proposals-bips">3.8. 3.1.6 Bitcoin Improvement Proposals (BIPs)</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bitcoin-improvement-proposals-bips">3.8. Bitcoin Improvement Proposals (BIPs)</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bip44-multi-account-hierarchy-for-deterministic-wallets">3.8.1. BIP44: Multi-Account Hierarchy for Deterministic Wallets</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interaction-of-private-key-public-key-and-mnemonic-phrase">3.8.2. Interaction of Private Key, Public Key, and Mnemonic Phrase</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">3.8.3. Interaction of Private Key, Public Key, and Mnemonic Phrase</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example">3.8.4. Example</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#consensus-algorithm">3.9. 3.1.7 Consensus Algorithm</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#consensus-algorithm">3.9. Consensus Algorithm</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#which-transactions-are-the-valid-ones-mining">3.9.1. Which transactions are the valid ones? (Mining)</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#peer-to-peer-electronic-cash-system-syntax">3.10. 3.1.5 Peer-to-Peer Electronic Cash System Syntax</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#peer-to-peer-electronic-cash-system-syntax">3.10. Peer-to-Peer Electronic Cash System Syntax</a></li>
 </ul>
             </nav>
         </div>
@@ -506,7 +506,7 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="security-aspects-and-technical-fundamentals-of-blockchain-technology">
-<h1><span class="section-number">3. </span>3. Security Aspects and Technical Fundamentals of Blockchain Technology <!-- (*20 Minuten*) --><a class="headerlink" href="#security-aspects-and-technical-fundamentals-of-blockchain-technology" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">3. </span>Security Aspects and Technical Fundamentals of Blockchain Technology <!-- (*20 Minuten*) --><a class="headerlink" href="#security-aspects-and-technical-fundamentals-of-blockchain-technology" title="Link to this heading">#</a></h1>
 <p><strong>Core idea of blockchain technology:</strong></p>
 <ul class="simple">
 <li><p>Create a decentralized transaction system</p></li>
@@ -547,7 +547,7 @@ document.write(`
 <!-- Die Kernidee hinter der Blockchain liegt darin ein System zu schaffen das es ermöglicht komplett Dezentral und somit ohne jegliche Intermediäre und damit auch ohne Treuhänder, Transaktionen zwischen Agenten zu ermöglichen.  -->
 <!-- Dabei übernehmen Mathematische Modelle die auf der Berechenbarkeit und Komplexität Kryptographische verschlüsselungen ermgöglichen, die Aufgaben eines Intermediärs und verteilen diese Aufgaben auf alle Agenten die Teil des Systems sind auch wenn diese eine Aufgabe erhalten die nicht ihrer eigenen Transaktion dient. -->
 <section id="cryptographic-hash-functions">
-<h2><span class="section-number">3.1. </span>3.1.1 Cryptographic Hash Functions<a class="headerlink" href="#cryptographic-hash-functions" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">3.1. </span>Cryptographic Hash Functions<a class="headerlink" href="#cryptographic-hash-functions" title="Link to this heading">#</a></h2>
 <p>Because the concept of blockchains is built on different aspects of computation theory, cryptography, and distributed computing, we will start with the core aspects that form a blockchain and begin with the <em>cryptographic hash functions</em>.</p>
 <p>This is a more uncommon approach in science, but we want to first define what properties our hash functions must hold so they can be used in common blockchains, and we will understand the “Why?” later when everything comes together. <span id="id1">[<a class="reference internal" href="9_bibliography.html#id20" title="Arvind Narayanan, Joseph Bonneau, Edward Felten, Andrew Miller, and Steven Goldfeder. Bitcoin and cryptocurrency technologies: a comprehensive introduction. 2016.">Narayanan <em>et al.</em>, 2016</a>]</span></p>
 <section id="computation">
@@ -614,7 +614,7 @@ document.write(`
 </section>
 </section>
 <section id="hash-pointers">
-<h2><span class="section-number">3.2. </span>3.1.2 Hash Pointers<a class="headerlink" href="#hash-pointers" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">3.2. </span>Hash Pointers<a class="headerlink" href="#hash-pointers" title="Link to this heading">#</a></h2>
 <p>The next thing we need are so called Hash Pointers. Imagine a Linked List</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -734,7 +734,7 @@ Data: Omega, Hash: 51ee1c31e1301e451649b629c4cc06f4f29fe48909c73bf009d412a873ccf
 <!-- # https://en.wikipedia.org/wiki/Merkle%E2%80%93Damg%C3%A5rd_construction -->
 </section>
 <section id="merkle-trees">
-<h2><span class="section-number">3.3. </span>3.1.3 Merkle Trees<a class="headerlink" href="#merkle-trees" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">3.3. </span>Merkle Trees<a class="headerlink" href="#merkle-trees" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Efficient Verification: In a Merkle tree, each leaf node represents a data block (e.g., a transaction), and each non-leaf node represents the hash of its child nodes. The root of the tree is a hash that represents the entire dataset. Verifying the integrity of a single block only requires a logarithmic number of hash computations (log(n)), making it much more efficient than traversing the entire chain.</p></li>
 </ul>
@@ -968,7 +968,7 @@ To cheaply (cheaply in the sense of computation) verify if a transaction existed
 </section>
 </section>
 <section id="identities-and-digital-signatures">
-<h2><span class="section-number">3.5. </span>3.1.5 Identities and Digital Signatures<a class="headerlink" href="#identities-and-digital-signatures" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">3.5. </span>Identities and Digital Signatures<a class="headerlink" href="#identities-and-digital-signatures" title="Link to this heading">#</a></h2>
 <section id="identities">
 <h3><span class="section-number">3.5.1. </span>Identities<a class="headerlink" href="#identities" title="Link to this heading">#</a></h3>
 <ul class="simple">
@@ -1147,7 +1147,7 @@ In ECDSA, if the same nonce (k) is used to sign two different messages, it becom
 </div>
 </section>
 <section id="bitcoin-improvement-proposals-bips">
-<h2><span class="section-number">3.8. </span>3.1.6 Bitcoin Improvement Proposals (BIPs)<a class="headerlink" href="#bitcoin-improvement-proposals-bips" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">3.8. </span>Bitcoin Improvement Proposals (BIPs)<a class="headerlink" href="#bitcoin-improvement-proposals-bips" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>design document providing information to the Bitcoin community, or describing a new feature for Bitcoin or its processes or environment <span id="id2">[<a class="reference internal" href="9_bibliography.html#id21" title="Bips.dev - Read BIPs like a pro. — bips.dev. https://bips.dev. [Accessed 30-06-2024]."><em>bips.dev - Read BIPs like a pro. — bips.dev</em>, n.d.</a>]</span></p></li>
 <li><p>aim to standardize changes and improvements in protocol and software</p></li>
@@ -1268,7 +1268,7 @@ Bitcoin Improvement Proposals were introduced by a very interesting guy called A
 </section>
 </section>
 <section id="consensus-algorithm">
-<h2><span class="section-number">3.9. </span>3.1.7 Consensus Algorithm<a class="headerlink" href="#consensus-algorithm" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">3.9. </span>Consensus Algorithm<a class="headerlink" href="#consensus-algorithm" title="Link to this heading">#</a></h2>
 <p>Now we know nearly fundamental technical details of blockchains and we now can understand how the consensus algorithm works in practice.</p>
 <div class="alert alert-info"><b>Why Consensus Algorithms are Needed:</b><br />
 <ul class="simple">
@@ -1355,7 +1355,7 @@ Bitcoin Improvement Proposals were introduced by a very interesting guy called A
 </section>
 </section>
 <section id="peer-to-peer-electronic-cash-system-syntax">
-<h2><span class="section-number">3.10. </span>3.1.5 Peer-to-Peer Electronic Cash System Syntax<a class="headerlink" href="#peer-to-peer-electronic-cash-system-syntax" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">3.10. </span>Peer-to-Peer Electronic Cash System Syntax<a class="headerlink" href="#peer-to-peer-electronic-cash-system-syntax" title="Link to this heading">#</a></h2>
 <div class="alert alert-info"><b>Bitcoin Script in Unspent Transaction Output (UTXO)</b><br />
 <p>Bitcoin Script in practice is a stack based programming language similar to Forth, RPL, and PostScript but with a few important differences, most importantly that its <strong>not Turing complete</strong>.</p>
 <p>Main purpose in Bitcoin is to have a flexible language that can provide following:</p>
@@ -1433,7 +1433,7 @@ Bitcoin Improvement Proposals were introduced by a very interesting guy called A
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">2. </span>2. Fundamentals and Principles of Blockchains</p>
+        <p class="prev-next-title"><span class="section-number">2. </span>Fundamentals and Principles of Blockchains</p>
       </div>
     </a>
     <a class="right-next"
@@ -1441,7 +1441,7 @@ Bitcoin Improvement Proposals were introduced by a very interesting guy called A
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">4. </span>4. Attack Vectors on Blockchains</p>
+        <p class="prev-next-title"><span class="section-number">4. </span>Attack Vectors on Blockchains</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1461,20 +1461,20 @@ Bitcoin Improvement Proposals were introduced by a very interesting guy called A
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cryptographic-hash-functions">3.1. 3.1.1 Cryptographic Hash Functions</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cryptographic-hash-functions">3.1. Cryptographic Hash Functions</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#computation">3.1.1. Computation</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cryptography">3.1.2. Cryptography</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hash-pointers">3.2. 3.1.2 Hash Pointers</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#merkle-trees">3.3. 3.1.3 Merkle Trees</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hash-pointers">3.2. Hash Pointers</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#merkle-trees">3.3. Merkle Trees</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transaction-validation">3.4. Transaction Validation</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-does-a-merkle-tree-form-to-blocks-in-a-blockchain">3.4.1. How does a Merkle Tree form to blocks in a blockchain?</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-do-we-need-merkle-trees-in-blockchains">3.4.2. Why do we need Merkle Trees in blockchains?</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#proof-of-membership-and-nonmembership">3.4.3. Proof of Membership and Nonmembership</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#identities-and-digital-signatures">3.5. 3.1.5 Identities and Digital Signatures</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#identities-and-digital-signatures">3.5. Identities and Digital Signatures</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#identities">3.5.1. Identities</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#digital-signatures">3.5.2. Digital Signatures</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unforgeability">3.5.3. Unforgeability</a></li>
@@ -1490,18 +1490,18 @@ Bitcoin Improvement Proposals were introduced by a very interesting guy called A
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#verification">3.7. Verification:</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bitcoin-improvement-proposals-bips">3.8. 3.1.6 Bitcoin Improvement Proposals (BIPs)</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bitcoin-improvement-proposals-bips">3.8. Bitcoin Improvement Proposals (BIPs)</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bip44-multi-account-hierarchy-for-deterministic-wallets">3.8.1. BIP44: Multi-Account Hierarchy for Deterministic Wallets</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interaction-of-private-key-public-key-and-mnemonic-phrase">3.8.2. Interaction of Private Key, Public Key, and Mnemonic Phrase</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">3.8.3. Interaction of Private Key, Public Key, and Mnemonic Phrase</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example">3.8.4. Example</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#consensus-algorithm">3.9. 3.1.7 Consensus Algorithm</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#consensus-algorithm">3.9. Consensus Algorithm</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#which-transactions-are-the-valid-ones-mining">3.9.1. Which transactions are the valid ones? (Mining)</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#peer-to-peer-electronic-cash-system-syntax">3.10. 3.1.5 Peer-to-Peer Electronic Cash System Syntax</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#peer-to-peer-electronic-cash-system-syntax">3.10. Peer-to-Peer Electronic Cash System Syntax</a></li>
 </ul>
   </nav></div>
 
