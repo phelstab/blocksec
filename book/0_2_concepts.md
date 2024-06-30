@@ -1,4 +1,4 @@
-# 2. Fundamentals and Principles of Blockchains
+# Fundamentals and Principles of Blockchains
 
 ## Block Structure
 ````{figure} ../_static/images/Blockchain_Block.drawio.png
