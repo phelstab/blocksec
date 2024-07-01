@@ -29,16 +29,19 @@ Initial concept originally introduced in 2008 by (anonymous) Satoshi Nakamoto to
 
 ## Development of Blockchain
 
+THE Blockchain does not exist - there are different types and generations of blockchains
+
 * Blockchain 1.0: Cryptocurrency {cite}`vokerla:inproceedings`
   * permissionless, public blockchains
   * main use case: digital currency
 * Blockchain 2.0: Smart Contracts
-  * lack of scalability and privacy in Blockchain 1.0
-  * Ethereum introduced smart contracts
+  * lack of scalability and privacy in Blockchain 1.0 led to the development of Blockchain 2.0
+  * introduction of smart contracts
+    * simple “if/when…then…” statements that are written into code on a blockchain which are executed when all conditions are met
   * main use case: trade finance, supply chain management, digital ownership
 * Blockchain 3.0: Decentralized Applications (DApps)
   * extension of Blockchain 2.0 allowing for decentralized applications
-  * blockchain-based applications that run on a peer-to-peer network
+    * blockchain-based applications that run on a peer-to-peer network
 * Onwards:
   * Blockchain in industry and governments (IoT, healthcare, finance, etc.) {cite}`9086611:article`
   * Interoperability between blockchains 
