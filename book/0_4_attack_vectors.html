@@ -402,13 +402,12 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">4.1. Introduction</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">4.2. Overview</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-attacks">4.3. Types of Attacks</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-attacks-blockchain-structure-vulnerabilities">4.3.1. Types of Attacks - Blockchain Structure Vulnerabilities</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-attacks-consensus-mechanism-vulnerabilities">4.3.2. Types of Attacks - Consensus Mechanism Vulnerabilities</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-attacks-application-oriented-attacks">4.3.3. Types of Attacks - Application Oriented Attacks</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-attacks-network-layer-attacks">4.3.4. Types of Attacks - Network Layer Attacks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview-of-common-attacks">4.1. Overview of common attacks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-attacks">4.2. Types of Attacks</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#blockchain-structure-vulnerabilities">4.2.1. Blockchain Structure Vulnerabilities</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#consensus-mechanism-vulnerabilities">4.2.2. Consensus Mechanism Vulnerabilities</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#application-oriented-attacks">4.2.3. Application Oriented Attacks</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#network-layer-attacks">4.2.4. Network Layer Attacks</a></li>
 </ul>
 </li>
 </ul>
@@ -424,8 +423,6 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="attack-vectors-on-blockchains">
 <h1><span class="section-number">4. </span>Attack Vectors on Blockchains<a class="headerlink" href="#attack-vectors-on-blockchains" title="Link to this heading">#</a></h1>
-<section id="introduction">
-<h2><span class="section-number">4.1. </span>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>“Blockchain technology can solve all our future problems while ensuring security and privacy”</p>
 <ul>
@@ -446,20 +443,25 @@ document.write(`
 </ul>
 </li>
 </ul>
-</section>
-<section id="overview">
-<h2><span class="section-number">4.2. </span>Overview<a class="headerlink" href="#overview" title="Link to this heading">#</a></h2>
-<figure class="align-default" id="id4">
-<img alt="../_images/Blockchain_Attack_Overview.jpg" src="../_images/Blockchain_Attack_Overview.jpg" />
-<figcaption>
-<p><span class="caption-number">Fig. 4.1 </span><span class="caption-text">Overview of Blockchain Attacks <span id="id3">[<a class="reference internal" href="9_bibliography.html#id2" title="Lukas König, Stefan Unger, Peter Kieseberg, Simon Tjoa, and Josef Ressel Center Blockchains. The risks of the blockchain a review on current vulnerabilities and attacks. J. Internet Serv. Inf. Secur., 10(3):110–127, 2020.">König <em>et al.</em>, 2020</a>]</span></span><a class="headerlink" href="#id4" title="Link to this image">#</a></p>
-</figcaption>
-</figure>
+<section id="overview-of-common-attacks">
+<h2><span class="section-number">4.1. </span>Overview of common attacks<a class="headerlink" href="#overview-of-common-attacks" title="Link to this heading">#</a></h2>
+<img src="../_static/images/Blockchain_Attack_Overview.jpg">
+{cite}`konig2020risks`
 </section>
 <section id="types-of-attacks">
-<h2><span class="section-number">4.3. </span>Types of Attacks<a class="headerlink" href="#types-of-attacks" title="Link to this heading">#</a></h2>
-<section id="types-of-attacks-blockchain-structure-vulnerabilities">
-<h3><span class="section-number">4.3.1. </span>Types of Attacks - Blockchain Structure Vulnerabilities<a class="headerlink" href="#types-of-attacks-blockchain-structure-vulnerabilities" title="Link to this heading">#</a></h3>
+<h2><span class="section-number">4.2. </span>Types of Attacks<a class="headerlink" href="#types-of-attacks" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>König et al. divided attacks into four categories <span id="id3">[<a class="reference internal" href="9_bibliography.html#id2" title="Lukas König, Stefan Unger, Peter Kieseberg, Simon Tjoa, and Josef Ressel Center Blockchains. The risks of the blockchain a review on current vulnerabilities and attacks. J. Internet Serv. Inf. Secur., 10(3):110–127, 2020.">König <em>et al.</em>, 2020</a>]</span></p>
+<ul>
+<li><p>Blockchain Structure Vulnerabilities</p></li>
+<li><p>Consensus Mechanism Vulnerabilities</p></li>
+<li><p>Application Oriented Attacks</p></li>
+<li><p>Network Layer Attacks</p></li>
+</ul>
+</li>
+</ul>
+<section id="blockchain-structure-vulnerabilities">
+<h3><span class="section-number">4.2.1. </span>Blockchain Structure Vulnerabilities<a class="headerlink" href="#blockchain-structure-vulnerabilities" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>one of the most fundamental risks of blockchain technology</p></li>
 <li><p>Primarily target integrity, security and availability of the blockchain foundation</p></li>
@@ -477,8 +479,8 @@ document.write(`
 </li>
 </ul>
 </section>
-<section id="types-of-attacks-consensus-mechanism-vulnerabilities">
-<h3><span class="section-number">4.3.2. </span>Types of Attacks - Consensus Mechanism Vulnerabilities<a class="headerlink" href="#types-of-attacks-consensus-mechanism-vulnerabilities" title="Link to this heading">#</a></h3>
+<section id="consensus-mechanism-vulnerabilities">
+<h3><span class="section-number">4.2.2. </span>Consensus Mechanism Vulnerabilities<a class="headerlink" href="#consensus-mechanism-vulnerabilities" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Attacks exploit flaws in the consensus mechanism of the blockchain</p></li>
 <li><p>target the agreement among participants on the validity of transactions</p></li>
@@ -492,8 +494,8 @@ document.write(`
 </li>
 </ul>
 </section>
-<section id="types-of-attacks-application-oriented-attacks">
-<h3><span class="section-number">4.3.3. </span>Types of Attacks - Application Oriented Attacks<a class="headerlink" href="#types-of-attacks-application-oriented-attacks" title="Link to this heading">#</a></h3>
+<section id="application-oriented-attacks">
+<h3><span class="section-number">4.2.3. </span>Application Oriented Attacks<a class="headerlink" href="#application-oriented-attacks" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Attacks exploit vulnerabilities in the applications built on top of the blockchain</p>
 <ul>
@@ -511,8 +513,8 @@ document.write(`
 </li>
 </ul>
 </section>
-<section id="types-of-attacks-network-layer-attacks">
-<h3><span class="section-number">4.3.4. </span>Types of Attacks - Network Layer Attacks<a class="headerlink" href="#types-of-attacks-network-layer-attacks" title="Link to this heading">#</a></h3>
+<section id="network-layer-attacks">
+<h3><span class="section-number">4.2.4. </span>Network Layer Attacks<a class="headerlink" href="#network-layer-attacks" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Attacks exploit vulnerabilities in the peer-to-peer network (the backbone of blockchain technology)</p></li>
 <li><p>network attacks nothing new, however distributed nature of blockchain networks further complicates them</p></li>
@@ -593,13 +595,12 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">4.1. Introduction</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">4.2. Overview</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-attacks">4.3. Types of Attacks</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-attacks-blockchain-structure-vulnerabilities">4.3.1. Types of Attacks - Blockchain Structure Vulnerabilities</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-attacks-consensus-mechanism-vulnerabilities">4.3.2. Types of Attacks - Consensus Mechanism Vulnerabilities</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-attacks-application-oriented-attacks">4.3.3. Types of Attacks - Application Oriented Attacks</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-attacks-network-layer-attacks">4.3.4. Types of Attacks - Network Layer Attacks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview-of-common-attacks">4.1. Overview of common attacks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-attacks">4.2. Types of Attacks</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#blockchain-structure-vulnerabilities">4.2.1. Blockchain Structure Vulnerabilities</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#consensus-mechanism-vulnerabilities">4.2.2. Consensus Mechanism Vulnerabilities</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#application-oriented-attacks">4.2.3. Application Oriented Attacks</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#network-layer-attacks">4.2.4. Network Layer Attacks</a></li>
 </ul>
 </li>
 </ul>

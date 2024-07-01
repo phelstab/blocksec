@@ -1,9 +1,23 @@
 # Introduction
 
-## Introduction
+<h2 style="text-align: center">
+Blockchain - the all-purpose weapon, just a buzzword or hacker's paradise?
+</h2>
+
+## Agenda
+
+* Overview of blockchain technology
+* Security aspects & technical fundamentals
+* Blockchain attack vectors
+* Hands-on exercises
+
+## Overview
+
+<div class="alert alert-info"><b>INFO</b><br />
 Initial concept originally introduced in 2008 by (anonymous) Satoshi Nakamoto to provide a solution to double-spending problem {cite}`bitcoinhistory:online,bitcoin:article`
 * **Definition**:
   * peer-to-peer, fault-tolerant, decentralized ledger system that records all transactions across a network of computers {cite}`Glaser2017_1000073702:inproceedings`
+</div>
 
 * **Key Characteristics**:
   * Immutable: Once recorded, data cannot be altered

@@ -1,6 +1,5 @@
 # Attack Vectors on Blockchains
 
-## Introduction
 * "Blockchain technology can solve all our future problems while ensuring security and privacy"
   * Well, no
 * Blockchains are not immune to attacks (like any IT system)
@@ -11,18 +10,20 @@
     * over 1.7 Billion USD stolen alone in crypto thefts alone 
     * https://hacked.slowmist.io/en/
 
-## Overview
-```{figure} ../_static/images/Blockchain_Attack_Overview.jpg
----
-align:center
-name: Blockchain_attacks
----
-Overview of Blockchain Attacks {cite}`konig2020risks`
-```
+## Overview of common attacks
+<img src="../_static/images/Blockchain_Attack_Overview.jpg">
+{cite}`konig2020risks`
+
 
 ## Types of Attacks
 
-### Types of Attacks - Blockchain Structure Vulnerabilities
+* König et al. divided attacks into four categories {cite}`konig2020risks`
+  * Blockchain Structure Vulnerabilities
+  * Consensus Mechanism Vulnerabilities
+  * Application Oriented Attacks
+  * Network Layer Attacks
+
+### Blockchain Structure Vulnerabilities
   * one of the most fundamental risks of blockchain technology
   * Primarily target integrity, security and availability of the blockchain foundation
   * Attacks exploit flaws in the fundamental design and implementation of the blockchain
@@ -32,7 +33,7 @@ Overview of Blockchain Attacks {cite}`konig2020risks`
     * Blockchain Forks (Soft and Hard Forks, sometimes intentional (DAO Hack revert), sometimes accidental)
     * Stale and Orphaned Blocks
 
-### Types of Attacks - Consensus Mechanism Vulnerabilities
+### Consensus Mechanism Vulnerabilities
 
   * Attacks exploit flaws in the consensus mechanism of the blockchain
   * target the agreement among participants on the validity of transactions
@@ -42,7 +43,7 @@ Overview of Blockchain Attacks {cite}`konig2020risks`
     * Nothing at Stake Attack
     * Finney Attack
 
-### Types of Attacks - Application Oriented Attacks
+### Application Oriented Attacks
   * Attacks exploit vulnerabilities in the applications built on top of the blockchain
     * smart contracts, decentralized applications, wallets, etc.
   * they exploit the application's logic and not the blockchain itself
@@ -52,7 +53,7 @@ Overview of Blockchain Attacks {cite}`konig2020risks`
     * Replay Attacks
     * Attacks on Smart Contracts and DApps (Overflow attacks, (D)Dos attacks, etc.)
 
-### Types of Attacks - Network Layer Attacks
+### Network Layer Attacks
   * Attacks exploit vulnerabilities in the peer-to-peer network (the backbone of blockchain technology)
   * network attacks nothing new, however distributed nature of blockchain networks further complicates them
   * attacks aim to disrupt communication, isolate node or manipulate transmissions
