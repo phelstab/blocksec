@@ -1,14 +1,8 @@
 # Fundamentals and Principles of Blockchains
 
 ## Block Structure
-````{figure} ../_static/images/Blockchain_Block.drawio.png
----
-height: 400px
-align:right
-name: Blockchain_Block
----
-Structure of a block in a blockchain
-````
+<img src="../_static/images/Blockchain_Block.drawio.png">
+
 
 **Block Header**:
 * Block Hash: hash of the block
@@ -23,15 +17,7 @@ Structure of a block in a blockchain
 * Transactions: list of transactions within the block
 
 ## Structure of a Blockchain
-````{figure} ../_static/images/Blockchain.drawio.png
----
-height: 400px
-align:center
-name: Blockchain
----
-Structure of a blockchain
-````
-
+<img src="../_static/images/Blockchain.drawio.png">
 
 ## Transactions
 Basic elements of a transaction:
