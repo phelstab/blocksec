@@ -12,7 +12,9 @@ For guidance on how to use the simulator, please refer to the [cheat sheet](http
 
 ### Task 1: 51% Attack
 
-> A 51% attack occurs when a malicious miner or group of miners control more than 50% of the network’s mining hash rate. This allows them to manipulate the blockchain by preventing other miners from completing blocks, reversing transactions, and double-spending coins.
+<div class="alert alert-info"><b>INFO</b><br />
+A 51% attack occurs when a malicious miner or group of miners control more than 50% of the network’s mining hash rate. This allows them to manipulate the blockchain by preventing other miners from completing blocks, reversing transactions, and double-spending coins.
+</div>
 
 1. **Configure Network**
    - Set up a network with at least five nodes
@@ -35,7 +37,9 @@ For guidance on how to use the simulator, please refer to the [cheat sheet](http
 
 ### Task 2: Partitioning Attack
 
-> A partitioning attack divides the network into separate segments that cannot communicate with each other. This can lead to forks and multiple competing chains, weakening the blockchain’s security.
+<div class="alert alert-info"><b>INFO</b><br />
+A partitioning attack divides the network into separate segments that cannot communicate with each other. This can lead to forks and multiple competing chains, weakening the blockchain’s security.
+</div>
 
 1. **Configure Network**
    - Set up a network with at least eight nodes arranged in two groups (e.g., 3 & 5)
@@ -59,7 +63,9 @@ For guidance on how to use the simulator, please refer to the [cheat sheet](http
 
 ## Task 3: DoS-Attack
 
-> A Denial of Service (DoS) attack involves overwhelming the network or specific nodes with excessive traffic, causing disruptions and preventing normal operations.
+<div class="alert alert-info"><b>INFO</b><br />
+A Denial of Service (DoS) attack involves overwhelming the network or specific nodes with excessive traffic, causing disruptions and preventing normal operations.
+</div>
 
 1. **Configure Network**
    - Set up a network with at least four nodes and set the bandwidth of each node to 100 MBps
