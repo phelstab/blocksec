@@ -12,14 +12,12 @@
 
 ## Overview of common attacks
 <img src="../_static/images/Blockchain_Attack_Overview.jpg">
-{cite}`konig2020risks`
-
 
 ## Types of Attacks
 
 * König et al. divided attacks into four categories {cite}`konig2020risks`
   * Blockchain Structure Vulnerabilities
-  * Consensus Mechanism Vulnerabilities
+  * Attacks on the Consensus Mechanism
   * Application Oriented Attacks
   * Network Layer Attacks
 
@@ -33,7 +31,7 @@
     * Blockchain Forks (Soft and Hard Forks, sometimes intentional (DAO Hack revert), sometimes accidental)
     * Stale and Orphaned Blocks
 
-### Consensus Mechanism Vulnerabilities
+### Attacks on the Consensus Mechanism
 
   * Attacks exploit flaws in the consensus mechanism of the blockchain
   * target the agreement among participants on the validity of transactions
