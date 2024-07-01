@@ -14,10 +14,11 @@ Blockchain - the all-purpose weapon, just a buzzword or hacker's paradise?
 ## Overview
 
 <div class="alert alert-info"><b>INFO</b><br />
-Initial concept originally introduced in 2008 by (anonymous) Satoshi Nakamoto to provide a solution to double-spending problem {cite}`bitcoinhistory:online,bitcoin:article`
-* **Definition**:
-  * peer-to-peer, fault-tolerant, decentralized ledger system that records all transactions across a network of computers {cite}`Glaser2017_1000073702:inproceedings`
+Initial concept originally introduced in 2008 by (anonymous) Satoshi Nakamoto to provide a solution to double-spending problem
 </div>
+
+* **Definition**:
+  * peer-to-peer, fault-tolerant, decentralized ledger system that records all transactions across a network of computers {cite}`bitcoinhistory:online,bitcoin:article,Glaser2017_1000073702:inproceedings`
 
 * **Key Characteristics**:
   * Immutable: Once recorded, data cannot be altered
