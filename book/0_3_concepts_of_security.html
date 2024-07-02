@@ -481,7 +481,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#purpose-of-the-formula">3.6.4. Purpose of the Formula:</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#verification">3.7. Verification:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#verification">3.7. Verification</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bitcoin-improvement-proposals-bips">3.8. Bitcoin Improvement Proposals (BIPs)</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bip44-multi-account-hierarchy-for-deterministic-wallets">3.8.1. BIP44: Multi-Account Hierarchy for Deterministic Wallets</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interaction-of-private-key-public-key-and-mnemonic-phrase">3.8.2. Interaction of Private Key, Public Key, and Mnemonic Phrase</a></li>
@@ -544,8 +544,7 @@ document.write(`
 </table>
 </div>
 <!-- Die Kernidee hinter der Blockchain liegt darin ein System zu schaffen das es ermöglicht komplett Dezentral und somit ohne jegliche Intermediäre und damit auch ohne Treuhänder, Transaktionen zwischen Agenten zu ermöglichen.  -->
-<!-- Dabei übernehmen Mathematische Modelle die auf der Berechenbarkeit und Komplexität Kryptographische verschlüsselungen ermgöglichen, die Aufgaben eines Intermediärs und verteilen diese Aufgaben auf alle Agenten die Teil des Systems sind auch wenn diese eine Aufgabe erhalten die nicht ihrer eigenen Transaktion dient. -->
-<section id="cryptographic-hash-functions">
+<!-- Dabei übernehmen Mathematische Modelle die auf der Berechenbarkeit und Komplexität Kryptographische verschlüsselungen ermgöglichen, die Aufgaben eines Intermediärs und verteilen diese Aufgaben auf alle Agenten die Teil des Systems sind auch wenn diese eine Aufgabe erhalten die nicht ihrer eigenen Transaktion dient. --><section id="cryptographic-hash-functions">
 <h2><span class="section-number">3.1. </span>Cryptographic Hash Functions<a class="headerlink" href="#cryptographic-hash-functions" title="Link to this heading">#</a></h2>
 <p>Because the concept of blockchains is built on different aspects of computation theory, cryptography, and distributed computing, we will start with the core aspects that form a blockchain and begin with the <em>cryptographic hash functions</em>.</p>
 <p>This is a more uncommon approach in science, but we want to first define what properties our hash functions must hold so they can be used in common blockchains, and we will understand the “Why?” later when everything comes together. <span id="id1">[<a class="reference internal" href="9_bibliography.html#id20" title="Arvind Narayanan, Joseph Bonneau, Edward Felten, Andrew Miller, and Steven Goldfeder. Bitcoin and cryptocurrency technologies: a comprehensive introduction. 2016.">Narayanan <em>et al.</em>, 2016</a>]</span></p>
@@ -642,6 +641,8 @@ document.write(`
 <li><p>We want to make sure that we cannot change any value in the middle of the linked list without changing every value before the changed one.</p></li>
 </ul>
 </li>
+</ul>
+<ul class="simple">
 <li><p><strong>Solution: Hash Pointers</strong></p>
 <ul>
 <li><p>Hash Pointers connect a hash of the previous node’s data to the current node.</p></li>
@@ -649,6 +650,8 @@ document.write(`
 <li><p>This creates a chain reaction, ensuring data integrity.</p></li>
 </ul>
 </li>
+</ul>
+<ul class="simple">
 <li><p><strong>Visualization:</strong></p>
 <ul>
 <li><p>Imagine a linked list where each node contains:</p>
@@ -720,14 +723,14 @@ Data: Omega, Hash: 51ee1c31e1301e451649b629c4cc06f4f29fe48909c73bf009d412a873ccf
 </div>
 <p>This structure called <em>tamper-evident log</em> is secure against manipulation and hold the following properties:</p>
 <ul class="simple">
-<li><p>Tamper Evidence: Any change in the data can be detected.
-*Integrity: The integrity of the data is maintained as long as the hash pointers are intact.</p></li>
+<li><p><strong>Tamper Evidence:</strong> Any change in the data can be detected.</p></li>
+<li><p><strong>Integrity:</strong> The integrity of the data is maintained as long as the hash pointers are intact.</p></li>
 </ul>
 <p>However, this structure alone is not sufficient for a full-fledged blockchain with transactions due to the following reasons:</p>
 <ul class="simple">
-<li><p>Efficiency in Verification: Verifying the integrity of a single block requires traversing the entire chain from the head to the block in question. This can be inefficient for large blockchains.</p></li>
-<li><p>Proof of Membership: Proving that a particular transaction exists in the blockchain is not straightforward and requires traversing the entire chain.</p></li>
-<li><p>Proof of Nonmembership: Proving that a particular transaction does not exist is even more complex and inefficient.</p></li>
+<li><p><strong>Efficiency in Verification:</strong> Verifying the integrity of a single block requires traversing the entire chain from the head to the block in question. This can be inefficient for large blockchains.</p></li>
+<li><p><strong>Proof of Membership:</strong> Proving that a particular transaction exists in the blockchain is not straightforward and requires traversing the entire chain.</p></li>
+<li><p><strong>Proof of Nonmembership:</strong> Proving that a particular transaction does not exist is even more complex and inefficient.</p></li>
 </ul>
 <p>Merkle trees address these inefficiencies by providing a more structured and efficient way to verify data integrity and membership.</p>
 <!-- # https://en.wikipedia.org/wiki/Merkle%E2%80%93Damg%C3%A5rd_construction -->
@@ -850,12 +853,11 @@ Expected: 830b7f324af3ff2b2a47cf7cf5ac825fe8d8034294ea8e8f853a4d3fada893fc
 <!-- Erweiterungs-Angriff (Extension-Attack) -->
 <section id="how-does-a-merkle-tree-form-to-blocks-in-a-blockchain">
 <h3><span class="section-number">3.4.1. </span>How does a Merkle Tree form to blocks in a blockchain?<a class="headerlink" href="#how-does-a-merkle-tree-form-to-blocks-in-a-blockchain" title="Link to this heading">#</a></h3>
-<img src="../_static/images/merkle_tree.png">
-<p>Important Practical properties Merkle Tree vs. Hashed linked lists:</p>
+<img src="../_static/images/merkle_tree.png"><p><strong>Important Practical properties Merkle Tree vs. Hashed linked lists:</strong></p>
 <ul class="simple">
-<li><p>Scalability: Merkle trees scale well with the size of the dataset. As the number of transactions grows, the depth of the tree increases logarithmically, maintaining efficient verification times.</p></li>
-<li><p>Concise Proofs: Both membership and nonmembership proofs are concise and efficient, making them suitable for large datasets.</p></li>
-<li><p>Parallelism: Merkle trees allow for parallel computation of hashes, which can speed up the process of building and verifying the tree.</p></li>
+<li><p><strong>Scalability:</strong> Merkle trees scale well with the size of the dataset. As the number of transactions grows, the depth of the tree increases logarithmically, maintaining efficient verification times.</p></li>
+<li><p><strong>Concise Proofs:</strong> Both membership and nonmembership proofs are concise and efficient, making them suitable for large datasets.</p></li>
+<li><p><strong>Parallelism:</strong> Merkle trees allow for parallel computation of hashes, which can speed up the process of building and verifying the tree.</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -951,7 +953,7 @@ True
 <div class="alert alert-info"><b>INFO</b><br />
 To cheaply (cheaply in the sense of computation) verify if a transaction existed/not existed in a block, which we can find out by checking if the merkle root is correct. 
 </div>
-<p>To check a transaction only need:</p>
+<p><strong>To check a transaction only need:</strong></p>
 <ol class="arabic simple">
 <li><p>The merkle root</p></li>
 <li><p>The hash of the transaction that you want to check.</p></li>
@@ -1003,29 +1005,24 @@ Digital signatures are cryptographic mechanisms that provide a digital equivalen
 </ul>
 <p><strong>Security Properties:</strong></p>
 <ul class="simple">
-<li><p>Transaction Integrity: Digital signatures ensure that only the owner of a cryptocurrency can authorize transactions, preventing unauthorized spending.</p></li>
-<li><p>Verification: Nodes in the network can verify transactions using the public key, ensuring the authenticity and integrity of transactions.</p></li>
-<li><p>Security: The unforgeability property protects against fraudulent transactions, maintaining the trust and security of the cryptocurrency system.</p></li>
+<li><p><strong>Transaction Integrity:</strong> Digital signatures ensure that only the owner of a cryptocurrency can authorize transactions, preventing unauthorized spending.</p></li>
+<li><p><strong>Verification:</strong> Nodes in the network can verify transactions using the public key, ensuring the authenticity and integrity of transactions.</p></li>
+<li><p><strong>Security:</strong> The unforgeability property protects against fraudulent transactions, maintaining the trust and security of the cryptocurrency system.</p></li>
 </ul>
 </section>
 <section id="unforgeability">
 <h3><span class="section-number">3.5.3. </span>Unforgeability<a class="headerlink" href="#unforgeability" title="Link to this heading">#</a></h3>
 <div class="alert alert-info"><b>INFO</b><br />
 An attacker should not be able to forge signatures on messages that were not signed by the legitimate signer.
-</div>
-<ul class="simple">
-<li><p>The unforgeability property is formalized through a game played between a challenger and an adversary. The challenger generates a key pair and gives the public key to the adversary.</p></li>
-</ul>
-<img src="../_static/images/unforge.png">
-<ul class="simple">
+</div><p>The unforgeability property is formalized through a game played between a challenger and an adversary. The challenger generates a key pair and gives the public key to the adversary.</p>
+<img src="../_static/images/unforge.png"><ul class="simple">
 <li><p>In the game, the adversary is allowed to request signatures on messages of their choice from the challenger, who uses the secret key to sign them. This models a real-world scenario where an attacker may see valid signatures on some messages.</p></li>
 <li><p>After seeing some signatures, the adversary picks a message M that they will attempt to forge a signature on. The only restriction is that M must not be a message the adversary previously requested a signature for.</p></li>
 <li><p>The adversary wins the game if they can produce a valid signature on M that verifies under the public key. The signature scheme is considered unforgeable if no adversary can win this game with a non-negligible probability.</p></li>
 </ul>
 <div class="alert alert-info"><b>INFO</b><br />
 For a signature scheme to be secure, it must be computationally infeasible for any adversary to win the unforgeability game, even if they can see signatures on other messages of their choosing.
-</div>
-</section>
+</div></section>
 <section id="digital-signatures-in-bitcoin">
 <h3><span class="section-number">3.5.4. </span>Digital Signatures in Bitcoin<a class="headerlink" href="#digital-signatures-in-bitcoin" title="Link to this heading">#</a></h3>
 <p><strong>Bitcoin Transaction Structure:</strong></p>
@@ -1040,18 +1037,18 @@ For a signature scheme to be secure, it must be computationally infeasible for a
 <li><p><strong>Verification:</strong> Nodes in the Bitcoin network use the public key (included in the <em>scriptSig</em>) and the conditions specified in the scriptPubKey to verify the signature. If the signature is valid, the transaction is considered authentic and is added to the blockchain.</p></li>
 </ul>
 <img src="../_static/images/transaction.png">
-<!-- https://blockstream.info/testnet/tx/da2d3adf3777c29c8b2b053ce189c29fd17431a643917449bcd047a7bd0cb754?expand -->
-</section>
+<!-- https://blockstream.info/testnet/tx/da2d3adf3777c29c8b2b053ce189c29fd17431a643917449bcd047a7bd0cb754?expand --></section>
 <section id="elliptic-curve-digital-signature-algorithm-ecdsa">
 <h3><span class="section-number">3.5.5. </span>Elliptic Curve Digital Signature Algorithm (ECDSA)<a class="headerlink" href="#elliptic-curve-digital-signature-algorithm-ecdsa" title="Link to this heading">#</a></h3>
 <div class="alert alert-info"><b>INFO</b><br />
 A digital signature system allows you to generate your own private/public key pair. You can then use the private key to generate signatures that prove you are the owner of the public key, without having to reveal the private key.
 </div>
 <p>ECDSA allows the owner of a private key to sign a transaction, providing proof that they authorize the Bitcoin transfer. Anyone can then verify this signature using the corresponding public key.</p>
-<img src="../_static/images/ecdsa.png">
-<img src="../_static/images/ecdsa2.png">
+<img src="../_static/images/ecdsa.png"><ul class="simple">
+<li><p>The intersection points look like they are randomly distributed.
+<img src="../_static/images/ecdsa2.png"></p></li>
+</ul>
 <ul class="simple">
-<li><p>The intersection points look like they are randomly distributed.</p></li>
 <li><p>We intersect with only 1 point (never &gt; 1)</p></li>
 <li><p>Public Key is <span class="math notranslate nohighlight">\(Q=xG\)</span></p>
 <ul>
@@ -1066,17 +1063,14 @@ A digital signature system allows you to generate your own private/public key pa
 </ul>
 </li>
 </ul>
-<img src="https://blog.cloudflare.com/content/images/image02.gif">
-<div class="alert alert-warning">
+<img src="https://blog.cloudflare.com/content/images/image02.gif"><div class="alert alert-warning">
 <b>Fun fact:</b><br />
 Satoshi Nakamoto chose the elliptic curve secp256k1 for Bitcoin, which is very rarely used outside of Bitcoin for practical applications (e.g., TLS key exchange uses the more common secp256r1 curve). Conspiracy theorists believe it is due to its mistrust of the U.S. National Security Agency (NSA) and other secret services.
-</div>
-</section>
+</div></section>
 </section>
 <section id="bitcoin-ecdsa-signing-process">
 <h2><span class="section-number">3.6. </span>Bitcoin ECDSA Signing Process<a class="headerlink" href="#bitcoin-ecdsa-signing-process" title="Link to this heading">#</a></h2>
-<img src="https://static.learnmeabitcoin.com/diagrams/png/ecdsa-bitcoin.png">
-<section id="components">
+<img src="https://static.learnmeabitcoin.com/diagrams/png/ecdsa-bitcoin.png"><section id="components">
 <h3><span class="section-number">3.6.1. </span>Components:<a class="headerlink" href="#components" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p><strong><span class="math notranslate nohighlight">\( k \)</span></strong>: A randomly chosen integer for each signature, known as the ephemeral key.</p></li>
@@ -1112,8 +1106,7 @@ Satoshi Nakamoto chose the elliptic curve secp256k1 for Bitcoin, which is very r
 </ul>
 </li>
 </ol>
-<img src="https://static.learnmeabitcoin.com/technical/cryptography/elliptic-curve/ecdsa/point-sign.gif">
-</section>
+<img src="https://static.learnmeabitcoin.com/technical/cryptography/elliptic-curve/ecdsa/point-sign.gif"></section>
 <section id="purpose-of-the-formula">
 <h3><span class="section-number">3.6.4. </span>Purpose of the Formula:<a class="headerlink" href="#purpose-of-the-formula" title="Link to this heading">#</a></h3>
 <ul class="simple">
@@ -1124,7 +1117,7 @@ Satoshi Nakamoto chose the elliptic curve secp256k1 for Bitcoin, which is very r
 </section>
 </section>
 <section id="verification">
-<h2><span class="section-number">3.7. </span>Verification:<a class="headerlink" href="#verification" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">3.7. </span>Verification<a class="headerlink" href="#verification" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>The signature <span class="math notranslate nohighlight">\((r, s)\)</span> can be verified by anyone who has the public key <span class="math notranslate nohighlight">\( Q \)</span> and the message.</p></li>
 <li><p>The verification process involves checking that the signature was indeed generated using the private key corresponding to the public key.</p></li>
@@ -1143,8 +1136,7 @@ In ECDSA, if the same nonce (k) is used to sign two different messages, it becom
 <li><p>n is the order of the elliptic curve group</p></li>
 </ul>
 <p>Once the attacker has the private key d, they can forge signatures and spend the victim’s bitcoins.</p>
-</div>
-</section>
+</div></section>
 <section id="bitcoin-improvement-proposals-bips">
 <h2><span class="section-number">3.8. </span>Bitcoin Improvement Proposals (BIPs)<a class="headerlink" href="#bitcoin-improvement-proposals-bips" title="Link to this heading">#</a></h2>
 <ul class="simple">
@@ -1246,7 +1238,7 @@ Bitcoin Improvement Proposals were introduced by a very interesting guy called A
 <li><p>Security: To protect against malicious actors and ensure the integrity of transactions.</p></li>
 </ul>
 </div>
-<p>What are aspects need to be adressed by the Consensus Algorithm in Blockchains?</p>
+<p><strong>What are aspects need to be adressed by the Consensus Algorithm in Blockchains?</strong></p>
 <ul class="simple">
 <li><p>Transaction Validation: Ensuring that all transactions are valid and have not been spent before.</p></li>
 <li><p>Order of Transactions: Agreeing on the order in which transactions are added to the blockchain.</p></li>
@@ -1255,7 +1247,7 @@ Bitcoin Improvement Proposals were introduced by a very interesting guy called A
 <li><p>Randomness and Incentives: Introducing randomness and incentives to encourage honest participation.</p></li>
 <li><p>Global Time: Achieving consensus without relying on a global clock or synchronized timestamps.</p></li>
 </ul>
-<p>What major security restrictions that need to be taken care by the Consensus Algorithms in Blockchains?</p>
+<p><strong>What major security restrictions that need to be taken care by the Consensus Algorithms in Blockchains?</strong></p>
 <ul class="simple">
 <li><p>The Byzantine Generals Problem:</p></li>
 <li><p>Summary: Ensuring that all honest nodes can reach consensus even if some nodes in the whole system are malicious.</p></li>
@@ -1271,14 +1263,14 @@ Bitcoin Improvement Proposals were introduced by a very interesting guy called A
 <li><p>Implicit Consensus: Nodes express their acceptance by including the hash of the accepted block in the next block they create.</p></li>
 </ol>
 </div>
+<section id="which-transactions-are-the-valid-ones-mining">
+<h3><span class="section-number">3.9.1. </span>Which transactions are the valid ones? (Mining)<a class="headerlink" href="#which-transactions-are-the-valid-ones-mining" title="Link to this heading">#</a></h3>
 <p><strong>What is mining now exactly?</strong></p>
 <ul class="simple">
 <li><p><strong>Role of Mining:</strong> Mining is the process by which nodes (miners) <em>compete to propose the next block</em>.</p></li>
 <li><p><strong>Proof of Work</strong>: Miners solve (brute force try and error) a computational puzzle to earn the right to propose a block, ensuring randomness and security.</p></li>
 <li><p><strong>Incentives</strong>: Miners are rewarded with newly minted bitcoins (currently 3.125 bitcoins per block and halves approx. every 210,000 blocks == approx. 4 years.) and the paid transaction fees (ranging from few hundred dollars to thousands of dollars per block), incentivizing honest behavior.</p></li>
 </ul>
-<section id="which-transactions-are-the-valid-ones-mining">
-<h3><span class="section-number">3.9.1. </span>Which transactions are the valid ones? (Mining)<a class="headerlink" href="#which-transactions-are-the-valid-ones-mining" title="Link to this heading">#</a></h3>
 <p><strong>Important aspects:</strong></p>
 <ul class="simple">
 <li><p><strong>Block Height as Global Time:</strong> It is used as the global time because it determines the timing of halvings and other protocol events (activation of soft forks etc.).</p></li>
@@ -1301,17 +1293,15 @@ Bitcoin Improvement Proposals were introduced by a very interesting guy called A
 </li>
 </ul>
 </li>
-<li><p><strong>Confirmations:</strong></p>
-<ul>
+</ul>
+<p><strong>Confirmations:</strong></p>
+<ul class="simple">
 <li><p>0 Confirmations: The transaction has been broadcast to the network but has not yet been included in a block. It is still in the mempool and is considered unconfirmed.</p></li>
 <li><p>1 Confirmation: When a transaction is first included in a block and that block is added to the blockchain, the transaction is said to have one confirmation.</p></li>
 <li><p>2 Confirmations: One additional block has been added to the blockchain after the block containing the transaction.</p></li>
 <li><p>… More confirmations mean higher security and lower risk of transaction reversal.</p></li>
 </ul>
-</li>
-</ul>
-<img src="../_static/images/bitcoin_trans.png">
-<div class="alert alert-warning">
+<img src="../_static/images/bitcoin_trans.png"><div class="alert alert-warning">
 <b>Questions: </b><br/>
 <ul class="simple">
 <li><p>How much fees was paid to the miners for this transaction?</p></li>
@@ -1320,8 +1310,7 @@ Bitcoin Improvement Proposals were introduced by a very interesting guy called A
 </ul>
 </div>
 <!-- https://blockstream.info/testnet/tx/23c9470a2269cf6430569afdd3e2e8f35f633b6cdbc34107ddbab932c4146ba3 -->
-<!-- Wie mining zusammenhängt letztlich mit dem blockexplorer: -->
-</section>
+<!-- Wie mining zusammenhängt letztlich mit dem blockexplorer: --></section>
 </section>
 <section id="peer-to-peer-electronic-cash-system-syntax">
 <h2><span class="section-number">3.10. </span>Peer-to-Peer Electronic Cash System Syntax<a class="headerlink" href="#peer-to-peer-electronic-cash-system-syntax" title="Link to this heading">#</a></h2>
@@ -1332,8 +1321,7 @@ Bitcoin Improvement Proposals were introduced by a very interesting guy called A
 <li><p><strong>Locking and Unlocking Scripts:</strong> Bitcoin transactions use a combination of locking scripts (also known as scriptPubKey) and unlocking scripts (also known as scriptSig). The locking script specifies the conditions that must be met to spend the output, while the unlocking script provides the data to satisfy those conditions.</p></li>
 <li><p><strong>Script Execution:</strong> When a transaction is being validated, the Bitcoin network executes the scripts to ensure that the unlocking script correctly satisfies the locking script’s conditions. If the conditions are met, the transaction is considered valid.</p></li>
 </ul>
-</div>
-<p>Bitcoin Script has a very simple syntax:</p>
+</div><p><strong>Bitcoin Script has a very simple syntax:</strong></p>
 <ul class="simple">
 <li><p>Sequence of Operations: Consists of a sequence of operations.</p></li>
 <li><p>Single Byte Operations: Each operation has a single byte that indicates the operation.</p></li>
@@ -1359,8 +1347,7 @@ Bitcoin Improvement Proposals were introduced by a very interesting guy called A
 <div class="alert alert-warning">
 <b>Important: </b><br/>
 <p>At the end that a transaction is considered valid if the script execution returns 1 (true). This is checked by the network to ensure that the transaction was correctly signed by the owner of the private key, which in other words <strong>gives access to the unspent value of the transaction</strong>.</p>
-</div>
-<!-- ## Security Problems -->
+</div><!-- ## Security Problems -->
 <!-- (Überleitung) -->
 <!-- Sehr sehr wichtig: -->
 <!-- https://bitcoin.org/en/bitcoin-core/features/validation --></section>
@@ -1458,7 +1445,7 @@ Bitcoin Improvement Proposals were introduced by a very interesting guy called A
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#purpose-of-the-formula">3.6.4. Purpose of the Formula:</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#verification">3.7. Verification:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#verification">3.7. Verification</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bitcoin-improvement-proposals-bips">3.8. Bitcoin Improvement Proposals (BIPs)</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bip44-multi-account-hierarchy-for-deterministic-wallets">3.8.1. BIP44: Multi-Account Hierarchy for Deterministic Wallets</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interaction-of-private-key-public-key-and-mnemonic-phrase">3.8.2. Interaction of Private Key, Public Key, and Mnemonic Phrase</a></li>
