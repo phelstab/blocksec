@@ -468,10 +468,12 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#identities-and-digital-signatures">3.5. Identities and Digital Signatures</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#identities">3.5.1. Identities</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#digital-signatures">3.5.2. Digital Signatures</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unforgeability">3.5.3. Unforgeability</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#digital-signatures-in-bitcoin">3.5.4. Digital Signatures in Bitcoin</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#elliptic-curve-digital-signature-algorithm-ecdsa">3.5.5. Elliptic Curve Digital Signature Algorithm (ECDSA)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#digital-signatures">3.5.2. Digital Signatures</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#unforgeability">3.5.2.1. Unforgeability</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#digital-signatures-in-bitcoin">3.5.2.2. Digital Signatures in Bitcoin</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#elliptic-curve-digital-signature-algorithm-ecdsa">3.5.2.3. Elliptic Curve Digital Signature Algorithm (ECDSA)</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bitcoin-ecdsa-signing-process">3.6. Bitcoin ECDSA Signing Process</a><ul class="nav section-nav flex-column">
@@ -490,9 +492,9 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#consensus-algorithm">3.9. Consensus Algorithm</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#which-transactions-are-the-valid-ones-mining">3.9.1. Which transactions are the valid ones? (Mining)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#peer-to-peer-electronic-cash-system-syntax">3.9.2. Peer-to-Peer Electronic Cash System Syntax</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#peer-to-peer-electronic-cash-system-syntax">3.10. Peer-to-Peer Electronic Cash System Syntax</a></li>
 </ul>
             </nav>
         </div>
@@ -1009,9 +1011,8 @@ Digital signatures are cryptographic mechanisms that provide a digital equivalen
 <li><p><strong>Verification:</strong> Nodes in the network can verify transactions using the public key, ensuring the authenticity and integrity of transactions.</p></li>
 <li><p><strong>Security:</strong> The unforgeability property protects against fraudulent transactions, maintaining the trust and security of the cryptocurrency system. <span id="id24">[<a class="reference internal" href="9_bibliography.html#id20" title="Arvind Narayanan, Joseph Bonneau, Edward Felten, Andrew Miller, and Steven Goldfeder. Bitcoin and cryptocurrency technologies: a comprehensive introduction. 2016.">Narayanan <em>et al.</em>, 2016</a>]</span></p></li>
 </ul>
-</section>
 <section id="unforgeability">
-<h3><span class="section-number">3.5.3. </span>Unforgeability<a class="headerlink" href="#unforgeability" title="Link to this heading">#</a></h3>
+<h4><span class="section-number">3.5.2.1. </span>Unforgeability<a class="headerlink" href="#unforgeability" title="Link to this heading">#</a></h4>
 <div class="alert alert-info"><b>INFO</b><br />
 An attacker should not be able to forge signatures on messages that were not signed by the legitimate signer.
 </div><p>The unforgeability property is formalized through a game played between a challenger and an adversary. The challenger generates a key pair and gives the public key to the adversary.</p>
@@ -1025,7 +1026,7 @@ An attacker should not be able to forge signatures on messages that were not sig
 For a signature scheme to be secure, it must be computationally infeasible for any adversary to win the unforgeability game, even if they can see signatures on other messages of their choosing.
 </div> {cite}`narayanan2016bitcoin`</section>
 <section id="digital-signatures-in-bitcoin">
-<h3><span class="section-number">3.5.4. </span>Digital Signatures in Bitcoin<a class="headerlink" href="#digital-signatures-in-bitcoin" title="Link to this heading">#</a></h3>
+<h4><span class="section-number">3.5.2.2. </span>Digital Signatures in Bitcoin<a class="headerlink" href="#digital-signatures-in-bitcoin" title="Link to this heading">#</a></h4>
 <p><strong>Bitcoin Transaction Structure:</strong></p>
 <ul class="simple">
 <li><p><strong>scriptSig:</strong> This is part of the transaction input and contains the digital signature and the public key. It proves that the transaction is authorized by the owner of the private key.</p></li>
@@ -1040,7 +1041,7 @@ For a signature scheme to be secure, it must be computationally infeasible for a
 <img src="../_static/images/transaction.png">
 <!-- https://blockstream.info/testnet/tx/da2d3adf3777c29c8b2b053ce189c29fd17431a643917449bcd047a7bd0cb754?expand --></section>
 <section id="elliptic-curve-digital-signature-algorithm-ecdsa">
-<h3><span class="section-number">3.5.5. </span>Elliptic Curve Digital Signature Algorithm (ECDSA)<a class="headerlink" href="#elliptic-curve-digital-signature-algorithm-ecdsa" title="Link to this heading">#</a></h3>
+<h4><span class="section-number">3.5.2.3. </span>Elliptic Curve Digital Signature Algorithm (ECDSA)<a class="headerlink" href="#elliptic-curve-digital-signature-algorithm-ecdsa" title="Link to this heading">#</a></h4>
 <div class="alert alert-info"><b>INFO</b><br />
 A digital signature system allows you to generate your own private/public key pair. You can then use the private key to generate signatures that prove you are the owner of the public key, without having to reveal the private key.
 </div>
@@ -1069,6 +1070,7 @@ A digital signature system allows you to generate your own private/public key pa
 <b>Fun fact:</b><br />
 Satoshi Nakamoto chose the elliptic curve secp256k1 for Bitcoin, which is very rarely used outside of Bitcoin for practical applications (e.g., TLS key exchange uses the more common secp256r1 curve). Conspiracy theorists believe it is due to its mistrust of the U.S. National Security Agency (NSA) and other secret services.
 </div></section>
+</section>
 </section>
 <section id="bitcoin-ecdsa-signing-process">
 <h2><span class="section-number">3.6. </span>Bitcoin ECDSA Signing Process<a class="headerlink" href="#bitcoin-ecdsa-signing-process" title="Link to this heading">#</a></h2>
@@ -1229,7 +1231,8 @@ In ECDSA, if the same nonce (k) is used to sign two different messages, it becom
 <div class="alert alert-warning">
 <b>Fun fact (or not so funny maybe):</b><br />
 Bitcoin Improvement Proposals were introduced by a very interesting guy called Amir Taaki which made his living as a professional poker player, served for the YPG military in the fight against Islamic State (ISIS) in Syrian Civil War and resided since 2013 in an anarchist squat in the former anti-G8 HQ building in London, England.
-<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKauKLc9SprlwfhFLG33MWsBCgc_SKvHFB--E_Zyc8rZMLmzEA" width="200"></div> {cite}`BitcoinI83:online` {cite}`HowAnarc47:online` {cite}`webarchi80:online` {cite}`webarchi80:online` {cite}`Hidingcu87:online`</section>
+</div> <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKauKLc9SprlwfhFLG33MWsBCgc_SKvHFB--E_Zyc8rZMLmzEA" width="200"> {cite}`BitcoinI83:online` {cite}`HowAnarc47:online` {cite}`webarchi80:online` {cite}`webarchi80:online` {cite}`Hidingcu87:online`
+</section>
 </section>
 <section id="consensus-algorithm">
 <h2><span class="section-number">3.9. </span>Consensus Algorithm<a class="headerlink" href="#consensus-algorithm" title="Link to this heading">#</a></h2>
@@ -1314,9 +1317,8 @@ Bitcoin Improvement Proposals were introduced by a very interesting guy called A
 </div>
 <!-- https://blockstream.info/testnet/tx/23c9470a2269cf6430569afdd3e2e8f35f633b6cdbc34107ddbab932c4146ba3 -->
 <!-- Wie mining zusammenhängt letztlich mit dem blockexplorer: --></section>
-</section>
 <section id="peer-to-peer-electronic-cash-system-syntax">
-<h2><span class="section-number">3.10. </span>Peer-to-Peer Electronic Cash System Syntax<a class="headerlink" href="#peer-to-peer-electronic-cash-system-syntax" title="Link to this heading">#</a></h2>
+<h3><span class="section-number">3.9.2. </span>Peer-to-Peer Electronic Cash System Syntax<a class="headerlink" href="#peer-to-peer-electronic-cash-system-syntax" title="Link to this heading">#</a></h3>
 <div class="alert alert-info"><b>Bitcoin Script in Unspent Transaction Output (UTXO)</b><br />
 <p>Bitcoin Script in practice is a stack based programming language similar to Forth, RPL, and PostScript but with a few important differences, most importantly that its <strong>not Turing complete</strong>.</p>
 <p>Main purpose in Bitcoin is to have a flexible language that can provide following:</p>
@@ -1354,6 +1356,7 @@ Bitcoin Improvement Proposals were introduced by a very interesting guy called A
 <!-- (Überleitung) -->
 <!-- Sehr sehr wichtig: -->
 <!-- https://bitcoin.org/en/bitcoin-core/features/validation --></section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -1435,10 +1438,12 @@ Bitcoin Improvement Proposals were introduced by a very interesting guy called A
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#identities-and-digital-signatures">3.5. Identities and Digital Signatures</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#identities">3.5.1. Identities</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#digital-signatures">3.5.2. Digital Signatures</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unforgeability">3.5.3. Unforgeability</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#digital-signatures-in-bitcoin">3.5.4. Digital Signatures in Bitcoin</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#elliptic-curve-digital-signature-algorithm-ecdsa">3.5.5. Elliptic Curve Digital Signature Algorithm (ECDSA)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#digital-signatures">3.5.2. Digital Signatures</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#unforgeability">3.5.2.1. Unforgeability</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#digital-signatures-in-bitcoin">3.5.2.2. Digital Signatures in Bitcoin</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#elliptic-curve-digital-signature-algorithm-ecdsa">3.5.2.3. Elliptic Curve Digital Signature Algorithm (ECDSA)</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bitcoin-ecdsa-signing-process">3.6. Bitcoin ECDSA Signing Process</a><ul class="nav section-nav flex-column">
@@ -1457,9 +1462,9 @@ Bitcoin Improvement Proposals were introduced by a very interesting guy called A
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#consensus-algorithm">3.9. Consensus Algorithm</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#which-transactions-are-the-valid-ones-mining">3.9.1. Which transactions are the valid ones? (Mining)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#peer-to-peer-electronic-cash-system-syntax">3.9.2. Peer-to-Peer Electronic Cash System Syntax</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#peer-to-peer-electronic-cash-system-syntax">3.10. Peer-to-Peer Electronic Cash System Syntax</a></li>
 </ul>
   </nav></div>
 
