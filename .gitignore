@@ -114,3 +114,5 @@ ENV/
 
 # IDE settings
 .vscode/
+
+pdfs/
