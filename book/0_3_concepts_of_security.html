@@ -511,13 +511,13 @@ document.write(`
 <li><p>Create a decentralized transaction system</p></li>
 <li><p>Enable transactions between parties (agents)</p></li>
 <li><p>Eliminate the need for intermediaries</p></li>
-<li><p>Remove reliance on trusted third parties</p></li>
+<li><p>Remove reliance on trusted third parties <span id="id1">[<a class="reference internal" href="9_bibliography.html#id20" title="Arvind Narayanan, Joseph Bonneau, Edward Felten, Andrew Miller, and Steven Goldfeder. Bitcoin and cryptocurrency technologies: a comprehensive introduction. 2016.">Narayanan <em>et al.</em>, 2016</a>]</span></p></li>
 </ul>
 <p><strong>How to achieve blockchain technology:</strong></p>
 <ul class="simple">
 <li><p>Mathematical models take over all the functional foundations of blockchain technology.</p></li>
 <li><p>Mathematical models that enable cryptographic encryption based on computability and complexity take on the tasks of an intermediary.</p></li>
-<li><p>The system itself distributes these tasks to all agents in the system, even if they receive a task that is not related to their own transactions.</p></li>
+<li><p>The system itself distributes these tasks to all agents in the system, even if they receive a task that is not related to their own transactions. <span id="id2">[<a class="reference internal" href="9_bibliography.html#id20" title="Arvind Narayanan, Joseph Bonneau, Edward Felten, Andrew Miller, and Steven Goldfeder. Bitcoin and cryptocurrency technologies: a comprehensive introduction. 2016.">Narayanan <em>et al.</em>, 2016</a>]</span></p></li>
 </ul>
 <p>It is replaced as follows:</p>
 <div class="pst-scrollable-table-container"><table class="table">
@@ -547,57 +547,57 @@ document.write(`
 <!-- Dabei übernehmen Mathematische Modelle die auf der Berechenbarkeit und Komplexität Kryptographische verschlüsselungen ermgöglichen, die Aufgaben eines Intermediärs und verteilen diese Aufgaben auf alle Agenten die Teil des Systems sind auch wenn diese eine Aufgabe erhalten die nicht ihrer eigenen Transaktion dient. --><section id="cryptographic-hash-functions">
 <h2><span class="section-number">3.1. </span>Cryptographic Hash Functions<a class="headerlink" href="#cryptographic-hash-functions" title="Link to this heading">#</a></h2>
 <p>Because the concept of blockchains is built on different aspects of computation theory, cryptography, and distributed computing, we will start with the core aspects that form a blockchain and begin with the <em>cryptographic hash functions</em>.</p>
-<p>This is a more uncommon approach in science, but we want to first define what properties our hash functions must hold so they can be used in common blockchains, and we will understand the “Why?” later when everything comes together. <span id="id1">[<a class="reference internal" href="9_bibliography.html#id20" title="Arvind Narayanan, Joseph Bonneau, Edward Felten, Andrew Miller, and Steven Goldfeder. Bitcoin and cryptocurrency technologies: a comprehensive introduction. 2016.">Narayanan <em>et al.</em>, 2016</a>]</span></p>
+<p>This is a more uncommon approach in science, but we want to first define what properties our hash functions must hold so they can be used in common blockchains, and we will understand the “Why?” later when everything comes together. <span id="id3">[<a class="reference internal" href="9_bibliography.html#id20" title="Arvind Narayanan, Joseph Bonneau, Edward Felten, Andrew Miller, and Steven Goldfeder. Bitcoin and cryptocurrency technologies: a comprehensive introduction. 2016.">Narayanan <em>et al.</em>, 2016</a>]</span></p>
 <section id="computation">
 <h3><span class="section-number">3.1.1. </span>Computation<a class="headerlink" href="#computation" title="Link to this heading">#</a></h3>
 <p><strong>Computational Property 1: <em>Input Flexibility</em></strong></p>
 <ul class="simple">
-<li><p>The input can be any string of any size.</p></li>
+<li><p>The input can be any string of any size. <span id="id4">[<a class="reference internal" href="9_bibliography.html#id20" title="Arvind Narayanan, Joseph Bonneau, Edward Felten, Andrew Miller, and Steven Goldfeder. Bitcoin and cryptocurrency technologies: a comprehensive introduction. 2016.">Narayanan <em>et al.</em>, 2016</a>]</span></p></li>
 </ul>
 <p><strong>Computational Property 2: <em>Fixed-Sized Output</em></strong></p>
 <ul class="simple">
 <li><p>The function produces a fixed-sized output.</p></li>
-<li><p>For this discussion, a 256-bit output size is assumed, but the property holds for any sufficiently large output size.</p></li>
+<li><p>For this discussion, a 256-bit output size is assumed, but the property holds for any sufficiently large output size. <span id="id5">[<a class="reference internal" href="9_bibliography.html#id20" title="Arvind Narayanan, Joseph Bonneau, Edward Felten, Andrew Miller, and Steven Goldfeder. Bitcoin and cryptocurrency technologies: a comprehensive introduction. 2016.">Narayanan <em>et al.</em>, 2016</a>]</span></p></li>
 </ul>
 <p><strong>Computational Property 3: <em>Efficient Computability</em></strong></p>
 <ul class="simple">
 <li><p>The hash function is efficiently computable, meaning that for a given input string, the output can be determined in a reasonable amount of time.</p></li>
-<li><p>Technically, computing the hash of an n-bit string should have a running time of O(n).</p></li>
+<li><p>Technically, computing the hash of an n-bit string should have a running time of O(n). <span id="id6">[<a class="reference internal" href="9_bibliography.html#id20" title="Arvind Narayanan, Joseph Bonneau, Edward Felten, Andrew Miller, and Steven Goldfeder. Bitcoin and cryptocurrency technologies: a comprehensive introduction. 2016.">Narayanan <em>et al.</em>, 2016</a>]</span></p></li>
 </ul>
 </section>
 <section id="cryptography">
 <h3><span class="section-number">3.1.2. </span>Cryptography<a class="headerlink" href="#cryptography" title="Link to this heading">#</a></h3>
 <p><strong>Cryptographic Property 1: <em>Collision Resistance</em></strong></p>
-<p><strong>Definition:</strong> A hash function <span class="math notranslate nohighlight">\( H \)</span> is said to be collision resistant if it is infeasible to find two values, <span class="math notranslate nohighlight">\( x \)</span> and <span class="math notranslate nohighlight">\( y \)</span>, such that <span class="math notranslate nohighlight">\( x \neq y \)</span>, yet <span class="math notranslate nohighlight">\( H(x) = H(y) \)</span>.</p>
+<p><strong>Definition:</strong> A hash function <span class="math notranslate nohighlight">\( H \)</span> is said to be collision resistant if it is infeasible to find two values, <span class="math notranslate nohighlight">\( x \)</span> and <span class="math notranslate nohighlight">\( y \)</span>, such that <span class="math notranslate nohighlight">\( x \neq y \)</span>, yet <span class="math notranslate nohighlight">\( H(x) = H(y) \)</span>. <span id="id7">[<a class="reference internal" href="9_bibliography.html#id20" title="Arvind Narayanan, Joseph Bonneau, Edward Felten, Andrew Miller, and Steven Goldfeder. Bitcoin and cryptocurrency technologies: a comprehensive introduction. 2016.">Narayanan <em>et al.</em>, 2016</a>]</span></p>
 <p><em>Why we need this?</em></p>
 <ul class="simple">
 <li><p>We need collision resistance to ensure that it is infeasible to find two different inputs that produce the same hash output.</p></li>
-<li><p>This is crucial for maintaining data integrity and preventing forgery.</p></li>
+<li><p>This is crucial for maintaining data integrity and preventing forgery. <span id="id8">[<a class="reference internal" href="9_bibliography.html#id20" title="Arvind Narayanan, Joseph Bonneau, Edward Felten, Andrew Miller, and Steven Goldfeder. Bitcoin and cryptocurrency technologies: a comprehensive introduction. 2016.">Narayanan <em>et al.</em>, 2016</a>]</span></p></li>
 </ul>
 <p><em>Example:</em></p>
 <ul class="simple">
 <li><p>When a transaction is created, it is hashed to produce a transaction ID.</p></li>
 <li><p>If an attacker could find two different transactions that produce the same hash (collision), they could potentially replace a legitimate transaction with a fraudulent one without being detected.</p></li>
-<li><p>This would undermine the integrity of the blockchain.</p></li>
+<li><p>This would undermine the integrity of the blockchain. <span id="id9">[<a class="reference internal" href="9_bibliography.html#id20" title="Arvind Narayanan, Joseph Bonneau, Edward Felten, Andrew Miller, and Steven Goldfeder. Bitcoin and cryptocurrency technologies: a comprehensive introduction. 2016.">Narayanan <em>et al.</em>, 2016</a>]</span></p></li>
 </ul>
 <p><strong>Cryptographic Property 2: <em>Hiding</em></strong></p>
-<p><strong>Definition:</strong> A hash function <span class="math notranslate nohighlight">\( H \)</span> is said to be hiding if, when a secret value <span class="math notranslate nohighlight">\( r \)</span> is chosen from a probability distribution that has high min-entropy, then, given <span class="math notranslate nohighlight">\( H(r \parallel x) \)</span>, it is infeasible to find <span class="math notranslate nohighlight">\( x \)</span>.</p>
+<p><strong>Definition:</strong> A hash function <span class="math notranslate nohighlight">\( H \)</span> is said to be hiding if, when a secret value <span class="math notranslate nohighlight">\( r \)</span> is chosen from a probability distribution that has high min-entropy, then, given <span class="math notranslate nohighlight">\( H(r \parallel x) \)</span>, it is infeasible to find <span class="math notranslate nohighlight">\( x \)</span>. <span id="id10">[<a class="reference internal" href="9_bibliography.html#id20" title="Arvind Narayanan, Joseph Bonneau, Edward Felten, Andrew Miller, and Steven Goldfeder. Bitcoin and cryptocurrency technologies: a comprehensive introduction. 2016.">Narayanan <em>et al.</em>, 2016</a>]</span></p>
 <p><em>Why we need this?</em></p>
 <ul class="simple">
 <li><p>We need the hiding property to ensure that given a hash output, it is infeasible to determine the original input.</p></li>
-<li><p>This is essential for preserving the confidentiality of the input data.</p></li>
+<li><p>This is essential for preserving the confidentiality of the input data. <span id="id11">[<a class="reference internal" href="9_bibliography.html#id20" title="Arvind Narayanan, Joseph Bonneau, Edward Felten, Andrew Miller, and Steven Goldfeder. Bitcoin and cryptocurrency technologies: a comprehensive introduction. 2016.">Narayanan <em>et al.</em>, 2016</a>]</span></p></li>
 </ul>
 <p><em>Example:</em></p>
 <ul class="simple">
 <li><p>The hiding property ensures that the nonce and other block header data cannot be easily deduced from the hash output.</p></li>
-<li><p>Maintains the difficulty and security of the mining process.</p></li>
+<li><p>Maintains the difficulty and security of the mining process. <span id="id12">[<a class="reference internal" href="9_bibliography.html#id20" title="Arvind Narayanan, Joseph Bonneau, Edward Felten, Andrew Miller, and Steven Goldfeder. Bitcoin and cryptocurrency technologies: a comprehensive introduction. 2016.">Narayanan <em>et al.</em>, 2016</a>]</span></p></li>
 </ul>
 <p><strong>Cryptographic Property 3: <em>Puzzle Friendliness</em></strong></p>
-<p><strong>Definition:</strong> A hash function <span class="math notranslate nohighlight">\( H \)</span> is said to be puzzle friendly if for every possible <span class="math notranslate nohighlight">\( n \)</span>-bit output value <span class="math notranslate nohighlight">\( y \)</span>, if <span class="math notranslate nohighlight">\( k \)</span> is chosen from a distribution with high min-entropy, then it is infeasible to find <span class="math notranslate nohighlight">\( x \)</span> such that <span class="math notranslate nohighlight">\( H(k \| x) = y \)</span> in time significantly less than <span class="math notranslate nohighlight">\( 2^n \)</span>.</p>
+<p><strong>Definition:</strong> A hash function <span class="math notranslate nohighlight">\( H \)</span> is said to be puzzle friendly if for every possible <span class="math notranslate nohighlight">\( n \)</span>-bit output value <span class="math notranslate nohighlight">\( y \)</span>, if <span class="math notranslate nohighlight">\( k \)</span> is chosen from a distribution with high min-entropy, then it is infeasible to find <span class="math notranslate nohighlight">\( x \)</span> such that <span class="math notranslate nohighlight">\( H(k \| x) = y \)</span> in time significantly less than <span class="math notranslate nohighlight">\( 2^n \)</span>. <span id="id13">[<a class="reference internal" href="9_bibliography.html#id20" title="Arvind Narayanan, Joseph Bonneau, Edward Felten, Andrew Miller, and Steven Goldfeder. Bitcoin and cryptocurrency technologies: a comprehensive introduction. 2016.">Narayanan <em>et al.</em>, 2016</a>]</span></p>
 <p><em>Why we need this?</em></p>
 <ul class="simple">
 <li><p>Puzzle friendliness ensures that solving the hash function requires a brute-force search.</p></li>
-<li><p>Prevents shortcuts and maintains the security of cryptographic protocols.</p></li>
+<li><p>Prevents shortcuts and maintains the security of cryptographic protocols. <span id="id14">[<a class="reference internal" href="9_bibliography.html#id20" title="Arvind Narayanan, Joseph Bonneau, Edward Felten, Andrew Miller, and Steven Goldfeder. Bitcoin and cryptocurrency technologies: a comprehensive introduction. 2016.">Narayanan <em>et al.</em>, 2016</a>]</span></p></li>
 </ul>
 <p><em>Example:</em></p>
 <ul class="simple">
@@ -605,7 +605,7 @@ document.write(`
 <ul>
 <li><p>Miners must find a nonce such that the hash of the block header concatenated with the nonce produces a hash with a certain number of leading zeros.</p></li>
 <li><p>Puzzle friendliness ensures there are no shortcuts to finding this nonce.</p></li>
-<li><p>Maintains the difficulty and security of the mining process.</p></li>
+<li><p>Maintains the difficulty and security of the mining process. <span id="id15">[<a class="reference internal" href="9_bibliography.html#id20" title="Arvind Narayanan, Joseph Bonneau, Edward Felten, Andrew Miller, and Steven Goldfeder. Bitcoin and cryptocurrency technologies: a comprehensive introduction. 2016.">Narayanan <em>et al.</em>, 2016</a>]</span></p></li>
 </ul>
 </li>
 </ul>
@@ -732,13 +732,13 @@ Data: Omega, Hash: 51ee1c31e1301e451649b629c4cc06f4f29fe48909c73bf009d412a873ccf
 <li><p><strong>Proof of Membership:</strong> Proving that a particular transaction exists in the blockchain is not straightforward and requires traversing the entire chain.</p></li>
 <li><p><strong>Proof of Nonmembership:</strong> Proving that a particular transaction does not exist is even more complex and inefficient.</p></li>
 </ul>
-<p>Merkle trees address these inefficiencies by providing a more structured and efficient way to verify data integrity and membership.</p>
+<p>Merkle trees address these inefficiencies by providing a more structured and efficient way to verify data integrity and membership. <span id="id16">[<a class="reference internal" href="9_bibliography.html#id20" title="Arvind Narayanan, Joseph Bonneau, Edward Felten, Andrew Miller, and Steven Goldfeder. Bitcoin and cryptocurrency technologies: a comprehensive introduction. 2016.">Narayanan <em>et al.</em>, 2016</a>]</span></p>
 <!-- # https://en.wikipedia.org/wiki/Merkle%E2%80%93Damg%C3%A5rd_construction -->
 </section>
 <section id="merkle-trees">
 <h2><span class="section-number">3.3. </span>Merkle Trees<a class="headerlink" href="#merkle-trees" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p>Efficient Verification: In a Merkle tree, each leaf node represents a data block (e.g., a transaction), and each non-leaf node represents the hash of its child nodes. The root of the tree is a hash that represents the entire dataset. Verifying the integrity of a single block only requires a logarithmic number of hash computations (log(n)), making it much more efficient than traversing the entire chain.</p></li>
+<li><p>Efficient Verification: In a Merkle tree, each leaf node represents a data block (e.g., a transaction), and each non-leaf node represents the hash of its child nodes. The root of the tree is a hash that represents the entire dataset. Verifying the integrity of a single block only requires a logarithmic number of hash computations (log(n)), making it much more efficient than traversing the entire chain. <span id="id17">[<a class="reference internal" href="9_bibliography.html#id20" title="Arvind Narayanan, Joseph Bonneau, Edward Felten, Andrew Miller, and Steven Goldfeder. Bitcoin and cryptocurrency technologies: a comprehensive introduction. 2016.">Narayanan <em>et al.</em>, 2016</a>]</span></p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -857,7 +857,7 @@ Expected: 830b7f324af3ff2b2a47cf7cf5ac825fe8d8034294ea8e8f853a4d3fada893fc
 <ul class="simple">
 <li><p><strong>Scalability:</strong> Merkle trees scale well with the size of the dataset. As the number of transactions grows, the depth of the tree increases logarithmically, maintaining efficient verification times.</p></li>
 <li><p><strong>Concise Proofs:</strong> Both membership and nonmembership proofs are concise and efficient, making them suitable for large datasets.</p></li>
-<li><p><strong>Parallelism:</strong> Merkle trees allow for parallel computation of hashes, which can speed up the process of building and verifying the tree.</p></li>
+<li><p><strong>Parallelism:</strong> Merkle trees allow for parallel computation of hashes, which can speed up the process of building and verifying the tree. <span id="id18">[<a class="reference internal" href="9_bibliography.html#id20" title="Arvind Narayanan, Joseph Bonneau, Edward Felten, Andrew Miller, and Steven Goldfeder. Bitcoin and cryptocurrency technologies: a comprehensive introduction. 2016.">Narayanan <em>et al.</em>, 2016</a>]</span></p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -957,14 +957,14 @@ To cheaply (cheaply in the sense of computation) verify if a transaction existed
 <ol class="arabic simple">
 <li><p>The merkle root</p></li>
 <li><p>The hash of the transaction that you want to check.</p></li>
-<li><p>Hashes of the sibling nodes along the path from the transaction hash to the merkle root</p></li>
+<li><p>Hashes of the sibling nodes along the path from the transaction hash to the merkle root <span id="id19">[<a class="reference internal" href="9_bibliography.html#id20" title="Arvind Narayanan, Joseph Bonneau, Edward Felten, Andrew Miller, and Steven Goldfeder. Bitcoin and cryptocurrency technologies: a comprehensive introduction. 2016.">Narayanan <em>et al.</em>, 2016</a>]</span></p></li>
 </ol>
 </section>
 <section id="proof-of-membership-and-nonmembership">
 <h3><span class="section-number">3.4.3. </span>Proof of Membership and Nonmembership<a class="headerlink" href="#proof-of-membership-and-nonmembership" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p><strong>Proof of Membership:</strong> To prove that a particular transaction is part of the blockchain, you only need to provide the transaction, its hash, and the hashes of its sibling nodes up to the root. This proof is concise and can be verified in logarithmic time.</p></li>
-<li><p><strong>Proof of Nonmembership:</strong> In a sorted Merkle tree, proving nonmembership involves showing the path to the items just before and after the position where the transaction would be. This proof is also efficient and can be verified in logarithmic time.</p></li>
+<li><p><strong>Proof of Nonmembership:</strong> In a sorted Merkle tree, proving nonmembership involves showing the path to the items just before and after the position where the transaction would be. This proof is also efficient and can be verified in logarithmic time. <span id="id20">[<a class="reference internal" href="9_bibliography.html#id20" title="Arvind Narayanan, Joseph Bonneau, Edward Felten, Andrew Miller, and Steven Goldfeder. Bitcoin and cryptocurrency technologies: a comprehensive introduction. 2016.">Narayanan <em>et al.</em>, 2016</a>]</span></p></li>
 </ul>
 </section>
 </section>
@@ -983,7 +983,7 @@ To cheaply (cheaply in the sense of computation) verify if a transaction existed
 <li><p>must be kept secret and secure</p></li>
 </ul>
 </li>
-<li><p><strong>Wallet Address:</strong> shorter, user-friendly form of the public key</p></li>
+<li><p><strong>Wallet Address:</strong> shorter, user-friendly form of the public key <span id="id21">[<a class="reference internal" href="9_bibliography.html#id20" title="Arvind Narayanan, Joseph Bonneau, Edward Felten, Andrew Miller, and Steven Goldfeder. Bitcoin and cryptocurrency technologies: a comprehensive introduction. 2016.">Narayanan <em>et al.</em>, 2016</a>]</span></p></li>
 </ul>
 </section>
 <section id="digital-signatures">
@@ -995,19 +995,19 @@ Digital signatures are cryptographic mechanisms that provide a digital equivalen
 <ul class="simple">
 <li><p><strong>Authenticity:</strong> Only the owner of the private key can create a valid signature.</p></li>
 <li><p><strong>Verification:</strong> Anyone with the corresponding public key can verify the authenticity of the signature.</p></li>
-<li><p><strong>Document Binding:</strong> The signature is tied to a specific document, preventing it from being reused on different documents.</p></li>
+<li><p><strong>Document Binding:</strong> The signature is tied to a specific document, preventing it from being reused on different documents. <span id="id22">[<a class="reference internal" href="9_bibliography.html#id20" title="Arvind Narayanan, Joseph Bonneau, Edward Felten, Andrew Miller, and Steven Goldfeder. Bitcoin and cryptocurrency technologies: a comprehensive introduction. 2016.">Narayanan <em>et al.</em>, 2016</a>]</span></p></li>
 </ul>
 <p><strong>General Digital Signature Scheme:</strong></p>
 <ul class="simple">
 <li><p><strong>generateKeys(keysize)</strong>: Produces a pair of keys—a private key (sk) for signing and a public key (pk) for verification.</p></li>
 <li><p><strong>sign(sk, message)</strong>: Uses the private key to generate a signature for a given message.</p></li>
-<li><p><strong>verify(pk, message, sig)</strong>: Uses the public key to verify if a given signature is valid for the message.</p></li>
+<li><p><strong>verify(pk, message, sig)</strong>: Uses the public key to verify if a given signature is valid for the message. <span id="id23">[<a class="reference internal" href="9_bibliography.html#id20" title="Arvind Narayanan, Joseph Bonneau, Edward Felten, Andrew Miller, and Steven Goldfeder. Bitcoin and cryptocurrency technologies: a comprehensive introduction. 2016.">Narayanan <em>et al.</em>, 2016</a>]</span></p></li>
 </ul>
 <p><strong>Security Properties:</strong></p>
 <ul class="simple">
 <li><p><strong>Transaction Integrity:</strong> Digital signatures ensure that only the owner of a cryptocurrency can authorize transactions, preventing unauthorized spending.</p></li>
 <li><p><strong>Verification:</strong> Nodes in the network can verify transactions using the public key, ensuring the authenticity and integrity of transactions.</p></li>
-<li><p><strong>Security:</strong> The unforgeability property protects against fraudulent transactions, maintaining the trust and security of the cryptocurrency system.</p></li>
+<li><p><strong>Security:</strong> The unforgeability property protects against fraudulent transactions, maintaining the trust and security of the cryptocurrency system. <span id="id24">[<a class="reference internal" href="9_bibliography.html#id20" title="Arvind Narayanan, Joseph Bonneau, Edward Felten, Andrew Miller, and Steven Goldfeder. Bitcoin and cryptocurrency technologies: a comprehensive introduction. 2016.">Narayanan <em>et al.</em>, 2016</a>]</span></p></li>
 </ul>
 </section>
 <section id="unforgeability">
@@ -1015,26 +1015,27 @@ Digital signatures are cryptographic mechanisms that provide a digital equivalen
 <div class="alert alert-info"><b>INFO</b><br />
 An attacker should not be able to forge signatures on messages that were not signed by the legitimate signer.
 </div><p>The unforgeability property is formalized through a game played between a challenger and an adversary. The challenger generates a key pair and gives the public key to the adversary.</p>
-<img src="../_static/images/unforge.png"><ul class="simple">
+<p><img src="../_static/images/unforge.png"> <span id="id25">[<a class="reference internal" href="9_bibliography.html#id20" title="Arvind Narayanan, Joseph Bonneau, Edward Felten, Andrew Miller, and Steven Goldfeder. Bitcoin and cryptocurrency technologies: a comprehensive introduction. 2016.">Narayanan <em>et al.</em>, 2016</a>]</span></p>
+<ul class="simple">
 <li><p>In the game, the adversary is allowed to request signatures on messages of their choice from the challenger, who uses the secret key to sign them. This models a real-world scenario where an attacker may see valid signatures on some messages.</p></li>
 <li><p>After seeing some signatures, the adversary picks a message M that they will attempt to forge a signature on. The only restriction is that M must not be a message the adversary previously requested a signature for.</p></li>
 <li><p>The adversary wins the game if they can produce a valid signature on M that verifies under the public key. The signature scheme is considered unforgeable if no adversary can win this game with a non-negligible probability.</p></li>
 </ul>
 <div class="alert alert-info"><b>INFO</b><br />
 For a signature scheme to be secure, it must be computationally infeasible for any adversary to win the unforgeability game, even if they can see signatures on other messages of their choosing.
-</div></section>
+</div> {cite}`narayanan2016bitcoin`</section>
 <section id="digital-signatures-in-bitcoin">
 <h3><span class="section-number">3.5.4. </span>Digital Signatures in Bitcoin<a class="headerlink" href="#digital-signatures-in-bitcoin" title="Link to this heading">#</a></h3>
 <p><strong>Bitcoin Transaction Structure:</strong></p>
 <ul class="simple">
 <li><p><strong>scriptSig:</strong> This is part of the transaction input and contains the digital signature and the public key. It proves that the transaction is authorized by the owner of the private key.</p></li>
-<li><p><strong>scriptPubKey</strong>: This is part of the transaction output and specifies the conditions under which the output can be spent. This includes the public key hash, which must match the public key provided in the <em>scriptSig</em>.</p></li>
+<li><p><strong>scriptPubKey</strong>: This is part of the transaction output and specifies the conditions under which the output can be spent. This includes the public key hash, which must match the public key provided in the <em>scriptSig</em>. <span id="id26">[<a class="reference internal" href="9_bibliography.html#id20" title="Arvind Narayanan, Joseph Bonneau, Edward Felten, Andrew Miller, and Steven Goldfeder. Bitcoin and cryptocurrency technologies: a comprehensive introduction. 2016.">Narayanan <em>et al.</em>, 2016</a>]</span></p></li>
 </ul>
 <p><strong>Bitcoin Digital Signature Scheme:</strong></p>
 <ul class="simple">
 <li><p><strong>Key Generation (Wallet creation):</strong> A user generates a private key and a corresponding public key.</p></li>
 <li><p><strong>Signing:</strong> When creating a transaction, the user signs the transaction data with their private key. This signature is included in the <em>scriptSig</em>.</p></li>
-<li><p><strong>Verification:</strong> Nodes in the Bitcoin network use the public key (included in the <em>scriptSig</em>) and the conditions specified in the scriptPubKey to verify the signature. If the signature is valid, the transaction is considered authentic and is added to the blockchain.</p></li>
+<li><p><strong>Verification:</strong> Nodes in the Bitcoin network use the public key (included in the <em>scriptSig</em>) and the conditions specified in the scriptPubKey to verify the signature. If the signature is valid, the transaction is considered authentic and is added to the blockchain. <span id="id27">[<a class="reference internal" href="9_bibliography.html#id20" title="Arvind Narayanan, Joseph Bonneau, Edward Felten, Andrew Miller, and Steven Goldfeder. Bitcoin and cryptocurrency technologies: a comprehensive introduction. 2016.">Narayanan <em>et al.</em>, 2016</a>]</span></p></li>
 </ul>
 <img src="../_static/images/transaction.png">
 <!-- https://blockstream.info/testnet/tx/da2d3adf3777c29c8b2b053ce189c29fd17431a643917449bcd047a7bd0cb754?expand --></section>
@@ -1046,7 +1047,7 @@ A digital signature system allows you to generate your own private/public key pa
 <p>ECDSA allows the owner of a private key to sign a transaction, providing proof that they authorize the Bitcoin transfer. Anyone can then verify this signature using the corresponding public key.</p>
 <img src="../_static/images/ecdsa.png"><ul class="simple">
 <li><p>The intersection points look like they are randomly distributed.
-<img src="../_static/images/ecdsa2.png"></p></li>
+<img src="../_static/images/ecdsa2.png"> <span id="id28">[<a class="reference internal" href="9_bibliography.html#id26" title="Mike Pound. Elliptic curves - computerphile - youtube. https://www.youtube.com/watch?v=NF1pwjL9-DE&amp;t=336s. (Accessed on 07/10/2024).">Pound, n.d.</a>]</span></p></li>
 </ul>
 <ul class="simple">
 <li><p>We intersect with only 1 point (never &gt; 1)</p></li>
@@ -1063,14 +1064,16 @@ A digital signature system allows you to generate your own private/public key pa
 </ul>
 </li>
 </ul>
-<img src="https://blog.cloudflare.com/content/images/image02.gif"><div class="alert alert-warning">
+<p><img src="https://blog.cloudflare.com/content/images/image02.gif"> <span id="id29">[<a class="reference internal" href="9_bibliography.html#id27" title="Nick Sullivan. Ecdsa: the digital signature algorithm of a better internet. https://blog.cloudflare.com/ecdsa-the-digital-signature-algorithm-of-a-better-internet. (Accessed on 07/10/2024).">Sullivan, n.d.</a>]</span></p>
+<div class="alert alert-warning">
 <b>Fun fact:</b><br />
 Satoshi Nakamoto chose the elliptic curve secp256k1 for Bitcoin, which is very rarely used outside of Bitcoin for practical applications (e.g., TLS key exchange uses the more common secp256r1 curve). Conspiracy theorists believe it is due to its mistrust of the U.S. National Security Agency (NSA) and other secret services.
 </div></section>
 </section>
 <section id="bitcoin-ecdsa-signing-process">
 <h2><span class="section-number">3.6. </span>Bitcoin ECDSA Signing Process<a class="headerlink" href="#bitcoin-ecdsa-signing-process" title="Link to this heading">#</a></h2>
-<img src="https://static.learnmeabitcoin.com/diagrams/png/ecdsa-bitcoin.png"><section id="components">
+<p><img src="https://static.learnmeabitcoin.com/diagrams/png/ecdsa-bitcoin.png"> <span id="id30">[<a class="reference internal" href="9_bibliography.html#id28" title="Greg Walker. Ecdsa | elliptic curve digital signature algorithm. https://learnmeabitcoin.com/technical/cryptography/elliptic-curve/ecdsa/. (Accessed on 07/10/2024).">Walker, n.d.</a>]</span></p>
+<section id="components">
 <h3><span class="section-number">3.6.1. </span>Components:<a class="headerlink" href="#components" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p><strong><span class="math notranslate nohighlight">\( k \)</span></strong>: A randomly chosen integer for each signature, known as the ephemeral key.</p></li>
@@ -1082,7 +1085,7 @@ Satoshi Nakamoto chose the elliptic curve secp256k1 for Bitcoin, which is very r
 </section>
 <section id="formula-explanation">
 <h3><span class="section-number">3.6.2. </span>Formula Explanation:<a class="headerlink" href="#formula-explanation" title="Link to this heading">#</a></h3>
-<p><span class="math notranslate nohighlight">\( s = k^{-1}(z + d \cdot r) \)</span></p>
+<p><span class="math notranslate nohighlight">\( s = k^{-1}(z + d \cdot r) \)</span> <span id="id31">[<a class="reference internal" href="9_bibliography.html#id20" title="Arvind Narayanan, Joseph Bonneau, Edward Felten, Andrew Miller, and Steven Goldfeder. Bitcoin and cryptocurrency technologies: a comprehensive introduction. 2016.">Narayanan <em>et al.</em>, 2016</a>]</span></p>
 </section>
 <section id="steps-in-the-ecdsa-signing-process">
 <h3><span class="section-number">3.6.3. </span>Steps in the ECDSA Signing Process:<a class="headerlink" href="#steps-in-the-ecdsa-signing-process" title="Link to this heading">#</a></h3>
@@ -1102,17 +1105,18 @@ Satoshi Nakamoto chose the elliptic curve secp256k1 for Bitcoin, which is very r
 <ul class="simple">
 <li><p>Compute the modular inverse of <span class="math notranslate nohighlight">\( k \)</span>, denoted as <span class="math notranslate nohighlight">\( k^{-1} \)</span>.</p></li>
 <li><p>Compute the value <span class="math notranslate nohighlight">\( s \)</span> using the formula:
-<span class="math notranslate nohighlight">\( s = k^{-1}(z + d \cdot r) \)</span></p></li>
+<span class="math notranslate nohighlight">\( s = k^{-1}(z + d \cdot r) \)</span> <span id="id32">[<a class="reference internal" href="9_bibliography.html#id20" title="Arvind Narayanan, Joseph Bonneau, Edward Felten, Andrew Miller, and Steven Goldfeder. Bitcoin and cryptocurrency technologies: a comprehensive introduction. 2016.">Narayanan <em>et al.</em>, 2016</a>]</span></p></li>
 </ul>
 </li>
 </ol>
-<img src="https://static.learnmeabitcoin.com/technical/cryptography/elliptic-curve/ecdsa/point-sign.gif"></section>
+<p><img src="https://static.learnmeabitcoin.com/technical/cryptography/elliptic-curve/ecdsa/point-sign.gif"> <span id="id33">[<a class="reference internal" href="9_bibliography.html#id28" title="Greg Walker. Ecdsa | elliptic curve digital signature algorithm. https://learnmeabitcoin.com/technical/cryptography/elliptic-curve/ecdsa/. (Accessed on 07/10/2024).">Walker, n.d.</a>]</span></p>
+</section>
 <section id="purpose-of-the-formula">
 <h3><span class="section-number">3.6.4. </span>Purpose of the Formula:<a class="headerlink" href="#purpose-of-the-formula" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>The formula <span class="math notranslate nohighlight">\( s = k^{-1}(z + d \cdot r) \)</span> is used to generate the second part of the ECDSA signature.</p></li>
 <li><p>The signature consists of the pair <span class="math notranslate nohighlight">\((r, s)\)</span>.</p></li>
-<li><p>This ensures that the signature is unique for each message and private key combination, and it can be verified using the corresponding public key.</p></li>
+<li><p>This ensures that the signature is unique for each message and private key combination, and it can be verified using the corresponding public key. <span id="id34">[<a class="reference internal" href="9_bibliography.html#id20" title="Arvind Narayanan, Joseph Bonneau, Edward Felten, Andrew Miller, and Steven Goldfeder. Bitcoin and cryptocurrency technologies: a comprehensive introduction. 2016.">Narayanan <em>et al.</em>, 2016</a>]</span></p></li>
 </ul>
 </section>
 </section>
@@ -1140,7 +1144,7 @@ In ECDSA, if the same nonce (k) is used to sign two different messages, it becom
 <section id="bitcoin-improvement-proposals-bips">
 <h2><span class="section-number">3.8. </span>Bitcoin Improvement Proposals (BIPs)<a class="headerlink" href="#bitcoin-improvement-proposals-bips" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p>design document providing information to the Bitcoin community, or describing a new feature for Bitcoin or its processes or environment <span id="id2">[<a class="reference internal" href="9_bibliography.html#id21" title="Bips.dev - Read BIPs like a pro. — bips.dev. https://bips.dev. [Accessed 30-06-2024]."><em>bips.dev - Read BIPs like a pro. — bips.dev</em>, n.d.</a>]</span></p></li>
+<li><p>design document providing information to the Bitcoin community, or describing a new feature for Bitcoin or its processes or environment <span id="id35">[<a class="reference internal" href="9_bibliography.html#id21" title="Bips.dev - Read BIPs like a pro. — bips.dev. https://bips.dev. [Accessed 30-06-2024]."><em>bips.dev - Read BIPs like a pro. — bips.dev</em>, n.d.</a>]</span></p></li>
 <li><p>aim to standardize changes and improvements in protocol and software</p></li>
 <li><p><strong>Examples</strong></p>
 <ul>
@@ -1224,9 +1228,8 @@ In ECDSA, if the same nonce (k) is used to sign two different messages, it becom
 </ol>
 <div class="alert alert-warning">
 <b>Fun fact (or not so funny maybe):</b><br />
-Bitcoin Improvement Proposals were introduced by a very interesting guy called Amir Taaki which made his living as a professional poker player, served for the YPG military in the fight against Islamic State (ISIS) in Syrian Civil War and resided since 2013 in an anarchist squat in the former anti-G8 HQ building in London, England. {cite}`BitcoinI83:online` {cite}`HowAnarc47:online` {cite}`webarchi80:online` {cite}`webarchi80:online` {cite}`Hidingcu87:online`
-<p><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKauKLc9SprlwfhFLG33MWsBCgc_SKvHFB--E_Zyc8rZMLmzEA" width="200"></div></p>
-</section>
+Bitcoin Improvement Proposals were introduced by a very interesting guy called Amir Taaki which made his living as a professional poker player, served for the YPG military in the fight against Islamic State (ISIS) in Syrian Civil War and resided since 2013 in an anarchist squat in the former anti-G8 HQ building in London, England.
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKauKLc9SprlwfhFLG33MWsBCgc_SKvHFB--E_Zyc8rZMLmzEA" width="200"></div> {cite}`BitcoinI83:online` {cite}`HowAnarc47:online` {cite}`webarchi80:online` {cite}`webarchi80:online` {cite}`Hidingcu87:online`</section>
 </section>
 <section id="consensus-algorithm">
 <h2><span class="section-number">3.9. </span>Consensus Algorithm<a class="headerlink" href="#consensus-algorithm" title="Link to this heading">#</a></h2>
@@ -1269,7 +1272,7 @@ Bitcoin Improvement Proposals were introduced by a very interesting guy called A
 <ul class="simple">
 <li><p><strong>Role of Mining:</strong> Mining is the process by which nodes (miners) <em>compete to propose the next block</em>.</p></li>
 <li><p><strong>Proof of Work</strong>: Miners solve (brute force try and error) a computational puzzle to earn the right to propose a block, ensuring randomness and security.</p></li>
-<li><p><strong>Incentives</strong>: Miners are rewarded with newly minted bitcoins (currently 3.125 bitcoins per block and halves approx. every 210,000 blocks == approx. 4 years.) and the paid transaction fees (ranging from few hundred dollars to thousands of dollars per block), incentivizing honest behavior.</p></li>
+<li><p><strong>Incentives</strong>: Miners are rewarded with newly minted bitcoins (currently 3.125 bitcoins per block and halves approx. every 210,000 blocks == approx. 4 years.) and the paid transaction fees (ranging from few hundred dollars to thousands of dollars per block), incentivizing honest behavior. <span id="id36">[<a class="reference internal" href="9_bibliography.html#id20" title="Arvind Narayanan, Joseph Bonneau, Edward Felten, Andrew Miller, and Steven Goldfeder. Bitcoin and cryptocurrency technologies: a comprehensive introduction. 2016.">Narayanan <em>et al.</em>, 2016</a>]</span></p></li>
 </ul>
 <p><strong>Important aspects:</strong></p>
 <ul class="simple">
@@ -1284,7 +1287,7 @@ Bitcoin Improvement Proposals were introduced by a very interesting guy called A
 <li><p>The adjustment is based on the actual time it took to mine the last 2016 blocks compared to the target time of 20160 minutes (2016 blocks * approx. this 10 minutes (read from a UTC unix timestamp in the block headers).</p>
 <ul>
 <li><p>If the actual time is less than 20160 minutes, the difficulty increases (finding more leading zeros in the hash).</p></li>
-<li><p>If the actual time is more than 20160 minutes, the difficulty decreases (finding less leading zeros in the hash).</p></li>
+<li><p>If the actual time is more than 20160 minutes, the difficulty decreases (finding less leading zeros in the hash). <span id="id37">[<a class="reference internal" href="9_bibliography.html#id20" title="Arvind Narayanan, Joseph Bonneau, Edward Felten, Andrew Miller, and Steven Goldfeder. Bitcoin and cryptocurrency technologies: a comprehensive introduction. 2016.">Narayanan <em>et al.</em>, 2016</a>]</span></p></li>
 </ul>
 </li>
 </ul>
